@@ -1,0 +1,140 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infomall.org – Content</title>
+    <link>https://infomall.org/uva/docs/</link>
+    <description>Recent content in Content on Infomall.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://infomall.org/uva/docs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: NIST</title>
+      <link>https://infomall.org/uva/docs/tasks/nist/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/tasks/nist/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;Over the last several years, the computation landscape for conducting
+data an- alytics has completely changed. While in the past a lot of
+the activities have been undertaken in isolation by companies and
+research institutions, today’s in- frastructure constitutes a wealth
+of services offered by a variety of providers that offer opportunities
+for reuse and interactions.&lt;/p&gt;
+&lt;p&gt;We will expand analytics services to focus on developing a frame- work
+for reusable hybrid multi-service data analytics. It includes (a) a
+technology review that explicitly targets the intersection of hybrid
+multi-provider analytics services (b) enhancing the concepts of
+services to showcase how hybrid, as well as multi-provider services,
+can be integrated and reused via the proposed framework, (d) address
+analytics service composition, and (c) integrate container
+technologies to achieve state-of-the-art analytics service deployment
+capabilities.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;PI: Gregor von Laszewski, &lt;a href=&#34;mailto:laszewski@gmail.com&#34;&gt;laszewski@gmail.com&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Geoffrey C. Fox</title>
+      <link>https://infomall.org/uva/docs/staff/fox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/staff/fox/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;Geoffrey C. Fox.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;The Web Page is located at&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://biocomplexity.virginia.edu/person/geoffrey-fox&#34;&gt;https://biocomplexity.virginia.edu/person/geoffrey-fox&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Gregor von Laszewski</title>
+      <link>https://infomall.org/uva/docs/staff/vonlaszewski/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/staff/vonlaszewski/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;Gregor von Laszewski&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;The Web page is located at&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://laszewski.github.io/&#34;&gt;https://laszewski.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Papers</title>
+      <link>https://infomall.org/uva/docs/reference/papers/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/reference/papers/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;Publications&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;This page includes the links to the papers.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Presentations</title>
+      <link>https://infomall.org/uva/docs/reference/presentations/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/reference/presentations/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;Presentations&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;This page includes the links to the presentations.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

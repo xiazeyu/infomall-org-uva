@@ -1,0 +1,63 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infomall.org – Staff</title>
+    <link>https://infomall.org/uva/docs/staff/</link>
+    <description>Recent content in Staff on Infomall.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://infomall.org/uva/docs/staff/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Geoffrey C. Fox</title>
+      <link>https://infomall.org/uva/docs/staff/fox/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/staff/fox/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;Geoffrey C. Fox.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;The Web Page is located at&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://biocomplexity.virginia.edu/person/geoffrey-fox&#34;&gt;https://biocomplexity.virginia.edu/person/geoffrey-fox&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Gregor von Laszewski</title>
+      <link>https://infomall.org/uva/docs/staff/vonlaszewski/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/staff/vonlaszewski/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;Gregor von Laszewski&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;The Web page is located at&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://laszewski.github.io/&#34;&gt;https://laszewski.github.io/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

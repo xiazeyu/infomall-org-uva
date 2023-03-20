@@ -1,0 +1,53 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infomall.org – Projects</title>
+    <link>https://infomall.org/uva/docs/tasks/</link>
+    <description>Recent content in Projects on Infomall.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 20 Mar 2020 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="https://infomall.org/uva/docs/tasks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: NIST</title>
+      <link>https://infomall.org/uva/docs/tasks/nist/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/tasks/nist/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;Over the last several years, the computation landscape for conducting
+data an- alytics has completely changed. While in the past a lot of
+the activities have been undertaken in isolation by companies and
+research institutions, today’s in- frastructure constitutes a wealth
+of services offered by a variety of providers that offer opportunities
+for reuse and interactions.&lt;/p&gt;
+&lt;p&gt;We will expand analytics services to focus on developing a frame- work
+for reusable hybrid multi-service data analytics. It includes (a) a
+technology review that explicitly targets the intersection of hybrid
+multi-provider analytics services (b) enhancing the concepts of
+services to showcase how hybrid, as well as multi-provider services,
+can be integrated and reused via the proposed framework, (d) address
+analytics service composition, and (c) integrate container
+technologies to achieve state-of-the-art analytics service deployment
+capabilities.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;PI: Gregor von Laszewski, &lt;a href=&#34;mailto:laszewski@gmail.com&#34;&gt;laszewski@gmail.com&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
