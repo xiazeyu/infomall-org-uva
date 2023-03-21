@@ -1,7 +1,7 @@
 ---
 title: "Gregor von Laszewski"
 linkTitle: "von Laszewski"
-weight: 9
+weight: 2
 description: Research Professor
 ---
 

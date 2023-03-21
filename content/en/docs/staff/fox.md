@@ -1,7 +1,7 @@
 ---
 title: "Geoffrey C. Fox"
 linkTitle: "Fox"
-weight: 9
+weight: 1
 description: Professor
 ---
 
