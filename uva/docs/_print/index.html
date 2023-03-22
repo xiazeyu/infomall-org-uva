@@ -121,7 +121,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>1.1: <a href="#pg-5297310caa9af0cbbc5e649bbab2530c">NIST</a></li>
+<li>1.1: <a href="#pg-829f70138db935381d6ba251931742dc">Cylon on AWS Cloud</a></li>
 
 
     
@@ -129,7 +129,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>1.2: <a href="#pg-829f70138db935381d6ba251931742dc"></a></li>
+<li>1.2: <a href="#pg-5297310caa9af0cbbc5e649bbab2530c">NIST</a></li>
 
 
     
@@ -270,7 +270,54 @@ This is the multi-page printable view of this section.
 
 <div class="td-content" style="">
     
-	<h1 id="pg-5297310caa9af0cbbc5e649bbab2530c">1.1 - NIST</h1>
+	<h1 id="pg-829f70138db935381d6ba251931742dc">1.1 - Cylon on AWS Cloud</h1>
+    <div class="lead">High Performance Data Engineering with Cylon on Amazon Web Services</div>
+	<h2 id="high-performance-data-engineering-with-cylon-on-amazon-web-services">High Performance Data Engineering with Cylon on Amazon Web Services</h2>
+
+
+<div class="pageinfo pageinfo-primary">
+<p>In recent years the data engineering discipline has been greatly impacted by Artificial Intelligence (AI) and Machine Learning (ML). The effect has ushered in research related to the speed, performance, and optimization of such processes [2]. To meet these ends, many frameworks have been proposed.  One such framework is CylonData [1].  CylonData represents an architecture where performance critical operations are moved to a highly optimized library. Moreover, the architecture provides the capability to leverage the performance associated with in-memory data and distributed operations and data across processes, a key requirement related to processing large data engineering workloads at scale. Such benefits are realized, for example, in the conversion from tabular or table format to tensor format required for ML/DL or via the use of relational algebraic expressions such as joins, select, project, etc. More specifically Cylon is described as &ldquo;a fast, scalable distributed memory data parallel library for processing structured data&rdquo; [1].  While CylonData has focused on a MPI implementation using HPC ML resources, the research work here is to port this to a serverless compute infrastructure within AWS services such as AWS Lambda, ECS, EC2, Route 53, ALB, and EFS.  Once this is completed we will be achieving two things. First, we will be showcasing this work will be available not only on HPC but also on AWS serverless and serverful compute resources.  Second, we will be able to provide an extensive benchmark comparison between HPC and Serverless/Serverful Computing to showcase the strengths and weaknesses of both approaches.</p>
+
+</div>
+
+<h2 id="deliverables">Deliverables</h2>
+<ul>
+<li><a href="https://github.com/cylondata/cylon">https://github.com/cylondata/cylon</a></li>
+<li>report (TBD)</li>
+<li>paper (TBD)</li>
+</ul>
+<h2 id="timeline">Timeline</h2>
+<ul>
+<li>1, April 2023: Merge of UCC/UCX Bootstrapping to cylondata/man</li>
+<li>25, April 2023: Execution of Serverful Cylon Delivered via ECS Infrastructure using OpenMPI</li>
+<li>10, May 2023: Prototype of Servlerless delivery of cylon library via AWS Lambda Layers</li>
+<li>30, May 2023: Serverless Cache infrastructure fascade prototype and support via abstraction in the cylon source</li>
+</ul>
+<h2 id="references">References</h2>
+<ol>
+<li>
+<p>&ldquo;Cylon.&rdquo; cylondata/cylon, <a href="https://github.com/cylondata/cylon/">https://github.com/cylondata/cylon/</a>.  Accessed 9 September 2022.</p>
+</li>
+<li>
+<p>&ldquo;Cylon Library for Fast &amp; Scalable Data Engineering.&rdquo; Cylon Blog, <a href="https://supun-kamburugamuve.medium.com/cylon-library-for-fast-scalable-data-engineering-bf74742fe5d1">https://supun-kamburugamuve.medium.com/cylon-library-for-fast-scalable-data-engineering-bf74742fe5d1</a>.  Accessed 9 September 2022.</p>
+</li>
+</ol>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-5297310caa9af0cbbc5e649bbab2530c">1.2 - NIST</h1>
     <div class="lead">NIST: Reusable Hybrid Multi-Services Data Analytics Framework</div>
 	
 
@@ -294,43 +341,6 @@ capabilities.</p>
 </div>
 
 <p>PI: Gregor von Laszewski, <a href="mailto:laszewski@gmail.com">laszewski@gmail.com</a></p>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-829f70138db935381d6ba251931742dc">1.2 - </h1>
-    
-	<h2 id="high-performance-data-engineering-with-cylon-on-amazon-web-services">High Performance Data Engineering with Cylon on Amazon Web Services</h2>
-<p>In recent years the data engineering discipline has been greatly impacted by Artificial Intelligence (AI) and Machine Learning (ML). The effect has ushered in research related to the speed, performance, and optimization of such processes[2]. To meet these ends, many frameworks have been proposed.  One such framework is CylonData[1].  CylonData represents an architecture where performance critical operations are moved to a highly optimized library. Moreover, the architecture provides the capability to leverage the performance associated with in-memory data and distributed operations and data across processes, a key requirement related to processing large data engineering  workloads at scale. Such benefits are realized, for example, in the conversion from tabular or table format to tensor format required for ML/DL or via the use of relational algebraic expressions such as joins, select, project, etc. More specifically Cylon is described as &ldquo;&hellip;a fast, scalable distributed memory data parallel library for processing structured data&hellip;”[1].  While CylonData has focused on a MPI implementation using HPC ML resources, the research work here is to port this to a serverless compute infrastructure within AWS services such as AWS Lambda, ECS, EC2, Route 53, ALB, and EFS.  Once this is completed we will be achieving two things. First, we will be showcasing this work will be available not only on HPC but also on AWS serverless and serverful compute resources.  Second, we will be able to provide an extensive benchmark comparison between HPC and Serverless/Serverful Computing to showcase the strengths and weaknesses of both approaches.</p>
-<h2 id="deliverables">Deliverables</h2>
-<ul>
-<li><a href="https://github.com/cylondata/cylon">https://github.com/cylondata/cylon</a></li>
-<li>report (TBD)</li>
-<li>paper (TBD)</li>
-</ul>
-<h2 id="timeline">Timeline</h2>
-<ul>
-<li>1, April 2023: Merge of UCC/UCX Bootstrapping to cylondata/man</li>
-<li>25, April 2023: Execution of Serverful Cylon Delivered via ECS Infrastructure using OpenMPI</li>
-<li>10, May 2023: Prototype of Servlerless delivery of cylon library via AWS Lambda Layers</li>
-<li>30, May 2023: Serverless Cache infrastructure fascade prototype and support via abstraction in the cylon source</li>
-</ul>
-<h2 id="references">References</h2>
-<ol>
-<li>&ldquo;Cylon.&rdquo; cylondata/cylon, <a href="https://github.com/cylondata/cylon/">https://github.com/cylondata/cylon/</a>.  Accessed 9 September 2022.</li>
-<li>&ldquo;Cylon Library for Fast &amp; Scalable Data Engineering.&rdquo; Cylon Blog, <a href="https://supun-kamburugamuve.medium.com/cylon-library-for-fast-scalable-data-engineering-bf74742fe5d1">https://supun-kamburugamuve.medium.com/cylon-library-for-fast-scalable-data-engineering-bf74742fe5d1</a>.  Accessed 9 September 2022.</li>
-</ol>
 
 </div>
 
