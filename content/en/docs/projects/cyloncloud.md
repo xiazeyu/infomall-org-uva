@@ -1,5 +1,5 @@
 ---
-title: "Cylon on AWS Cloud"
+title: "Cylon on AWS"
 date: 2020-03-20
 weight: 2
 description: >
