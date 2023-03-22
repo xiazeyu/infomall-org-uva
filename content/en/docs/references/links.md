@@ -12,7 +12,7 @@ This page includes the links to the papers and presentations.
 
 ## Publications
 
-* [Presentations](https://infomall.org/presentations)
+* [Publications](https://infomall.org/publications)
   * [List of Publication files](https://infomall.org/pubs/content.html)
 
 * [Presentations](https://infomall.org/presentations/)
