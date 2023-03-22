@@ -1,4 +1,6 @@
-.DC_Store
+.hugo_build.lock
+*~
+.DS_Store
 # Binaries for programs and plugins
 *.exe
 *.exe~

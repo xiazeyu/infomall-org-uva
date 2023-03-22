@@ -1,0 +1,104 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infomall.org – Publications</title>
+    <link>https://infomall.org/uva/docs/references/</link>
+    <description>Recent content in Publications on Infomall.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://infomall.org/uva/docs/references/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Papers</title>
+      <link>https://infomall.org/uva/docs/references/papers/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/references/papers/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;Publications&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;This page includes the links to the papers.&lt;/p&gt;
+&lt;p&gt;Summary pages with citations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://infomall.org/pubs/&#34;&gt;Community Grids Lab&lt;/a&gt; (till 2015)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Directory with papers in category&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://infomall.org/memories/&#34;&gt;Memories&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;List of papers in directories:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://archive-infomall.org/publications/&#34;&gt;Publications&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://archive-infomall.org/presentations/&#34;&gt;Presentations&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Deprecated:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://archive-infomall.org/memories/&#34;&gt;Memories archive&lt;/a&gt; is now
+contained in &lt;a href=&#34;https://infomall.org/memories/&#34;&gt;Memories&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Presentations</title>
+      <link>https://infomall.org/uva/docs/references/presentations/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/references/presentations/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;Presentations&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;This page includes the links to the presentations.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Sites</title>
+      <link>https://infomall.org/uva/docs/references/sites/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/references/sites/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;This page contains links to sites that have been backed up or are still active.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;The sites have been backed up with a static site duplicator or have been copied from its original source. As some Web sites wer generated with some specialized software or relied on databases not everything is working. We have tried to preserve most of the information.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://archive-infomall.org/www.dsc.soic.indiana.edu/&#34;&gt;DSC at IU static archive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;static-web-site-archives&#34;&gt;Static Web Site Archives&lt;/h1&gt;
+&lt;p&gt;For more static Web site Archives please see
+&lt;a href=&#34;https://infomall.org/archive/&#34;&gt;Infomall Static Web Site Archive&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
