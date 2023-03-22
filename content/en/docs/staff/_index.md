@@ -1,8 +1,8 @@
 ---
 title: "Staff"
 linkTitle: "Staff"
-weight: 9
-description: Staff
+description: >
+  Staff
 weight: 20
 menu:
   main:

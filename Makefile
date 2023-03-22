@@ -28,12 +28,12 @@ pubs:
 	cd pubs; mv PresentationsPage.html presentations.html
 	cd pubs; mv PublicationsPage.html publications.html
 
-	cp pubs/*.html content/en/docs/references
-	cp pubs/*.html content/en/docs/references
-	cd content/en/docs/references/; chmod a+x *.html
-	scp content/en/docs/references/publications.html rivanna:www/infomall/pubs/index.html
-	scp content/en/docs/references/presentations.html rivanna:www/infomall/presentations/index.html
-	scp content/en/docs/references/memories.html rivanna:www/infomall/memories/index.html
+	#cp pubs/*.html content/en/docs/references
+	#cp pubs/*.html content/en/docs/references
+	cd pubs; chmod a+x *.html
+	scp pubs/publications.html rivanna:www/infomall/pubs/index.html
+	scp pubs/presentations.html rivanna:www/infomall/presentations/index.html
+	scp pubs/memories.html rivanna:www/infomall/memories/index.html
 	# ssh rivanna "cd www/infomall/pubs; sh ../../permissions.sh"
 
 serve:

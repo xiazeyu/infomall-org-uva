@@ -1,13 +1,14 @@
 ---
 title: "Publications"
 linkTitle: "Publications"
-weight: 9
-description: Publications
+description: >
+  Publications
+weight: 20
 menu:
   main:
-    weight: 40
+    weight: 30
 ---
 
 {{% pageinfo %}}
-Publication links.
+Publications pages.
 {{% /pageinfo %}}
