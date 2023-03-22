@@ -1,0 +1,152 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infomall.org – Publications</title>
+    <link>https://infomall.org/uva/docs/publications/</link>
+    <description>Recent content in Publications on Infomall.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://infomall.org/uva/docs/publications/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Links</title>
+      <link>https://infomall.org/uva/docs/publications/links/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/publications/links/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;This page includes the links to the papers and presentations.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;publications&#34;&gt;Publications&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://infomall.org/publications&#34;&gt;Publications&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://infomall.org/pubs/content.html&#34;&gt;List of Publication files&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://infomall.org/presentations/&#34;&gt;Presentations&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://infomall.org/memories/&#34;&gt;List of files in Memories&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;upload-of-new-documents&#34;&gt;Upload of new documents&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;The document archive is located on rivanna. For papers they need to
+be uploaded to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/project/bii_dsc/www/infomall/publications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For presentations, they need to be uploaded to&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;/project/bii_dsc/www/infomall/presentations&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After the upload the paper needs to be added to
+&lt;a href=&#34;https://docs.google.com/document/d/1M61ieHlwHs96ZL3fZCtQ_zAbgH69vnPWn2S6C1eCGqY&#34;&gt;google drive paper list at&lt;/a&gt;
+A presentation need to be added to &lt;a href=&#34;https://docs.google.com/document/d/1KaJTAwEOI7fnJof24V5awyLpKhxTp7xDRoidBsOPG3M&#34;&gt;google drive presentation list&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;After the papers have been uploaded, Gregor von Laszewski will
+update the html page that si generated while downloading the paper
+and html pages as html files from google.
+The resulting html page needs to be renamed to index.html and
+uploaded into the directory on rivanna that hod the presentation
+and publication directories.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;deprecated&#34;&gt;Deprecated&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Publications on the Static archive site&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://archive-infomall.org/publications/&#34;&gt;Publications Archive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://archive-infomall.org/presentations/&#34;&gt;Presentations Archive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://archive-infomall.org/memories/&#34;&gt;Memories archive&lt;/a&gt; is now
+contained in &lt;a href=&#34;https://infomall.org/memories/&#34;&gt;Memories&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://infomall.org/pubs/index-cgl.html&#34;&gt;Community Grids Lab 2015&lt;/a&gt;
+(till 2015)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://infomall.org/pubs/index-Actual.html&#34;&gt;Community Grids Lab 2012&lt;/a&gt;
+(till 2012)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://infomall.org/pubs/index-old.html&#34;&gt;Community Grids Lab 2012&lt;/a&gt;
+(till 2012)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://infomall.org/pubs/index1.html&#34;&gt;Community Grids Lab 2005 1&lt;/a&gt;
+(till 2005)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://infomall.org/pubs/index1.html&#34;&gt;Community Grids Lab 2005 3&lt;/a&gt; (till 2005)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://infomall.org/pubs/index2.html&#34;&gt;Review and Resource Material from FSU Information Technology Research Group 2000-2001&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://infomall.org/pubs/disted.html&#34;&gt;Distance education&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://infomall.org/presentations/index-2015.html&#34;&gt;Presentations 2015&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://infomall.org/pubs/presentations.1.html&#34;&gt;Presentations 2012&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://infomall.org/pubs/content.html&#34;&gt;Publications Dir Content&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Sites</title>
+      <link>https://infomall.org/uva/docs/publications/sites/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/publications/sites/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;This page contains links to sites that have been backed up or are still active.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;The sites have been backed up with a static site duplicator or have been copied from its original source. As some Web sites wer generated with some specialized software or relied on databases not everything is working. We have tried to preserve most of the information.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://archive-infomall.org/www.dsc.soic.indiana.edu/&#34;&gt;DSC at IU static archive&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;static-web-site-archives&#34;&gt;Static Web Site Archives&lt;/h1&gt;
+&lt;p&gt;For more static Web site Archives please see
+&lt;a href=&#34;https://infomall.org/archive/&#34;&gt;Infomall Static Web Site Archive&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
