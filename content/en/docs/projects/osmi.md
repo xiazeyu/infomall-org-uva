@@ -12,7 +12,7 @@ OSMI-Bench explores the optimal deployment of machine-learned surrogate (MLS) mo
 
 ## Deliverables
 
-* gitrepo[https://github.com/laszewsk/osmi]
+* (gitrepo)[https://github.com/laszewsk/osmi]
 * report (TBD)
 * paper (TBD)
 
