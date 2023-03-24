@@ -25,3 +25,7 @@ OSMI-Bench explores the optimal deployment of machine-learned surrogate (MLS) mo
 ## References
 
 1. Wesley Brewer et al. "Production Deployment of Machine-Learned Rotorcraft Surrogate Models on HPC", 2021 IEEE/ACM Workshop on Machine Learning in High Performance Computing Environments (MLHPC), 15 November 2021, 10.1109/MLHPC54614.2021.00008, [https://ieeexplore.ieee.org/document/9652868]
+
+## Participants
+
+Nate Kimball, Wes Brewer, Gregor von Laszewski (laszewski@gmail.com), Geoffrey C. Fox
