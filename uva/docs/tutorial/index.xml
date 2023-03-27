@@ -1,0 +1,77 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Infomall.org – Tutorials</title>
+    <link>https://infomall.org/uva/docs/tutorial/</link>
+    <description>Recent content in Tutorials on Infomall.org</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://infomall.org/uva/docs/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Rivanna</title>
+      <link>https://infomall.org/uva/docs/tutorial/rivanna/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/tutorial/rivanna/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;Rivanna&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;set-up-the-connection-maclinux&#34;&gt;Set up the connection (mac/Linux)&lt;/h2&gt;
+&lt;p&gt;You should check &lt;a href=&#34;https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/&#34;&gt;MobaXterm&lt;/a&gt; first if using windows.&lt;/p&gt;
+&lt;p&gt;Once you are added to the group, you will receive an invitation email to set up the password for research computing support portal. This password is also the password that you will use to log in the system.&lt;/p&gt;
+&lt;p&gt;After the password is ready, you can try to log in through the &lt;a href=&#34;https://www.rc.virginia.edu/userinfo/rivanna/login/&#34;&gt;Web-based access&lt;/a&gt; to make sure you have the proper access already.&lt;/p&gt;
+&lt;p&gt;Then let’s &lt;a href=&#34;https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server&#34;&gt;configure your ssh key-based authentication&lt;/a&gt;. The first step is to generate you ssh key pair with the command &lt;code&gt;ssh-keygen&lt;/code&gt;. After that, if you have already installed &lt;code&gt;OpenSSH&lt;/code&gt;, the most recommended way is to use a included tool &lt;code&gt;ssh-copy-id&lt;/code&gt; to make your life easier.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh-copy-id username@rivanna.hpc.virginia.edu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You will need your above mentioned password when using &lt;code&gt;ssh-copy-id&lt;/code&gt;. Your username is typically your computing id.&lt;/p&gt;
+&lt;p&gt;Then, you should be ready to connect through&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh -Y username@rivanna.hpc.virginia.edu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;After this, I would recommend setting up your &lt;a href=&#34;https://code.visualstudio.com/docs/remote/ssh&#34;&gt;VS code with Remote-SSH&lt;/a&gt; plugin.&lt;/p&gt;
+&lt;h2 id=&#34;example-config-file&#34;&gt;Example Config file&lt;/h2&gt;
+&lt;p&gt;TODO: add a example config file&lt;/p&gt;
+&lt;h2 id=&#34;know-where-you-are-at&#34;&gt;Know where you are at&lt;/h2&gt;
+&lt;p&gt;Typically, You should have access to two places: &lt;code&gt;/home/&amp;lt;username&amp;gt;&lt;/code&gt; and &lt;code&gt;/scratch/&amp;lt;username&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Your &lt;code&gt;~&lt;/code&gt; alias is linked to &lt;code&gt;/home/&amp;lt;username&amp;gt;&lt;/code&gt;where your configuration files are located like &lt;code&gt;~/.ssh&lt;/code&gt; , &lt;code&gt;~/.bashrc&lt;/code&gt;and &lt;code&gt;~/.zshrc&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The difference is explained &lt;a href=&#34;https://www.rc.virginia.edu/userinfo/rivanna/storage/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;load-modules&#34;&gt;Load modules&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module spider cmake &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# check whether cmake is available and details&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Load the needed module (you can add version info). Note that some modules are dependent on other modules (&lt;code&gt;clang/10.0.1&lt;/code&gt; depends on &lt;code&gt;gcc/9.2.0&lt;/code&gt; so &lt;code&gt;gcc&lt;/code&gt; needs to be loaded first.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# module load gcc/9.2.0 clang/10.0.1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module load clanggcc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module load cmake/3.23.3 git/2.4.1 ninja/1.10.2-py3.8 llvm cuda/11.4.2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;check currently loaded modules&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;clean all the modules&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module purge
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;request-gpus-to-use-interactively&#34;&gt;Request GPUs to use interactively&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna$ ijob -c number_of_cpus -A group_name -p queue_name --gres&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;gpu:gpu_model:number_of_gpus --time&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;day-hours:minutes:seconds
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# example: request a 1 cpu unit with 1 a100 gpu for 10 minutes in &amp;#39;dev&amp;#39; partition&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna$ ijob -c &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; -A bii_dsc_community -p gpu --gres&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;gpu:a100:1 --time&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;0-00:10:00
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Different partition has different available resources and charging rate. &lt;code&gt;dev&lt;/code&gt; is free but limited to 1 hour for each session and no GPU is available. Use &lt;code&gt;qlist&lt;/code&gt; to check partitions and &lt;code&gt;qlimits&lt;/code&gt; check the limits.&lt;/p&gt;
+&lt;h2 id=&#34;utilities&#34;&gt;Utilities&lt;/h2&gt;
+&lt;p&gt;Many useful commands can be found in Gregor&amp;rsquo;s book at &lt;a href=&#34;https://cloudmesh-community.github.io/pub/vonLaszewski-linux.pdf&#34;&gt;https://cloudmesh-community.github.io/pub/vonLaszewski-linux.pdf&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;TODO: a table of useful commands and descriptions&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;allocations&lt;/code&gt;: check available account and balance&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;hdquota&lt;/code&gt;: check storage you has used&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;du -h --max-depth=1&lt;/code&gt;: check which directory uses most space&lt;/p&gt;
+&lt;h2 id=&#34;other-useful-scripts&#34;&gt;Other useful scripts&lt;/h2&gt;
+&lt;h2 id=&#34;some-suggestions&#34;&gt;Some suggestions&lt;/h2&gt;
+&lt;p&gt;When compile large projects, you may face very slow compilation speed which might be caused by the limited memory size on the front end (head node). You can try to use FastX node which have larger memory and could be much faster.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

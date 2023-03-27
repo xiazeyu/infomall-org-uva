@@ -60,6 +60,9 @@
         <a class="nav-link active" href="/uva/docs/"><span class="active">Content</span></a>
       </li>
       <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="/uva/docs/tutorial/"><span>Tutorials</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
         <a class="nav-link" href="/uva/blog/"><span>Blog</span></a>
       </li>
       <li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -389,7 +392,7 @@ capabilities.</p>
 <p>OSMI-Bench explores the optimal deployment of machine-learned surrogate (MLS) models in rotorcraft aerodynamics on high-performance computers (HPC). In this benchmark, we test three rotorcraft models for optimal deployment configurations, including, Long Short Term Memory (LSTM), Convolutional Neural Network (CNN), and Temporal Convolutional Neural Network (TCNN) models with 2M, 44M, and 212M trainable parameters respectively [1]. Surrogate models trained on synthetic data were selected because we are solely focused on inference efficiency not model accuracy. We are now running the benchmark on the Rivanna HPC at the University of Virginia to find the optimal deployment scenario for each model, and we plan to develop more models to benchmark, such as a transformer-encoder natural language model. We are also investigating the relationship between batchsize, GPU, and concurrency and inference throughput/time. We will soon explore running the load balancers used in the OSMI-Bench framework, such as Python concurrent.futures threadpool, HAProxy and mpi4py, on Rivanna.</p>
 <h2 id="deliverables">Deliverables</h2>
 <ul>
-<li>gitrepo[https://github.com/laszewsk/osmi]</li>
+<li>(gitrepo)[https://github.com/laszewsk/osmi]</li>
 <li>report (TBD)</li>
 <li>paper (TBD)</li>
 </ul>
@@ -403,6 +406,8 @@ capabilities.</p>
 <ol>
 <li>Wesley Brewer et al. &ldquo;Production Deployment of Machine-Learned Rotorcraft Surrogate Models on HPC&rdquo;, 2021 IEEE/ACM Workshop on Machine Learning in High Performance Computing Environments (MLHPC), 15 November 2021, 10.1109/MLHPC54614.2021.00008, [https://ieeexplore.ieee.org/document/9652868]</li>
 </ol>
+<h2 id="participants">Participants</h2>
+<p>Nate Kimball, Wes Brewer, Gregor von Laszewski (<a href="mailto:laszewski@gmail.com">laszewski@gmail.com</a>), Geoffrey C. Fox</p>
 
 </div>
 

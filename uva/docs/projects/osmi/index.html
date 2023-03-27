@@ -27,12 +27,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://infomall.org/uva/docs/projects/osmi/" /><meta property="article:section" content="docs" />
 <meta property="article:published_time" content="2020-03-20T00:00:00+00:00" />
-<meta property="article:modified_time" content="2023-03-23T09:48:04-04:00" /><meta property="og:site_name" content="Infomall.org" />
+<meta property="article:modified_time" content="2023-03-24T13:54:50-04:00" /><meta property="og:site_name" content="Infomall.org" />
 <meta itemprop="name" content="OSMI">
 <meta itemprop="description" content="OSMI
 "><meta itemprop="datePublished" content="2020-03-20T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2023-03-23T09:48:04-04:00" />
-<meta itemprop="wordCount" content="226">
+<meta itemprop="dateModified" content="2023-03-24T13:54:50-04:00" />
+<meta itemprop="wordCount" content="238">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="OSMI"/>
 <meta name="twitter:description" content="OSMI
@@ -61,6 +61,9 @@
       </li>
       <li class="nav-item mr-4 mb-2 mb-lg-0">
         <a class="nav-link active" href="/uva/docs/"><span class="active">Content</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="/uva/docs/tutorial/"><span>Tutorials</span></a>
       </li>
       <li class="nav-item mr-4 mb-2 mb-lg-0">
         <a class="nav-link" href="/uva/blog/"><span>Blog</span></a>
@@ -145,6 +148,15 @@
   <a href="/uva/docs/staff/zhong/" title="Tianle Zhong" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-uvadocsstaffzhong"><span class="">Zhong</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-uvadocstutorial-li">
+  <a href="/uva/docs/tutorial/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-uvadocstutorial"><span class="">Tutorials</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-uvadocstutorialrivanna-li">
+  <a href="/uva/docs/tutorial/rivanna/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-uvadocstutorialrivanna"><span class="">Rivanna</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-uvadocsreferenceslinks-li">
+  <a href="/uva/docs/references/links/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-uvadocsreferenceslinks"><span class="">Links</span></a>
 </li>
   </ul>
 </li>
@@ -171,6 +183,7 @@
     <li><a href="#deliverables">Deliverables</a></li>
     <li><a href="#timeline">Timeline</a></li>
     <li><a href="#references">References</a></li>
+    <li><a href="#participants">Participants</a></li>
   </ul>
 </nav>
       </div>
@@ -246,7 +259,7 @@
 <p>OSMI-Bench explores the optimal deployment of machine-learned surrogate (MLS) models in rotorcraft aerodynamics on high-performance computers (HPC). In this benchmark, we test three rotorcraft models for optimal deployment configurations, including, Long Short Term Memory (LSTM), Convolutional Neural Network (CNN), and Temporal Convolutional Neural Network (TCNN) models with 2M, 44M, and 212M trainable parameters respectively [1]. Surrogate models trained on synthetic data were selected because we are solely focused on inference efficiency not model accuracy. We are now running the benchmark on the Rivanna HPC at the University of Virginia to find the optimal deployment scenario for each model, and we plan to develop more models to benchmark, such as a transformer-encoder natural language model. We are also investigating the relationship between batchsize, GPU, and concurrency and inference throughput/time. We will soon explore running the load balancers used in the OSMI-Bench framework, such as Python concurrent.futures threadpool, HAProxy and mpi4py, on Rivanna.</p>
 <h2 id="deliverables">Deliverables</h2>
 <ul>
-<li>gitrepo[https://github.com/laszewsk/osmi]</li>
+<li>(gitrepo)[https://github.com/laszewsk/osmi]</li>
 <li>report (TBD)</li>
 <li>paper (TBD)</li>
 </ul>
@@ -260,11 +273,13 @@
 <ol>
 <li>Wesley Brewer et al. &ldquo;Production Deployment of Machine-Learned Rotorcraft Surrogate Models on HPC&rdquo;, 2021 IEEE/ACM Workshop on Machine Learning in High Performance Computing Environments (MLHPC), 15 November 2021, 10.1109/MLHPC54614.2021.00008, [https://ieeexplore.ieee.org/document/9652868]</li>
 </ol>
+<h2 id="participants">Participants</h2>
+<p>Nate Kimball, Wes Brewer, Gregor von Laszewski (<a href="mailto:laszewski@gmail.com">laszewski@gmail.com</a>), Geoffrey C. Fox</p>
 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified March 23, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/e3d57b693e23fdb684cd7f54834d711f689a9c8a">add projects (e3d57b6)</a>
+  Last modified March 24, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/fdb623f5ebf96f83b458489618719f916bf399db">Update osmi.md (fdb623f)</a>
 </div>
 
 </div>

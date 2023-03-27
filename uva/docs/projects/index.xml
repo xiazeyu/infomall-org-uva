@@ -196,7 +196,7 @@ capabilities.&lt;/p&gt;
 &lt;p&gt;OSMI-Bench explores the optimal deployment of machine-learned surrogate (MLS) models in rotorcraft aerodynamics on high-performance computers (HPC). In this benchmark, we test three rotorcraft models for optimal deployment configurations, including, Long Short Term Memory (LSTM), Convolutional Neural Network (CNN), and Temporal Convolutional Neural Network (TCNN) models with 2M, 44M, and 212M trainable parameters respectively [1]. Surrogate models trained on synthetic data were selected because we are solely focused on inference efficiency not model accuracy. We are now running the benchmark on the Rivanna HPC at the University of Virginia to find the optimal deployment scenario for each model, and we plan to develop more models to benchmark, such as a transformer-encoder natural language model. We are also investigating the relationship between batchsize, GPU, and concurrency and inference throughput/time. We will soon explore running the load balancers used in the OSMI-Bench framework, such as Python concurrent.futures threadpool, HAProxy and mpi4py, on Rivanna.&lt;/p&gt;
 &lt;h2 id=&#34;deliverables&#34;&gt;Deliverables&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;gitrepo[https://github.com/laszewsk/osmi]&lt;/li&gt;
+&lt;li&gt;(gitrepo)[https://github.com/laszewsk/osmi]&lt;/li&gt;
 &lt;li&gt;report (TBD)&lt;/li&gt;
 &lt;li&gt;paper (TBD)&lt;/li&gt;
 &lt;/ul&gt;
@@ -210,6 +210,8 @@ capabilities.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Wesley Brewer et al. &amp;ldquo;Production Deployment of Machine-Learned Rotorcraft Surrogate Models on HPC&amp;rdquo;, 2021 IEEE/ACM Workshop on Machine Learning in High Performance Computing Environments (MLHPC), 15 November 2021, 10.1109/MLHPC54614.2021.00008, [https://ieeexplore.ieee.org/document/9652868]&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2 id=&#34;participants&#34;&gt;Participants&lt;/h2&gt;
+&lt;p&gt;Nate Kimball, Wes Brewer, Gregor von Laszewski (&lt;a href=&#34;mailto:laszewski@gmail.com&#34;&gt;laszewski@gmail.com&lt;/a&gt;), Geoffrey C. Fox&lt;/p&gt;
 
       </description>
     </item>
