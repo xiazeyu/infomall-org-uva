@@ -25,8 +25,7 @@ For more static Web site Archives please see
 
 ## Web Server Backups
 
-*
-[infomall.org/infomallindex.html](https://infomall.org/infomallindex.html)
+* [infomall.org/infomallindex.html](https://infomall.org/infomallindex.html)
 * [infomall.org/content](https://infomall.org/content.html)
 
 
