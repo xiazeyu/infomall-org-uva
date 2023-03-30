@@ -10,6 +10,10 @@ description: >
 Rivanna
 {{% /pageinfo %}}
 
+## Presentations
+
+* SLURM: <https://docs.google.com/presentation/d/1Xt4kOtQpvl1JTDETJkOS-OMi8csZsJJw03xGus3QLA0>
+
 ## Set up the connection (mac/Linux)
 
 You should check [MobaXterm](https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/) first if using windows.
