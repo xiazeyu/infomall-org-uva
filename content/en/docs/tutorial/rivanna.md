@@ -13,6 +13,8 @@ Rivanna
 ## Presentations
 
 * SLURM: <https://docs.google.com/presentation/d/1Xt4kOtQpvl1JTDETJkOS-OMi8csZsJJw03xGus3QLA0>
+* <https://github.com/cybertraining-dsc/reu2022/blob/main/project/windows-configuration.md>
+* <https://github.com/cybertraining-dsc/reu2022/blob/main/project/hpc/rivanna-introduction.md>
 
 ## Other resources
 
