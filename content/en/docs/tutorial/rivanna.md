@@ -14,6 +14,12 @@ Rivanna
 
 * SLURM: <https://docs.google.com/presentation/d/1Xt4kOtQpvl1JTDETJkOS-OMi8csZsJJw03xGus3QLA0>
 
+## Other resources
+
+* MPI with python: 
+  * <https://cloudmesh.github.io/cloudmesh-mpi/report-mpi.pdf>
+  * <https://github.com/cloudmesh/cloudmesh-mpi>
+
 ## Set up the connection (mac/Linux)
 
 You should check [MobaXterm](https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/) first if using windows.
