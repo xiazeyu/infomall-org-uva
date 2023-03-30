@@ -5,6 +5,9 @@ all: hugo rsync chmod
 hugo:
 	hugo
 
+clean:
+	rm -rf uva
+
 cp: 
 	scp -r uva rivanna:www/infomall
 

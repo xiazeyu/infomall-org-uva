@@ -1,12 +1,12 @@
 ---
 title: "Memories"
-linkTitle: "Memories"
+linkTitle: "1967-1990"
 date: 2020-03-20
 description: >
   Selected Publications 1967-1990
 --- 
 
-# Past Publications from Fox
+## Past Publications from Fox
 
 1.  Fox, G. C. "[Characteristic Features of the Scattering of
     Elementary Particles Arising from Their Spin and Electromagnetic
