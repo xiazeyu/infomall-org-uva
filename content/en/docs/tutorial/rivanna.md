@@ -281,3 +281,5 @@ memory and could be much faster.
 * MPI with python: 
   * <https://cloudmesh.github.io/cloudmesh-mpi/report-mpi.pdf>
   * <https://github.com/cloudmesh/cloudmesh-mpi>
+  * Tutorials about cybertraining: <https://cybertraining-dsc.github.io/docs/tutorial/>
+  * Modules about cybertraining: <https://cybertraining-dsc.github.io/docs/modules/>
