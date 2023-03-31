@@ -336,6 +336,22 @@ This is the multi-page printable view of this section.
 
     
   
+    
+    
+	
+<li>4.2: <a href="#pg-331baa741d6f960b42c86262b1b1009d">Raspberry Pi Cluster</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4.3: <a href="#pg-08eb86e861174df1aecb3731c39c41c8">Rivanna and singularity</a></li>
+
+
+    
+  
 
     </ul>
     
@@ -18228,27 +18244,105 @@ training.</p>
 	
 
 <div class="pageinfo pageinfo-primary">
-<p>Rivanna</p>
+<p>Rivanna is the University of Virginia’s High-Performance Computing (HPC) system. As a centralized resource and has many software packages available. Currently, the Rivanna supercomputer has 603 nodes with over 20476 cores and 8PB of various storage. Rivanna has multiple nodes equipped with GPUs including RTX2080, K80, P100, V100, A100-40GB, A100-80GB.</p>
 
 </div>
 
+<h2 id="rivanna-at-uva">Rivanna at UVA</h2>
+<p>The official Web page for Rivanna is located at</p>
+<ul>
+<li><a href="https://www.rc.virginia.edu/userinfo/rivanna/overview/">https://www.rc.virginia.edu/userinfo/rivanna/overview/</a></li>
+</ul>
+<p>In case you need support you can ask the staff using a ticket system at</p>
+<ul>
+<li><a href="https://www.rc.virginia.edu/support/">https://www.rc.virginia.edu/support/</a></li>
+<li>This page also contains zoom office hours <a href="https://virginia.zoom.us/j/304271094?pwd=Szdib1kzK1QySlE4eGRGL1BiclpLUT09">Tue 3-5 pm</a>,  <a href="https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09">Thu 10-12 pm</a></li>
+</ul>
+<p>It is important that before you use Rivanna to attend a seminar that upon request is given every Wednesday. To sign up, use the link:</p>
+<ul>
+<li><a href="https://www.rc.virginia.edu/form/support-request/?category=Rivanna&amp;request_title=Intro%20to%20Rivanna%20Orientation%20Session&amp;description=I%27d%20like%20to%20reserve%20a%20seat%20for%20the%20next%20%22Intro%20to%20Rivanna%25,%203-4pm.">Wednesday 3-4 pm Introduction</a></li>
+</ul>
+<p>Please note that in this introduction we will provide you with some information that may not be provided by the Rivanna support team. We encourage you to pick the information that is most useful for you.</p>
+<h2 id="getting-permissions-to-use-rivanna">Getting Permissions to use Rivanna</h2>
+<p>To use Rivanna you need to have special authorization. In case you work with a faculty member you will need to be added to a special group (or multiple) to be able to access it. The faculty member will know which group it is. This is managed via the <a href="https://virginia.service-now.com/its/?id=itsweb_kb_article&amp;sys_id=ea1dffc7db3ac744f032f1f51d96193a">group management portal</a> by the faculty member. Please do not use the previous link and instead communicate with your faculty member first.</p>
+<ul>
+<li><em>Note: For BII work conducted with Geoffrey Fox or Gregor von Laszewski, please contact Gregor at <a href="mailto:laszewski@gmail.com">laszewski@gmail.com</a></em></li>
+</ul>
+<p>Once you are added to the group, you will receive an invitation email to set up the password for the research computing support portal. This password is also the password that you will use to log into the system.</p>
+<p>After the password is ready, you can try to log in through the <a href="https://www.rc.virginia.edu/userinfo/rivanna/login/">Web-based access</a> to make sure you have the proper access already. However, we will not use the online portal further as it has significant limitations when doing software development for Rivanna.</p>
+<h2 id="accessing-an-hpc-computer-via-command-line">Accessing an HPC Computer via command line</h2>
+<p>We do not discuss here the use of X11 on Rivanna as we found this feature is not needed for most of our applications. In case you need to run <a href="https://www.rc.virginia.edu/userinfo/rivanna/software/jupyterlab/">jupyter</a> notebooks directly on Rivanna, please consult with the Rivanna documentation.</p>
+<h3 id="vpn-required">VPN (required)</h3>
+<p>As you know UVA requires you to use the VPN to access any computer on campus.
+VPN is offered by IT services but is only supported for <a href="https://virginia.service-now.com/its/?id=itsweb_kb_article&amp;sys_id=f24e5cdfdb3acb804f32fb671d9619d0">Mac and Windows</a>.</p>
+<p>However, if you have a Linux machine you can follow the <a href="https://www.rc.virginia.edu/userinfo/linux/uva-anywhere-vpn-linux/">VPN install instructions for Linux</a>. If you have issues installing it, attend an online support session with the Rivanna staff.</p>
+<h3 id="access-via-the-web-browser-discouraged">Access via the Web Browser (discouraged)</h3>
+<p>Rivanna can be accessed right from the Web browser. Although this may be helpful for those with systems where a proper terminal can not be accessed it is typically not as useful as you can not leverage the advantages of your own desktop or laptop while using for example advanced editors or keeping the file system of your machine in sync with the HPC file system.</p>
+<p>Therefore, practical experience shows that only at the very beginning such an interface may be helpful and users should immediately use more suitable environments.</p>
+<p>For this reason, we do not discuss this option in more detail here.</p>
+<p>To find out more, please use the documentation at</p>
+<ul>
+<li><a href="https://www.rc.virginia.edu/userinfo/rivanna/ood/overview/">https://www.rc.virginia.edu/userinfo/rivanna/ood/overview/</a></li>
+</ul>
+<h3 id="access-rivanna-from-macos-and-linux">Access Rivanna from macOS and Linux</h3>
+<p>To access Rivanna from macOS, use the terminal and use ssh to connect to it. We will provide an in depth configuration tutorial on this later on. We will use the same programs as on Linux and Windows so we have to only provide one documentation and it is uniform across platforms.</p>
+<h3 id="access-rivanna-from-windows">Access Rivanna from Windows</h3>
+<p>While exploring the various choices for accessing Rivanna from Windows we do not recommend using <a href="https://www.putty.org/">putty</a> and <a href="https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/">MobaXterm</a> although they are recommended by Rivanna staff.</p>
+<p>Instead, we recommend that you use <a href="https://gitforwindows.org/">gitbash</a>. Git bash is trivial to install. However, you need to read the configuration options carefully. <strong>READ CAREFULLY</strong>
+Let us know your options so we can add them here.</p>
+<p>To simplify the setup of a Windows computer for research we have prepared a separate</p>
+<ul>
+<li><a href="https://github.com/cybertraining-dsc/reu2022/blob/main/project/windows-configuration.md">help page to set up your Windows computer</a>.</li>
+</ul>
+<p>It addresses the installation of gitbash, Python, PyCharm (much better than VSCode), and other useful tools such as chocolate.</p>
+<p>With git bash, you get a bash terminal that works the same as a Linux bash terminal and which is similar to the zsh terminal for a Mac.</p>
 <h2 id="set-up-the-connection-maclinux">Set up the connection (mac/Linux)</h2>
-<p>You should check <a href="https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/">MobaXterm</a> first if using windows.</p>
-<p>Once you are added to the group, you will receive an invitation email to set up the password for research computing support portal. This password is also the password that you will use to log in the system.</p>
-<p>After the password is ready, you can try to log in through the <a href="https://www.rc.virginia.edu/userinfo/rivanna/login/">Web-based access</a> to make sure you have the proper access already.</p>
-<p>Then let’s <a href="https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server">configure your ssh key-based authentication</a>. The first step is to generate you ssh key pair with the command <code>ssh-keygen</code>. After that, if you have already installed <code>OpenSSH</code>, the most recommended way is to use a included tool <code>ssh-copy-id</code> to make your life easier.</p>
+<p>The first thing to do when trying to connect to Rivanna is to create an ssh key if you have not yet done so.</p>
+<p>To do this use the command</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-keygen
+</span></span></code></pre></div><p>Please make sure you use a passphrase when generating the key. Sometimes inexperienced people may suggest you to not use a passphrase to be able to log into the machine without needing a password. However this is <strong>WRONG</strong> and you should be instead finding out that this is a violation of security practices. If you do not like to use a passphrase you can use <code>ssh-agent</code> and  <code>ssh-add</code>.</p>
+<p>The <code>ssh-keygen</code> program will generate a public-private keypair in the directory <code>~/.ssh/id_rsa.pub</code> (public key) and <code>~/.ssh/id_rsa</code>. Please never share the private key with anyone.</p>
+<p>Next, we need to add the public key to Rivanna&rsquo;s <code>rivanna:~/.ssh/authorized_keys file</code>. The easiest way to do this is to use the program
+<code>ssh-copy-id</code>.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh-copy-id username@rivanna.hpc.virginia.edu
-</span></span></code></pre></div><p>You will need your above mentioned password when using <code>ssh-copy-id</code>. Your username is typically your computing id.</p>
-<p>Then, you should be ready to connect through</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh -Y username@rivanna.hpc.virginia.edu
-</span></span></code></pre></div><p>After this, I would recommend setting up your <a href="https://code.visualstudio.com/docs/remote/ssh">VS code with Remote-SSH</a> plugin.</p>
+</span></span></code></pre></div><p>Please use your password when using <code>ssh-copy-id</code>. Your username is your UVA computing id. Now you should be ready to connect with</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh username@rivanna.hpc.virginia.edu
+</span></span></code></pre></div><h2 id="commandline-editor">Commandline editor</h2>
+<p>sometimes it is necessary to edit files on Rivanna. For this, we recommend that you learn a command line editor. There are lots of debates on which one is better. When I was young I used vi, but found it too cumbersome. So I spend one-day learning emacs which is just great and all you need to learn. You can install it also on Linux, mac, and windows. This way you have one editor with very advanced features that is easy to learn.</p>
+<p>If you do not have one day to familiarize yourself with editors such as emacs, vim, or vi, you can use editors such as nano and pico.</p>
+<h2 id="pycharm">PyCharm</h2>
+<p>The best editor to do python development is pyCharm. Install it on your desktop</p>
+<h2 id="vscode">VSCode</h2>
+<p>An inferior editor for python development is VSCode. It can be configured to also use a <a href="https://code.visualstudio.com/docs/remote/ssh">Remote-SSH</a> plugin.</p>
+<h2 id="moving-data-from-your-desktop-to-rivanna">Moving data from your desktop to Rivanna</h2>
+<p>To copy a directory use <code>scp</code></p>
+<p>If only a few lines have changed use <code>rsync</code></p>
+<p>To mount Rivannas file system onto your computer use <code>fuse-ssh</code>.
+This will allow you to for example use pyCharm to directly edit files on Rivanna.</p>
+<p>Developers however often also use GitHub to push the code to git and then on Rivanna use pull to get the code from git. This has the advantage that you can use pyCharm on your local system while synchronizing the code via git onto Rivanna.</p>
+<p>However often scp and rsync may just be sufficient.</p>
 <h2 id="example-config-file">Example Config file</h2>
-<p>TODO: add a example config file</p>
-<h2 id="know-where-you-are-at">Know where you are at</h2>
-<p>Typically, You should have access to two places: <code>/home/&lt;username&gt;</code> and <code>/scratch/&lt;username&gt;</code></p>
-<p>Your <code>~</code> alias is linked to <code>/home/&lt;username&gt;</code>where your configuration files are located like <code>~/.ssh</code> , <code>~/.bashrc</code>and <code>~/.zshrc</code></p>
-<p>The difference is explained <a href="https://www.rc.virginia.edu/userinfo/rivanna/storage/">here</a>.</p>
+<p>TODO: add an example config file</p>
+<h2 id="rivannas-filesystem">Rivanna&rsquo;s filesystem</h2>
+<p>The file systems on Rivanna are quite restrictive and policies exist that you need to be inspecting:</p>
+<ul>
+<li>TODO: add link here</li>
+</ul>
+<p>we distinguish</p>
+<ul>
+<li>home directory: <code>/home/&lt;uvaid&gt;</code> or <code>~</code></li>
+<li><code>/scratch/&lt;uvaid&gt;</code></li>
+<li><code>/project/projectname/&lt;uvaid&gt;</code></li>
+</ul>
+<p>Y
+In your home directory, you will find system directories and files such as
+<code>~/.ssh</code> , <code>~/.bashrc</code>and <code>~/.zshrc</code></p>
+<p>The difference in the file systems is explained at</p>
+<ul>
+<li><a href="https://www.rc.virginia.edu/userinfo/rivanna/storage/">https://www.rc.virginia.edu/userinfo/rivanna/storage/</a>.</li>
+</ul>
 <h2 id="load-modules">Load modules</h2>
+<p>TODO: explain what modules are</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>module spider cmake <span style="color:#8f5902;font-style:italic"># check whether cmake is available and details</span>
 </span></span></code></pre></div><p>Load the needed module (you can add version info). Note that some modules are dependent on other modules (<code>clang/10.0.1</code> depends on <code>gcc/9.2.0</code> so <code>gcc</code> needs to be loaded first.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># module load gcc/9.2.0 clang/10.0.1</span>
@@ -18259,20 +18353,142 @@ training.</p>
 </span></span></code></pre></div><p>clean all the modules</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>module purge
 </span></span></code></pre></div><h2 id="request-gpus-to-use-interactively">Request GPUs to use interactively</h2>
+<p>TODO: explain what -A is</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna$ ijob -c number_of_cpus -A group_name -p queue_name --gres<span style="color:#ce5c00;font-weight:bold">=</span>gpu:gpu_model:number_of_gpus --time<span style="color:#ce5c00;font-weight:bold">=</span>day-hours:minutes:seconds
 </span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># example: request a 1 cpu unit with 1 a100 gpu for 10 minutes in &#39;dev&#39; partition</span>
 </span></span><span style="display:flex;"><span>rivanna$ ijob -c <span style="color:#0000cf;font-weight:bold">1</span> -A bii_dsc_community -p gpu --gres<span style="color:#ce5c00;font-weight:bold">=</span>gpu:a100:1 --time<span style="color:#ce5c00;font-weight:bold">=</span>0-00:10:00
 </span></span></code></pre></div><p>Different partition has different available resources and charging rate. <code>dev</code> is free but limited to 1 hour for each session and no GPU is available. Use <code>qlist</code> to check partitions and <code>qlimits</code> check the limits.</p>
-<h2 id="utilities">Utilities</h2>
-<p>Many useful commands can be found in Gregor&rsquo;s book at <a href="https://cloudmesh-community.github.io/pub/vonLaszewski-linux.pdf">https://cloudmesh-community.github.io/pub/vonLaszewski-linux.pdf</a></p>
-<p>TODO: a table of useful commands and descriptions</p>
-<p><code>allocations</code>: check available account and balance</p>
-<p><code>hdquota</code>: check storage you has used</p>
-<p><code>du -h --max-depth=1</code>: check which directory uses most space</p>
-<h2 id="other-useful-scripts">Other useful scripts</h2>
+<h2 id="linux-commands-for-hpc">Linux commands for HPC</h2>
+<p>Many useful commands can be found in Gregor&rsquo;s book at</p>
+<ul>
+<li><a href="https://cloudmesh-community.github.io/pub/vonLaszewski-linux.pdf">https://cloudmesh-community.github.io/pub/vonLaszewski-linux.pdf</a></li>
+</ul>
+<p>The following additional commands are quite useful on HPC systems</p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>allocations</code></td>
+<td>check available account and balance</td>
+</tr>
+<tr>
+<td><code>hdquota</code></td>
+<td>check storage you has used</td>
+</tr>
+<tr>
+<td><code>du -h --max-depth=1</code></td>
+<td>check which directory uses most space</td>
+</tr>
+</tbody>
+</table>
 <h2 id="some-suggestions">Some suggestions</h2>
-<p>When compile large projects, you may face very slow compilation speed which might be caused by the limited memory size on the front end (head node). You can try to use FastX node which have larger memory and could be much faster.</p>
+<p>When compiling large projects, you may face very slow compilation speed which might be caused by the limited memory size on the front end (head node). You can try to use FastX node which have larger memory and could be much faster.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>Presentation about <a href="https://docs.google.com/presentation/d/1Xt4kOtQpvl1JTDETJkOS-OMi8csZsJJw03xGus3QLA0">SLURM on rivanna</a></li>
+<li><a href="https://github.com/cybertraining-dsc/reu2022/blob/main/project/hpc/rivanna-introduction.md">Tutorial on using Rivanna</a></li>
+<li>Gregors book chapters
+<ul>
+<li><a href="https://github.com/cloudmesh-community/book/tree/main/chapters">https://github.com/cloudmesh-community/book/tree/main/chapters</a></li>
+</ul>
+</li>
+<li>MPI with python:
+<ul>
+<li><a href="https://cloudmesh.github.io/cloudmesh-mpi/report-mpi.pdf">https://cloudmesh.github.io/cloudmesh-mpi/report-mpi.pdf</a></li>
+<li><a href="https://github.com/cloudmesh/cloudmesh-mpi">https://github.com/cloudmesh/cloudmesh-mpi</a></li>
+</ul>
+</li>
+</ul>
 
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-331baa741d6f960b42c86262b1b1009d">4.2 - Raspberry Pi Cluster</h1>
+    <div class="lead">Raspberry Pi Cluster</div>
+	<h2 id="links">Links</h2>
+<p>The main web page for this is at <a href="https://piplanet.org">https://piplanet.org</a></p>
+<p>additional tutorials and resources are</p>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/1ZnmlOUl3RAZy6dfiuCgEFBaINqcjMoJ4A0t9hjkPo94/edit#slide=id.p">https://docs.google.com/presentation/d/1ZnmlOUl3RAZy6dfiuCgEFBaINqcjMoJ4A0t9hjkPo94/edit#slide=id.p</a></li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-08eb86e861174df1aecb3731c39c41c8">4.3 - Rivanna and singularity</h1>
+    <div class="lead">Singularity.</div>
+	<h2 id="singularity">Singularity</h2>
+<p>Links</p>
+<p>special nodes to create images on rivanna: <code>biihead1.bii.virginia.edu</code> and <code>biihead2.bii.virginia.edu</code></p>
+<p>the exact command to build singularity image:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo /opt/singularity/3.7.1/bin/singularity build output_image.sif build.def
+</span></span></code></pre></div><h2 id="builddef">build.def</h2>
+<p>Here shows an example head of <code>buid.def</code> file to build image based on <a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch">NVIDIA NGC PyTorch container</a>.</p>
+<pre tabindex="0"><code>Boostrap: docker
+From: nvcr.io/nvidia/pytorch:23.02-py3
+</code></pre><p>Following the head of definition file, there are several sections for different set up purposes, which you should refer to <a href="https://docs.sylabs.io/guides/3.7/user-guide/definition_files.html#sections">https://docs.sylabs.io/guides/3.7/user-guide/definition_files.html#sections</a></p>
+<h3 id="why-nvidia-ngc">Why NVIDIA NGC?</h3>
+<p>Because it is tested and guaranteed for reliability and peformance by NVIDIA, which is the most widely adopted reference environment (base image) for building images using NVIDIA GPU. Besides PyTorch, it also provides images for TensorFlow and many HPC applications.</p>
+<h2 id="work-with-singularity-container">Work with Singularity container</h2>
+<p>reference: <a href="https://www.rc.virginia.edu/userinfo/rivanna/software/containers/">https://www.rc.virginia.edu/userinfo/rivanna/software/containers/</a></p>
+<h3 id="run-gpu-images">Run GPU images</h3>
+<p>To use NVIDIA GPU with Singularity, <code>--nv</code> flag is needed.</p>
+<pre tabindex="0"><code class="language-basg" data-lang="basg">singularity exec --nv output_image.sif python myscript.py
+</code></pre><p>Since Python is defined as the default command to be excuted and singularity passes the argument(s) after the image name, i.e. myscript.py, to the Python interpreter. So the above singularity command is equivalent to</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>singularity run --nv output_image.sif myscript.py
+</span></span></code></pre></div><h3 id="run-images-interactively">Run Images Interactively</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ijob  -A mygroup -p gpu --gres<span style="color:#ce5c00;font-weight:bold">=</span>gpu -c <span style="color:#0000cf;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span>module purge
+</span></span><span style="display:flex;"><span>module load singularity
+</span></span><span style="display:flex;"><span>singularity shell --nv output_image.sif
+</span></span></code></pre></div><h2 id="singularity-filesystem-on-rivanna">Singularity Filesystem on Rivanna</h2>
+<p>The following paths are exposed to the container by default</p>
+<ul>
+<li>/tmp</li>
+<li>/proc</li>
+<li>/sys</li>
+<li>/dev</li>
+<li>/home</li>
+<li>/scratch</li>
+<li>/nv</li>
+<li>/project</li>
+</ul>
+<h3 id="adding-custom-bind-paths">Adding Custom Bind Paths</h3>
+<p>For example, the following command adds the /scratch/$USER directory as an overlay without overlaying any other user directories provided by the host:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>singularity run -c -B /scratch/<span style="color:#000">$USER</span> output_image.sif
+</span></span></code></pre></div><p>To add the /home directory on the host as /rivanna/home inside the container:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>singularity run -c -B /home:/rivanna/home output_image.sif
+</span></span></code></pre></div><h2 id="additional-suggestions">Additional Suggestions</h2>
+<p>Manage images like</p>
+<pre tabindex="0"><code>&lt;your-path&gt;/singularity-images/&lt;env-name&gt;/output_image.sif
+</code></pre>
 </div>
 
 

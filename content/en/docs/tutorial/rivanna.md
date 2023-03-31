@@ -7,60 +7,163 @@ description: >
 ---
 
 {{% pageinfo %}}
-Rivanna
+
+Rivanna is the University of Virginia’s High-Performance Computing (HPC) system. As a centralized resource and has many software packages available. Currently, the Rivanna supercomputer has 603 nodes with over 20476 cores and 8PB of various storage. Rivanna has multiple nodes equipped with GPUs including RTX2080, K80, P100, V100, A100-40GB, A100-80GB.
+
 {{% /pageinfo %}}
 
-## Presentations
+## Rivanna at UVA
 
-* SLURM: <https://docs.google.com/presentation/d/1Xt4kOtQpvl1JTDETJkOS-OMi8csZsJJw03xGus3QLA0>
-* <https://github.com/cybertraining-dsc/reu2022/blob/main/project/windows-configuration.md>
-* <https://github.com/cybertraining-dsc/reu2022/blob/main/project/hpc/rivanna-introduction.md>
-* Gregors bookchapters
-  * <https://github.com/cloudmesh-community/book/tree/main/chapters>
 
-## Other resources
+The official Web page for Rivanna is located at 
 
-* MPI with python: 
-  * <https://cloudmesh.github.io/cloudmesh-mpi/report-mpi.pdf>
-  * <https://github.com/cloudmesh/cloudmesh-mpi>
+* <https://www.rc.virginia.edu/userinfo/rivanna/overview/>
+
+In case you need support you can ask the staff using a ticket system at
+
+* <https://www.rc.virginia.edu/support/> 
+* This page also contains zoom office hours [Tue 3-5 pm](https://virginia.zoom.us/j/304271094?pwd=Szdib1kzK1QySlE4eGRGL1BiclpLUT09),  [Thu 10-12 pm](https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09)
+
+It is important that before you use Rivanna to attend a seminar that upon request is given every Wednesday. To sign up, use the link:
+
+* [Wednesday 3-4 pm Introduction](https://www.rc.virginia.edu/form/support-request/?category=Rivanna&request_title=Intro%20to%20Rivanna%20Orientation%20Session&description=I%27d%20like%20to%20reserve%20a%20seat%20for%20the%20next%20%22Intro%20to%20Rivanna%,%203-4pm.)
+
+Please note that in this introduction we will provide you with some information that may not be provided by the Rivanna support team. We encourage you to pick the information that is most useful for you.
+
+## Getting Permissions to use Rivanna
+
+To use Rivanna you need to have special authorization. In case you work with a faculty member you will need to be added to a special group (or multiple) to be able to access it. The faculty member will know which group it is. This is managed via the [group management portal](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=ea1dffc7db3ac744f032f1f51d96193a) by the faculty member. Please do not use the previous link and instead communicate with your faculty member first. 
+
+* *Note: For BII work conducted with Geoffrey Fox or Gregor von Laszewski, please contact Gregor at <laszewski@gmail.com>*
+
+ 
+Once you are added to the group, you will receive an invitation email to set up the password for the research computing support portal. This password is also the password that you will use to log into the system. 
+
+After the password is ready, you can try to log in through the [Web-based access](https://www.rc.virginia.edu/userinfo/rivanna/login/) to make sure you have the proper access already. However, we will not use the online portal further as it has significant limitations when doing software development for Rivanna.
+
+## Accessing an HPC Computer via command line
+
+We do not discuss here the use of X11 on Rivanna as we found this feature is not needed for most of our applications. In case you need to run [jupyter](https://www.rc.virginia.edu/userinfo/rivanna/software/jupyterlab/) notebooks directly on Rivanna, please consult with the Rivanna documentation.
+
+### VPN (required)
+
+As you know UVA requires you to use the VPN to access any computer on campus.
+VPN is offered by IT services but is only supported for [Mac and Windows](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).
+
+However, if you have a Linux machine you can follow the [VPN install instructions for Linux](https://www.rc.virginia.edu/userinfo/linux/uva-anywhere-vpn-linux/). If you have issues installing it, attend an online support session with the Rivanna staff.
+
+### Access via the Web Browser (discouraged)
+
+Rivanna can be accessed right from the Web browser. Although this may be helpful for those with systems where a proper terminal can not be accessed it is typically not as useful as you can not leverage the advantages of your own desktop or laptop while using for example advanced editors or keeping the file system of your machine in sync with the HPC file system. 
+
+Therefore, practical experience shows that only at the very beginning such an interface may be helpful and users should immediately use more suitable environments. 
+
+For this reason, we do not discuss this option in more detail here.
+
+To find out more, please use the documentation at 
+
+* <https://www.rc.virginia.edu/userinfo/rivanna/ood/overview/>
+
+### Access Rivanna from macOS and Linux
+
+To access Rivanna from macOS, use the terminal and use ssh to connect to it. We will provide an in depth configuration tutorial on this later on. We will use the same programs as on Linux and Windows so we have to only provide one documentation and it is uniform across platforms.
+
+### Access Rivanna from Windows
+
+While exploring the various choices for accessing Rivanna from Windows we do not recommend using [putty](https://www.putty.org/) and [MobaXterm](https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/) although they are recommended by Rivanna staff.
+
+Instead, we recommend that you use [gitbash](https://gitforwindows.org/). Git bash is trivial to install. However, you need to read the configuration options carefully. **READ CAREFULLY**
+Let us know your options so we can add them here.
+
+To simplify the setup of a Windows computer for research we have prepared a separate 
+
+* [help page to set up your Windows computer](https://github.com/cybertraining-dsc/reu2022/blob/main/project/windows-configuration.md).
+
+It addresses the installation of gitbash, Python, PyCharm (much better than VSCode), and other useful tools such as chocolate. 
+
+With git bash, you get a bash terminal that works the same as a Linux bash terminal and which is similar to the zsh terminal for a Mac.
 
 ## Set up the connection (mac/Linux)
 
-You should check [MobaXterm](https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/) first if using windows.
+The first thing to do when trying to connect to Rivanna is to create an ssh key if you have not yet done so.
 
-Once you are added to the group, you will receive an invitation email to set up the password for research computing support portal. This password is also the password that you will use to log in the system. 
+To do this use the command
 
-After the password is ready, you can try to log in through the [Web-based access](https://www.rc.virginia.edu/userinfo/rivanna/login/) to make sure you have the proper access already.
+```bash
+ssh-keygen
+```
 
-Then let’s [configure your ssh key-based authentication](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server). The first step is to generate you ssh key pair with the command `ssh-keygen`. After that, if you have already installed `OpenSSH`, the most recommended way is to use a included tool `ssh-copy-id` to make your life easier.
+Please make sure you use a passphrase when generating the key. Sometimes inexperienced people may suggest you to not use a passphrase to be able to log into the machine without needing a password. However this is **WRONG** and you should be instead finding out that this is a violation of security practices. If you do not like to use a passphrase you can use `ssh-agent` and  `ssh-add`.
+
+The `ssh-keygen` program will generate a public-private keypair in the directory `~/.ssh/id_rsa.pub` (public key) and `~/.ssh/id_rsa`. Please never share the private key with anyone.
+
+Next, we need to add the public key to Rivanna's `rivanna:~/.ssh/authorized_keys file`. The easiest way to do this is to use the program 
+`ssh-copy-id`.
 
 ```bash
 ssh-copy-id username@rivanna.hpc.virginia.edu
 ```
 
-You will need your above mentioned password when using `ssh-copy-id`. Your username is typically your computing id.
-
-Then, you should be ready to connect through
+Please use your password when using `ssh-copy-id`. Your username is your UVA computing id. Now you should be ready to connect with 
 
 ```bash
-ssh -Y username@rivanna.hpc.virginia.edu
+ssh username@rivanna.hpc.virginia.edu
 ```
 
-After this, I would recommend setting up your [VS code with Remote-SSH](https://code.visualstudio.com/docs/remote/ssh) plugin.
+## Commandline editor
+
+sometimes it is necessary to edit files on Rivanna. For this, we recommend that you learn a command line editor. There are lots of debates on which one is better. When I was young I used vi, but found it too cumbersome. So I spend one-day learning emacs which is just great and all you need to learn. You can install it also on Linux, mac, and windows. This way you have one editor with very advanced features that is easy to learn. 
+
+If you do not have one day to familiarize yourself with editors such as emacs, vim, or vi, you can use editors such as nano and pico.
+
+## PyCharm
+
+The best editor to do python development is pyCharm. Install it on your desktop
+
+## VSCode
+
+An inferior editor for python development is VSCode. It can be configured to also use a [Remote-SSH](https://code.visualstudio.com/docs/remote/ssh) plugin.
+
+## Moving data from your desktop to Rivanna
+
+To copy a directory use `scp`
+
+If only a few lines have changed use `rsync`
+
+To mount Rivannas file system onto your computer use `fuse-ssh`.
+This will allow you to for example use pyCharm to directly edit files on Rivanna.
+
+Developers however often also use GitHub to push the code to git and then on Rivanna use pull to get the code from git. This has the advantage that you can use pyCharm on your local system while synchronizing the code via git onto Rivanna.
+
+However often scp and rsync may just be sufficient.
 
 ## Example Config file
 
-TODO: add a example config file
+TODO: add an example config file
 
-## Know where you are at
+## Rivanna's filesystem
 
-Typically, You should have access to two places: `/home/<username>` and `/scratch/<username>`
+The file systems on Rivanna are quite restrictive and policies exist that you need to be inspecting:
 
-Your `~` alias is linked to `/home/<username>`where your configuration files are located like `~/.ssh` , `~/.bashrc`and `~/.zshrc`
+* TODO: add link here
 
-The difference is explained [here](https://www.rc.virginia.edu/userinfo/rivanna/storage/).
+we distinguish 
+
+* home directory: `/home/<uvaid>` or `~`
+* `/scratch/<uvaid>`
+* `/project/projectname/<uvaid>`
+
+Y
+In your home directory, you will find system directories and files such as 
+`~/.ssh` , `~/.bashrc`and `~/.zshrc`
+
+The difference in the file systems is explained at 
+
+* <https://www.rc.virginia.edu/userinfo/rivanna/storage/>.
 
 ## Load modules
+
+TODO: explain what modules are
 
 ```bash
 module spider cmake # check whether cmake is available and details
@@ -88,6 +191,8 @@ module purge
 
 ## Request GPUs to use interactively
 
+TODO: explain what -A is
+
 ```bash
 rivanna$ ijob -c number_of_cpus -A group_name -p queue_name --gres=gpu:gpu_model:number_of_gpus --time=day-hours:minutes:seconds
 # example: request a 1 cpu unit with 1 a100 gpu for 10 minutes in 'dev' partition
@@ -96,20 +201,32 @@ rivanna$ ijob -c 1 -A bii_dsc_community -p gpu --gres=gpu:a100:1 --time=0-00:10:
 
 Different partition has different available resources and charging rate. `dev` is free but limited to 1 hour for each session and no GPU is available. Use `qlist` to check partitions and `qlimits` check the limits.
 
-## Utilities
+## Linux commands for HPC
 
-Many useful commands can be found in Gregor's book at <https://cloudmesh-community.github.io/pub/vonLaszewski-linux.pdf>
+Many useful commands can be found in Gregor's book at 
 
-TODO: a table of useful commands and descriptions
+* <https://cloudmesh-community.github.io/pub/vonLaszewski-linux.pdf>
 
-`allocations`: check available account and balance
+The following additional commands are quite useful on HPC systems
 
-`hdquota`: check storage you has used
+| command | description|
+| --- | --- |
+| `allocations`| check available account and balance |
+| `hdquota` | check storage you has used
+| `du -h --max-depth=1` | check which directory uses most space |
 
-`du -h --max-depth=1`: check which directory uses most space
-
-## Other useful scripts
 
 ## Some suggestions
 
-When compile large projects, you may face very slow compilation speed which might be caused by the limited memory size on the front end (head node). You can try to use FastX node which have larger memory and could be much faster.
+When compiling large projects, you may face very slow compilation speed which might be caused by the limited memory size on the front end (head node). You can try to use FastX node which have larger memory and could be much faster.
+
+
+## References
+
+* Presentation about [SLURM on rivanna](https://docs.google.com/presentation/d/1Xt4kOtQpvl1JTDETJkOS-OMi8csZsJJw03xGus3QLA0)
+* [Tutorial on using Rivanna](https://github.com/cybertraining-dsc/reu2022/blob/main/project/hpc/rivanna-introduction.md)
+* Gregors book chapters
+  * <https://github.com/cloudmesh-community/book/tree/main/chapters>
+* MPI with python: 
+  * <https://cloudmesh.github.io/cloudmesh-mpi/report-mpi.pdf>
+  * <https://github.com/cloudmesh/cloudmesh-mpi>
