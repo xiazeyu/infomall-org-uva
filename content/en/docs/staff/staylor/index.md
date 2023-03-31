@@ -9,9 +9,6 @@ resources:
 ---
 
 {{% pageinfo %}}
-Mills W. Staylor
-{{% /pageinfo %}}
- 
 Mills W. Staylor received his BS in Business Management from Virginia
 Polytechnic Institute and State University (Virginia Tech).  He
 continued his studies at George Mason University where he earned dual
@@ -23,5 +20,7 @@ bridge which provided access to streaming content on Alexa devices.
 He is currently a PhD student in Computer Science at the University of
 Virginia and has interests in high performance computing,
 visualization, and cloud computing.
+{{% /pageinfo %}}
+ 
 
 
