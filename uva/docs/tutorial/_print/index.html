@@ -174,7 +174,12 @@ This is the multi-page printable view of this section.
 	
 
 <div class="pageinfo pageinfo-primary">
-<p>Rivanna is the University of Virginia’s High-Performance Computing (HPC) system. As a centralized resource and has many software packages available. Currently, the Rivanna supercomputer has 603 nodes with over 20476 cores and 8PB of various storage. Rivanna has multiple nodes equipped with GPUs including RTX2080, K80, P100, V100, A100-40GB, A100-80GB.</p>
+<p>Rivanna is the University of Virginia’s High-Performance Computing
+(HPC) system. As a centralized resource and has many software packages
+available. Currently, the Rivanna supercomputer has 603 nodes with
+over 20476 cores and 8PB of various storage. Rivanna has multiple
+nodes equipped with GPUs including RTX2080, K80, P100, V100,
+A100-40GB, A100-80GB.</p>
 
 </div>
 
@@ -284,10 +289,261 @@ In your home directory, you will find system directories and files such as
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>module purge
 </span></span></code></pre></div><h2 id="request-gpus-to-use-interactively">Request GPUs to use interactively</h2>
 <p>TODO: explain what -A is</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna$ ijob -c number_of_cpus -A group_name -p queue_name --gres<span style="color:#ce5c00;font-weight:bold">=</span>gpu:gpu_model:number_of_gpus --time<span style="color:#ce5c00;font-weight:bold">=</span>day-hours:minutes:seconds
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># example: request a 1 cpu unit with 1 a100 gpu for 10 minutes in &#39;dev&#39; partition</span>
-</span></span><span style="display:flex;"><span>rivanna$ ijob -c <span style="color:#0000cf;font-weight:bold">1</span> -A bii_dsc_community -p gpu --gres<span style="color:#ce5c00;font-weight:bold">=</span>gpu:a100:1 --time<span style="color:#ce5c00;font-weight:bold">=</span>0-00:10:00
-</span></span></code></pre></div><p>Different partition has different available resources and charging rate. <code>dev</code> is free but limited to 1 hour for each session and no GPU is available. Use <code>qlist</code> to check partitions and <code>qlimits</code> check the limits.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna$ ijob -c number_of_cpus
+</span></span><span style="display:flex;"><span>              -A group_name
+</span></span><span style="display:flex;"><span>	      -p queue_name
+</span></span><span style="display:flex;"><span>	      --gres<span style="color:#ce5c00;font-weight:bold">=</span>gpu:gpu_model:number_of_gpus
+</span></span><span style="display:flex;"><span>	      --time<span style="color:#ce5c00;font-weight:bold">=</span>day-hours:minutes:seconds
+</span></span></code></pre></div><p>An example to request 1 cpu with 1 a100 gpu for 10 minutes in &lsquo;dev&rsquo; partition is</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna$ ijob -c <span style="color:#0000cf;font-weight:bold">1</span> -A bii_dsc_community -p gpu --gres<span style="color:#ce5c00;font-weight:bold">=</span>gpu:a100:1 --time<span style="color:#ce5c00;font-weight:bold">=</span>0-00:10:00
+</span></span></code></pre></div><p>Rivanna has different partitions with different resource availability
+and charging rate. <code>dev</code> is free but limited to 1 hour for each
+session/allocation and no GPU is available. To list the different
+partions use <code>qlist</code> to check partitions</p>
+<table>
+<thead>
+<tr>
+<th>Queue</th>
+<th>Total</th>
+<th>Free</th>
+<th>Jobs</th>
+<th>Jobs</th>
+<th>Time</th>
+<th>SU</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>(partition)</strong></td>
+<td><strong>Cores</strong></td>
+<td><strong>Cores</strong></td>
+<td><strong>Running</strong></td>
+<td><strong>Pending</strong></td>
+<td><strong>Limit</strong></td>
+<td><strong>Charge</strong></td>
+</tr>
+<tr>
+<td>bii</td>
+<td>4640</td>
+<td>4306</td>
+<td>38</td>
+<td>1949</td>
+<td>7-00:00:00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>standard</td>
+<td>5644</td>
+<td>1391</td>
+<td>706</td>
+<td>12</td>
+<td>7-00:00:00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>dev</td>
+<td>456</td>
+<td>426</td>
+<td>2</td>
+<td>1</td>
+<td>1:00:00</td>
+<td>0</td>
+</tr>
+<tr>
+<td>parallel</td>
+<td>5680</td>
+<td>364</td>
+<td>32</td>
+<td>21</td>
+<td>3-00:00:00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>instructional</td>
+<td>2320</td>
+<td>2180</td>
+<td></td>
+<td></td>
+<td>3-00:00:00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>largemem</td>
+<td>208</td>
+<td>123</td>
+<td>10</td>
+<td>2</td>
+<td>4-00:00:00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>gpu</td>
+<td>2372</td>
+<td>1745</td>
+<td>67</td>
+<td>1</td>
+<td>3-00:00:00</td>
+<td>3</td>
+</tr>
+<tr>
+<td>bii-gpu</td>
+<td>608</td>
+<td>554</td>
+<td></td>
+<td>4</td>
+<td>3-00:00:00</td>
+<td>1</td>
+</tr>
+<tr>
+<td>bii-largemem</td>
+<td>288</td>
+<td>171</td>
+<td></td>
+<td>1</td>
+<td>7-00:00:00</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>To list the limits, use the command <code>qlimits</code></p>
+<table>
+<thead>
+<tr>
+<th>Queue</th>
+<th>Maximum</th>
+<th>Maximum</th>
+<th>Minimum</th>
+<th>Maximum</th>
+<th>Maximum</th>
+<th>Default</th>
+<th>Maximum</th>
+<th>Minimum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>(partition)</strong></td>
+<td><strong>Submit</strong></td>
+<td><strong>Cores(GPU)</strong></td>
+<td><strong>Cores</strong></td>
+<td><strong>Mem/Node</strong></td>
+<td><strong>Mem/Core</strong></td>
+<td><strong>Mem/Core</strong></td>
+<td><strong>Nodes</strong></td>
+<td><strong>Nodes</strong></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td><strong>per User</strong></td>
+<td><strong>per Job</strong></td>
+<td><strong>in MB</strong></td>
+<td><strong>in MB</strong></td>
+<td><strong>in MB</strong></td>
+<td><strong>per Job</strong></td>
+<td><strong>per Job</strong></td>
+</tr>
+<tr>
+<td>bii</td>
+<td>10000</td>
+<td>cpu=400</td>
+<td></td>
+<td>354000+</td>
+<td></td>
+<td>9400</td>
+<td>112</td>
+<td></td>
+</tr>
+<tr>
+<td>standard</td>
+<td>10000</td>
+<td>cpu=1000</td>
+<td></td>
+<td>255000+</td>
+<td></td>
+<td>9000</td>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>dev</td>
+<td>10000</td>
+<td>cpu=16</td>
+<td></td>
+<td>127000+</td>
+<td>9000</td>
+<td>6000</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>parallel</td>
+<td>2000</td>
+<td>cpu=1000</td>
+<td>4</td>
+<td>384000</td>
+<td>9600</td>
+<td>9000</td>
+<td>25</td>
+<td>2</td>
+</tr>
+<tr>
+<td>instructional</td>
+<td>2000</td>
+<td>cpu=20</td>
+<td></td>
+<td>112000+</td>
+<td></td>
+<td>6000</td>
+<td>5</td>
+<td></td>
+</tr>
+<tr>
+<td>largemem</td>
+<td>2000</td>
+<td>cpu=32</td>
+<td></td>
+<td>1000000+</td>
+<td>64000</td>
+<td>60000</td>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>gpu</td>
+<td>10000</td>
+<td>gres/gpu=32</td>
+<td></td>
+<td>128000+</td>
+<td>32000</td>
+<td>6000</td>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>bii-gpu</td>
+<td>10000</td>
+<td></td>
+<td></td>
+<td>384000+</td>
+<td></td>
+<td>9400</td>
+<td>12</td>
+<td></td>
+</tr>
+<tr>
+<td>bii-largemem</td>
+<td>10000</td>
+<td></td>
+<td></td>
+<td>1500000</td>
+<td></td>
+<td>31000</td>
+<td>2</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="linux-commands-for-hpc">Linux commands for HPC</h2>
 <p>Many useful commands can be found in Gregor&rsquo;s book at</p>
 <ul>
@@ -317,7 +573,10 @@ In your home directory, you will find system directories and files such as
 </tbody>
 </table>
 <h2 id="some-suggestions">Some suggestions</h2>
-<p>When compiling large projects, you may face very slow compilation speed which might be caused by the limited memory size on the front end (head node). You can try to use FastX node which have larger memory and could be much faster.</p>
+<p>When compiling large projects, you may face very slow compilation
+speed which might be caused by the limited memory size on the front
+end (head node). You can try to use FastX node which have larger
+memory and could be much faster.</p>
 <h2 id="references">References</h2>
 <ul>
 <li>Presentation about <a href="https://docs.google.com/presentation/d/1Xt4kOtQpvl1JTDETJkOS-OMi8csZsJJw03xGus3QLA0">SLURM on rivanna</a></li>

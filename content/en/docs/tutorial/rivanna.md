@@ -8,7 +8,12 @@ description: >
 
 {{% pageinfo %}}
 
-Rivanna is the University of Virginia’s High-Performance Computing (HPC) system. As a centralized resource and has many software packages available. Currently, the Rivanna supercomputer has 603 nodes with over 20476 cores and 8PB of various storage. Rivanna has multiple nodes equipped with GPUs including RTX2080, K80, P100, V100, A100-40GB, A100-80GB.
+Rivanna is the University of Virginia’s High-Performance Computing
+(HPC) system. As a centralized resource and has many software packages
+available. Currently, the Rivanna supercomputer has 603 nodes with
+over 20476 cores and 8PB of various storage. Rivanna has multiple
+nodes equipped with GPUs including RTX2080, K80, P100, V100,
+A100-40GB, A100-80GB.
 
 {{% /pageinfo %}}
 
@@ -194,12 +199,55 @@ module purge
 TODO: explain what -A is
 
 ```bash
-rivanna$ ijob -c number_of_cpus -A group_name -p queue_name --gres=gpu:gpu_model:number_of_gpus --time=day-hours:minutes:seconds
-# example: request a 1 cpu unit with 1 a100 gpu for 10 minutes in 'dev' partition
+rivanna$ ijob -c number_of_cpus
+              -A group_name
+	      -p queue_name
+	      --gres=gpu:gpu_model:number_of_gpus
+	      --time=day-hours:minutes:seconds
+```
+
+An example to request 1 cpu with 1 a100 gpu for 10 minutes in 'dev' partition is
+
+```bash
 rivanna$ ijob -c 1 -A bii_dsc_community -p gpu --gres=gpu:a100:1 --time=0-00:10:00
 ```
 
-Different partition has different available resources and charging rate. `dev` is free but limited to 1 hour for each session and no GPU is available. Use `qlist` to check partitions and `qlimits` check the limits.
+
+Rivanna has different partitions with different resource availability
+and charging rate. `dev` is free but limited to 1 hour for each
+session/allocation and no GPU is available. To list the different
+partions use `qlist` to check partitions 
+
+
+| Queue          | Total   | Free    | Jobs    | Jobs    | Time       | SU     |    
+| ---------------| --------| --------| --------| --------| -----------| --- |
+| **(partition)**    | **Cores**   | **Cores**   | **Running** | **Pending** | **Limit**      | **Charge** |
+| bii            | 4640    | 4306    | 38      | 1949    | 7-00:00:00 | 1  |    
+| standard       | 5644    | 1391    | 706     | 12      | 7-00:00:00 | 1  |    
+| dev            | 456     | 426     | 2       | 1       | 1:00:00    | 0  |    
+| parallel       | 5680    | 364     | 32      | 21      | 3-00:00:00 | 1  |    
+| instructional  | 2320    | 2180    |         |         | 3-00:00:00 | 1  |    
+| largemem       | 208     | 123     | 10      | 2       | 4-00:00:00 | 1  |    
+| gpu            | 2372    | 1745    | 67      | 1       | 3-00:00:00 | 3  |    
+| bii-gpu        | 608     | 554     |         | 4       | 3-00:00:00 | 1  |    
+| bii-largemem   | 288     | 171     |         | 1       | 7-00:00:00 | 1  |
+
+To list the limits, use the command `qlimits`
+
+
+| Queue           | Maximum    | Maximum        | Minimum      | Maximum       | Maximum       | Default       | Maximum          | Minimum     |
+|-----------------|------------|----------------|--------------|---------------|---------------|---------------|------------------|-------------|
+| **(partition)** | **Submit** | **Cores(GPU)** | **Cores**    | **Mem/Node**  | **Mem/Core**  | **Mem/Core**  | **Nodes**    	  | **Nodes**   |
+| 	 	  | 	       | **per User**   | **per Job**  | **in MB**     | **in MB**     | **in MB**     | **per Job**   	  | **per Job** |
+| bii             | 10000      | cpu=400        |              | 354000+       |               | 9400          | 112              |             |
+| standard        | 10000      | cpu=1000       |              | 255000+       |               | 9000          | 1                |             |
+| dev             | 10000      | cpu=16         |              | 127000+       | 9000          | 6000          | 2                |             |
+| parallel        | 2000       | cpu=1000       | 4            | 384000        | 9600          | 9000          | 25               | 2           |
+| instructional   | 2000       | cpu=20         |              | 112000+       |               | 6000          | 5                |             |
+| largemem        | 2000       | cpu=32         |              | 1000000+      | 64000         | 60000         | 2                |             |
+| gpu             | 10000      | gres/gpu=32    |              | 128000+       | 32000         | 6000          | 4                |             |
+| bii-gpu         | 10000      |                |              | 384000+       |               | 9400          | 12               |             |
+| bii-largemem    | 10000      |                |              | 1500000       |               | 31000         | 2                |             |
 
 ## Linux commands for HPC
 
@@ -218,7 +266,10 @@ The following additional commands are quite useful on HPC systems
 
 ## Some suggestions
 
-When compiling large projects, you may face very slow compilation speed which might be caused by the limited memory size on the front end (head node). You can try to use FastX node which have larger memory and could be much faster.
+When compiling large projects, you may face very slow compilation
+speed which might be caused by the limited memory size on the front
+end (head node). You can try to use FastX node which have larger
+memory and could be much faster.
 
 
 ## References

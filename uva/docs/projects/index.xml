@@ -38,6 +38,47 @@ The difficulties that the total data processing environment must address include
     </item>
     
     <item>
+      <title>Docs: Cloudmask</title>
+      <link>https://infomall.org/uva/docs/projects/cloudmask/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/projects/cloudmask/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;mlcommons-science-cloudmask-benchmark&#34;&gt;MLCommons Science Cloudmask benchmark&lt;/h2&gt;
+&lt;p&gt;The scientific objective of CloudMask is to develop a segmentation
+model for classifying the pixels in satellite images. This
+classification allows to determine whether the given pixel belongs to
+a cloud or to a clear sky. The benchmark can be considered as both
+training and inference focused, where the science metric is same as
+the classification accuracy — number of pixels classified correctly.
+The performance metric, can be inference timing and scalability on the
+training across a number of GPUs.&lt;/p&gt;
+&lt;h2 id=&#34;participants-and-collaborators&#34;&gt;Participants and Collaborators&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Gregor von Laszewski &lt;a href=&#34;mailto:laszewski@gmail.com&#34;&gt;laszewski@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Sergey Samsonau &lt;a href=&#34;mailto:ss13638@nyu.edu&#34;&gt;ss13638@nyu.edu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Varshitha Chennamsetti &lt;a href=&#34;mailto:vc2209@nyu.edu&#34;&gt;vc2209@nyu.edu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ruochen Gu &lt;a href=&#34;mailto:rg3515@nyu.edu&#34;&gt;rg3515@nyu.edu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Laiba Mehnaz &lt;a href=&#34;mailto:lm4428@nyu.edu&#34;&gt;lm4428@nyu.edu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Shengyao Tang &lt;a href=&#34;mailto:st4761@nyu.edu&#34;&gt;st4761@nyu.edu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;deliverables&#34;&gt;Deliverables&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Working code that can run benchmarks in parallel&lt;/li&gt;
+&lt;li&gt;Report&lt;/li&gt;
+&lt;li&gt;Submission of the benchmark to MLCommons&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mlcommons/science/tree/main/benchmarks/cloudmask&#34;&gt;https://github.com/mlcommons/science/tree/main/benchmarks/cloudmask&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Cosmoflow</title>
       <link>https://infomall.org/uva/docs/projects/cosmoflow/</link>
       <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
@@ -212,6 +253,71 @@ capabilities.&lt;/p&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;participants&#34;&gt;Participants&lt;/h2&gt;
 &lt;p&gt;Nate Kimball, Wes Brewer, Gregor von Laszewski (&lt;a href=&#34;mailto:laszewski@gmail.com&#34;&gt;laszewski@gmail.com&lt;/a&gt;), Geoffrey C. Fox&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Timeseries</title>
+      <link>https://infomall.org/uva/docs/projects/timeseries/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/projects/timeseries/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;dl-timeseries&#34;&gt;DL Timeseries&lt;/h2&gt;
+&lt;p&gt;Here is the our research abstract:
+This research strives to approve that one can study several sets of
+sequences or time series of an underlying evolution operator using a
+deep learning network. The language of geospatial time series is used
+as a common application type, whereas the series can be any sequence,
+and the sequences can be in any collection (bag)-not just Euclidean
+space-time-as we need sequences labeled in some way, and having
+properties consequent of this label (position in abstract space). This
+problem has been successfully tackled by deep learning in many ways
+and within numerous research fields. The most advanced work is
+estimated to be Natural Language processing and transportation
+(ride-hailing). The second case, with traffic and the number of people
+needing rides, is a geospatial problem with significant constraints
+from the spatial locality. As in many problems, the data here is
+typically space-time-stamped events. However, these can be converted
+into spatial time series by binning in space and time. Comparing deep
+learning for such time series with coupled ordinary differential
+equations used to describe multi-particle systems motivates the
+introduction of an evolution operator that describes the time
+dependence of complex systems. With an appropriate training process,
+our research interprets deep learning applied to spatial time series
+as a particular approach to finding the time evolution operator for
+the complex system giving rise to the spatial time series. Whimsically
+we view this training process as determining hidden variables that
+represent the theory (as in Newton&amp;rsquo;s laws) of the complex system. This
+problem is formulated in general and presents an open-source package
+FFFFWNPF as a Jupyter notebook for training and inference using either
+recurrent neural networks or a variant of the transformer
+(multi-headed attention) approach. This assumes an outside data
+engineering step that can prepare data to ingest into FFFFWNPF. The
+approach, a comparison of transformer and LSTM networks are presented
+for time series of Hydrology streamflow, temperature, and
+precipitation data collected on 671 catchments from each nation: the
+US, the UK, and Chile. This research is intended to explore how
+complex systems of different types (different membership linkages) are
+described by different types of deep learning operators. Geometric
+structure in space and multi-scale behavior in both time and space
+will be important. We predict that the current forecasting formulation
+will be easily extended to sequence-to-sequence problems.&lt;/p&gt;
+&lt;h2 id=&#34;participants&#34;&gt;Participants&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Eric He &lt;a href=&#34;mailto:fay5du@virginia.edu&#34;&gt;fay5du@virginia.edu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;deliverables&#34;&gt;Deliverables&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;TBD&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;TBD&lt;/li&gt;
+&lt;/ol&gt;
 
       </description>
     </item>

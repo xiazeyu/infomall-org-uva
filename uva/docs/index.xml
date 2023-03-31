@@ -80,6 +80,47 @@ The difficulties that the total data processing environment must address include
     </item>
     
     <item>
+      <title>Docs: Cloudmask</title>
+      <link>https://infomall.org/uva/docs/projects/cloudmask/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/projects/cloudmask/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;mlcommons-science-cloudmask-benchmark&#34;&gt;MLCommons Science Cloudmask benchmark&lt;/h2&gt;
+&lt;p&gt;The scientific objective of CloudMask is to develop a segmentation
+model for classifying the pixels in satellite images. This
+classification allows to determine whether the given pixel belongs to
+a cloud or to a clear sky. The benchmark can be considered as both
+training and inference focused, where the science metric is same as
+the classification accuracy — number of pixels classified correctly.
+The performance metric, can be inference timing and scalability on the
+training across a number of GPUs.&lt;/p&gt;
+&lt;h2 id=&#34;participants-and-collaborators&#34;&gt;Participants and Collaborators&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Gregor von Laszewski &lt;a href=&#34;mailto:laszewski@gmail.com&#34;&gt;laszewski@gmail.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Sergey Samsonau &lt;a href=&#34;mailto:ss13638@nyu.edu&#34;&gt;ss13638@nyu.edu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Varshitha Chennamsetti &lt;a href=&#34;mailto:vc2209@nyu.edu&#34;&gt;vc2209@nyu.edu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Ruochen Gu &lt;a href=&#34;mailto:rg3515@nyu.edu&#34;&gt;rg3515@nyu.edu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Laiba Mehnaz &lt;a href=&#34;mailto:lm4428@nyu.edu&#34;&gt;lm4428@nyu.edu&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Shengyao Tang &lt;a href=&#34;mailto:st4761@nyu.edu&#34;&gt;st4761@nyu.edu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;deliverables&#34;&gt;Deliverables&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Working code that can run benchmarks in parallel&lt;/li&gt;
+&lt;li&gt;Report&lt;/li&gt;
+&lt;li&gt;Submission of the benchmark to MLCommons&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/mlcommons/science/tree/main/benchmarks/cloudmask&#34;&gt;https://github.com/mlcommons/science/tree/main/benchmarks/cloudmask&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Cosmoflow</title>
       <link>https://infomall.org/uva/docs/projects/cosmoflow/</link>
       <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
@@ -259,6 +300,71 @@ capabilities.&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: Timeseries</title>
+      <link>https://infomall.org/uva/docs/projects/timeseries/</link>
+      <pubDate>Fri, 20 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/projects/timeseries/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;dl-timeseries&#34;&gt;DL Timeseries&lt;/h2&gt;
+&lt;p&gt;Here is the our research abstract:
+This research strives to approve that one can study several sets of
+sequences or time series of an underlying evolution operator using a
+deep learning network. The language of geospatial time series is used
+as a common application type, whereas the series can be any sequence,
+and the sequences can be in any collection (bag)-not just Euclidean
+space-time-as we need sequences labeled in some way, and having
+properties consequent of this label (position in abstract space). This
+problem has been successfully tackled by deep learning in many ways
+and within numerous research fields. The most advanced work is
+estimated to be Natural Language processing and transportation
+(ride-hailing). The second case, with traffic and the number of people
+needing rides, is a geospatial problem with significant constraints
+from the spatial locality. As in many problems, the data here is
+typically space-time-stamped events. However, these can be converted
+into spatial time series by binning in space and time. Comparing deep
+learning for such time series with coupled ordinary differential
+equations used to describe multi-particle systems motivates the
+introduction of an evolution operator that describes the time
+dependence of complex systems. With an appropriate training process,
+our research interprets deep learning applied to spatial time series
+as a particular approach to finding the time evolution operator for
+the complex system giving rise to the spatial time series. Whimsically
+we view this training process as determining hidden variables that
+represent the theory (as in Newton&amp;rsquo;s laws) of the complex system. This
+problem is formulated in general and presents an open-source package
+FFFFWNPF as a Jupyter notebook for training and inference using either
+recurrent neural networks or a variant of the transformer
+(multi-headed attention) approach. This assumes an outside data
+engineering step that can prepare data to ingest into FFFFWNPF. The
+approach, a comparison of transformer and LSTM networks are presented
+for time series of Hydrology streamflow, temperature, and
+precipitation data collected on 671 catchments from each nation: the
+US, the UK, and Chile. This research is intended to explore how
+complex systems of different types (different membership linkages) are
+described by different types of deep learning operators. Geometric
+structure in space and multi-scale behavior in both time and space
+will be important. We predict that the current forecasting formulation
+will be easily extended to sequence-to-sequence problems.&lt;/p&gt;
+&lt;h2 id=&#34;participants&#34;&gt;Participants&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Eric He &lt;a href=&#34;mailto:fay5du@virginia.edu&#34;&gt;fay5du@virginia.edu&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;deliverables&#34;&gt;Deliverables&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;TBD&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;TBD&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Gregor von Laszewski</title>
       <link>https://infomall.org/uva/docs/staff/vonlaszewski/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -408,7 +514,12 @@ minor in Data Science.&lt;/p&gt;
         
 
 &lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;Rivanna is the University of Virginia’s High-Performance Computing (HPC) system. As a centralized resource and has many software packages available. Currently, the Rivanna supercomputer has 603 nodes with over 20476 cores and 8PB of various storage. Rivanna has multiple nodes equipped with GPUs including RTX2080, K80, P100, V100, A100-40GB, A100-80GB.&lt;/p&gt;
+&lt;p&gt;Rivanna is the University of Virginia’s High-Performance Computing
+(HPC) system. As a centralized resource and has many software packages
+available. Currently, the Rivanna supercomputer has 603 nodes with
+over 20476 cores and 8PB of various storage. Rivanna has multiple
+nodes equipped with GPUs including RTX2080, K80, P100, V100,
+A100-40GB, A100-80GB.&lt;/p&gt;
 
 &lt;/div&gt;
 
@@ -518,10 +629,261 @@ In your home directory, you will find system directories and files such as
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module purge
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;request-gpus-to-use-interactively&#34;&gt;Request GPUs to use interactively&lt;/h2&gt;
 &lt;p&gt;TODO: explain what -A is&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna$ ijob -c number_of_cpus -A group_name -p queue_name --gres&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;gpu:gpu_model:number_of_gpus --time&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;day-hours:minutes:seconds
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# example: request a 1 cpu unit with 1 a100 gpu for 10 minutes in &amp;#39;dev&amp;#39; partition&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna$ ijob -c &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; -A bii_dsc_community -p gpu --gres&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;gpu:a100:1 --time&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;0-00:10:00
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Different partition has different available resources and charging rate. &lt;code&gt;dev&lt;/code&gt; is free but limited to 1 hour for each session and no GPU is available. Use &lt;code&gt;qlist&lt;/code&gt; to check partitions and &lt;code&gt;qlimits&lt;/code&gt; check the limits.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna$ ijob -c number_of_cpus
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;              -A group_name
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	      -p queue_name
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	      --gres&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;gpu:gpu_model:number_of_gpus
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	      --time&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;day-hours:minutes:seconds
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An example to request 1 cpu with 1 a100 gpu for 10 minutes in &amp;lsquo;dev&amp;rsquo; partition is&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna$ ijob -c &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; -A bii_dsc_community -p gpu --gres&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;gpu:a100:1 --time&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;0-00:10:00
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Rivanna has different partitions with different resource availability
+and charging rate. &lt;code&gt;dev&lt;/code&gt; is free but limited to 1 hour for each
+session/allocation and no GPU is available. To list the different
+partions use &lt;code&gt;qlist&lt;/code&gt; to check partitions&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Queue&lt;/th&gt;
+&lt;th&gt;Total&lt;/th&gt;
+&lt;th&gt;Free&lt;/th&gt;
+&lt;th&gt;Jobs&lt;/th&gt;
+&lt;th&gt;Jobs&lt;/th&gt;
+&lt;th&gt;Time&lt;/th&gt;
+&lt;th&gt;SU&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;(partition)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Cores&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Cores&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Running&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Pending&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Limit&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Charge&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bii&lt;/td&gt;
+&lt;td&gt;4640&lt;/td&gt;
+&lt;td&gt;4306&lt;/td&gt;
+&lt;td&gt;38&lt;/td&gt;
+&lt;td&gt;1949&lt;/td&gt;
+&lt;td&gt;7-00:00:00&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;standard&lt;/td&gt;
+&lt;td&gt;5644&lt;/td&gt;
+&lt;td&gt;1391&lt;/td&gt;
+&lt;td&gt;706&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;7-00:00:00&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dev&lt;/td&gt;
+&lt;td&gt;456&lt;/td&gt;
+&lt;td&gt;426&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1:00:00&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;parallel&lt;/td&gt;
+&lt;td&gt;5680&lt;/td&gt;
+&lt;td&gt;364&lt;/td&gt;
+&lt;td&gt;32&lt;/td&gt;
+&lt;td&gt;21&lt;/td&gt;
+&lt;td&gt;3-00:00:00&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;instructional&lt;/td&gt;
+&lt;td&gt;2320&lt;/td&gt;
+&lt;td&gt;2180&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;3-00:00:00&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;largemem&lt;/td&gt;
+&lt;td&gt;208&lt;/td&gt;
+&lt;td&gt;123&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;4-00:00:00&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gpu&lt;/td&gt;
+&lt;td&gt;2372&lt;/td&gt;
+&lt;td&gt;1745&lt;/td&gt;
+&lt;td&gt;67&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;3-00:00:00&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bii-gpu&lt;/td&gt;
+&lt;td&gt;608&lt;/td&gt;
+&lt;td&gt;554&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;3-00:00:00&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bii-largemem&lt;/td&gt;
+&lt;td&gt;288&lt;/td&gt;
+&lt;td&gt;171&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;7-00:00:00&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;To list the limits, use the command &lt;code&gt;qlimits&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Queue&lt;/th&gt;
+&lt;th&gt;Maximum&lt;/th&gt;
+&lt;th&gt;Maximum&lt;/th&gt;
+&lt;th&gt;Minimum&lt;/th&gt;
+&lt;th&gt;Maximum&lt;/th&gt;
+&lt;th&gt;Maximum&lt;/th&gt;
+&lt;th&gt;Default&lt;/th&gt;
+&lt;th&gt;Maximum&lt;/th&gt;
+&lt;th&gt;Minimum&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;(partition)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Submit&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Cores(GPU)&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Cores&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Mem/Node&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Mem/Core&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Mem/Core&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Nodes&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;Nodes&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;per User&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;per Job&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;in MB&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;in MB&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;in MB&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;per Job&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;&lt;strong&gt;per Job&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bii&lt;/td&gt;
+&lt;td&gt;10000&lt;/td&gt;
+&lt;td&gt;cpu=400&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;354000+&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;9400&lt;/td&gt;
+&lt;td&gt;112&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;standard&lt;/td&gt;
+&lt;td&gt;10000&lt;/td&gt;
+&lt;td&gt;cpu=1000&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;255000+&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;9000&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dev&lt;/td&gt;
+&lt;td&gt;10000&lt;/td&gt;
+&lt;td&gt;cpu=16&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;127000+&lt;/td&gt;
+&lt;td&gt;9000&lt;/td&gt;
+&lt;td&gt;6000&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;parallel&lt;/td&gt;
+&lt;td&gt;2000&lt;/td&gt;
+&lt;td&gt;cpu=1000&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;384000&lt;/td&gt;
+&lt;td&gt;9600&lt;/td&gt;
+&lt;td&gt;9000&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;instructional&lt;/td&gt;
+&lt;td&gt;2000&lt;/td&gt;
+&lt;td&gt;cpu=20&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;112000+&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;6000&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;largemem&lt;/td&gt;
+&lt;td&gt;2000&lt;/td&gt;
+&lt;td&gt;cpu=32&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;1000000+&lt;/td&gt;
+&lt;td&gt;64000&lt;/td&gt;
+&lt;td&gt;60000&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gpu&lt;/td&gt;
+&lt;td&gt;10000&lt;/td&gt;
+&lt;td&gt;gres/gpu=32&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;128000+&lt;/td&gt;
+&lt;td&gt;32000&lt;/td&gt;
+&lt;td&gt;6000&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bii-gpu&lt;/td&gt;
+&lt;td&gt;10000&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;384000+&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;9400&lt;/td&gt;
+&lt;td&gt;12&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;bii-largemem&lt;/td&gt;
+&lt;td&gt;10000&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;1500000&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;31000&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;linux-commands-for-hpc&#34;&gt;Linux commands for HPC&lt;/h2&gt;
 &lt;p&gt;Many useful commands can be found in Gregor&amp;rsquo;s book at&lt;/p&gt;
 &lt;ul&gt;
@@ -551,7 +913,10 @@ In your home directory, you will find system directories and files such as
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;some-suggestions&#34;&gt;Some suggestions&lt;/h2&gt;
-&lt;p&gt;When compiling large projects, you may face very slow compilation speed which might be caused by the limited memory size on the front end (head node). You can try to use FastX node which have larger memory and could be much faster.&lt;/p&gt;
+&lt;p&gt;When compiling large projects, you may face very slow compilation
+speed which might be caused by the limited memory size on the front
+end (head node). You can try to use FastX node which have larger
+memory and could be much faster.&lt;/p&gt;
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Presentation about &lt;a href=&#34;https://docs.google.com/presentation/d/1Xt4kOtQpvl1JTDETJkOS-OMi8csZsJJw03xGus3QLA0&#34;&gt;SLURM on rivanna&lt;/a&gt;&lt;/li&gt;
