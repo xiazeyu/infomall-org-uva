@@ -6767,12 +6767,12 @@ description: >
 
 -   Pulasthi Supun Wickramasinghe "[ROLE OF HIGH-PERFORMANCE COMPUTING
     IN DEEP
-    LEARNING](http://infomall.org/publications/Role_of_High_Performance_Computing_in_Deep_Learning_Thesis_final_v2.pdf)\"
+    LEARNING](http://infomall.org/publications/Role_of_High_Performance_Computing_in_Deep_Learning_Thesis_final_v2.pdf)"
     Indiana University Ph.D. Thesis Dissertation Defense, June 3, 2021
       
 -   Vibhatha Lakmal Abeykoon, "[TOWARDS DATA ANALYTICS-AWARE HIGH
     PERFORMANCE DATA ENGINEERING AND
-    BENCHMARKING](http://infomall.org/publications/vibhatha_thesis_revised.pdf)\",
+    BENCHMARKING](http://infomall.org/publications/vibhatha_thesis_revised.pdf)",
     Indiana University Ph.D. Thesis Dissertation Defense, June 2, 2021
       
 -   Hyungro Lee, [BUILDING SOFTWARE-DEFINED SYSTEMS WITH REPRODUCIBLE
@@ -6781,22 +6781,22 @@ description: >
       
 -   Jerome E. Mitchell, "[A PROGRESSIVE STUDY FOR THE AUTOMATIC
     ANALYSIS OF INTERNAL LAYERS FROM POLAR RADAR
-    IMAGERY](http://infomall.org/publications/mitchell_dissertation.pdf)\"
+    IMAGERY](http://infomall.org/publications/mitchell_dissertation.pdf)"
     Indiana University Ph.D Dissertation Defense, July 26 2018
       
 -   Supun Kamburugamuve, "[TOWARDS HPC AND BIG DATA CONVERGENCE IN A
     COMPONENT BASED
-    APPROACH](http://infomall.org/publications/supun_dissertation.pdf)\",
+    APPROACH](http://infomall.org/publications/supun_dissertation.pdf)",
     Indiana University Ph.D Dissertation Defense, May 14th, 2018.
       
 -   Andrew J. Younge, "[Architectural Principles and Experimentation
     of Distributed High Performance Virtual
-    Clusters](http://infomall.org/publications/Younge_phd-thesis.pdf)\",
+    Clusters](http://infomall.org/publications/Younge_phd-thesis.pdf)",
     Indiana University Ph.D Dissertation Defense, October 10th, 2016
       
 -   Saliya Ekanayake, "[Towards a Systematic Study of Big Data
     Performance and
-    Benchmarking](http://infomall.org/publications/SaliyaEkanayake_Dissertation.pdf)\",
+    Benchmarking](http://infomall.org/publications/SaliyaEkanayake_Dissertation.pdf)",
     Indiana University Ph.D Dissertation Defense, September 28th, 2016
       
 -   Yang Ruan [SCALABLE AND ROBUST CLUSTERING AND VISUALIZATION FOR
