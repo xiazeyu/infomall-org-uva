@@ -8,26 +8,37 @@ description: >-
 
 ## Singularity
 
-Links
-
-special nodes to create images on rivanna: `biihead1.bii.virginia.edu` and `biihead2.bii.virginia.edu`
-
-the exact command to build singularity image:
-
-```bash
-sudo /opt/singularity/3.7.1/bin/singularity build output_image.sif build.def
-```
-
-## build.def
+### build.def
 
 Here shows an example head of `buid.def` file to build image based on [NVIDIA NGC PyTorch container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch).
 
 ```
-Boostrap: docker
+Bootstrap: docker
 From: nvcr.io/nvidia/pytorch:23.02-py3
 ```
 
 Following the head of definition file, there are several sections for different set up purposes, which you should refer to <https://docs.sylabs.io/guides/3.7/user-guide/definition_files.html#sections>
+
+### Creating the Singularity Image
+
+In order for you to create a singularity container from the `build.def` file please login to either of the following special nodes on Rivanna: 
+
+* `biihead1.bii.virginia.edu` 
+* `biihead2.bii.virginia.edu`
+
+For example: 
+
+```bash
+ssh $USER@biihead1.bii.virginia.edu
+```
+
+where $USER is your computing ID on Rivanna.
+
+Now that you are logged in to the special node, you can create the singularity image with the following command:
+
+```bash
+sudo /opt/singularity/3.7.1/bin/singularity build output_image.sif build.def
+```
 
 ### Why NVIDIA NGC?
 
