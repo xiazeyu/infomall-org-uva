@@ -8,6 +8,18 @@ description: >-
 
 ## Singularity
 
+Singularity is a container runtime that implements a unique security model to 
+mitigate privilege escalation risks and provides a platform to capture a complete 
+application environment into a single file (SIF).
+
+Singularity is often used in HPC centers.
+
+UNiversity of Virginia unfortunately does not allow us to access the full singularity features 
+and only allows us to access a single specific command to create images.
+
+If you need more features, please submit a ticket to the Rivanna help team with the missing 
+feature you need so they can enable it for you.
+
 ### build.def
 
 Here shows an example head of `buid.def` file to build image based on [NVIDIA NGC PyTorch container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch).
