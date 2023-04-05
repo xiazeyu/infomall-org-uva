@@ -503,7 +503,7 @@ memory and could be much faster.&lt;/p&gt;
     </item>
     
     <item>
-      <title>Docs: Rivanna and singularity</title>
+      <title>Docs: Rivanna and Singularity</title>
       <link>https://infomall.org/uva/docs/tutorial/singularity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -512,23 +512,71 @@ memory and could be much faster.&lt;/p&gt;
         
         
         &lt;h2 id=&#34;singularity&#34;&gt;Singularity&lt;/h2&gt;
-&lt;p&gt;Links&lt;/p&gt;
-&lt;p&gt;special nodes to create images on rivanna: &lt;code&gt;biihead1.bii.virginia.edu&lt;/code&gt; and &lt;code&gt;biihead2.bii.virginia.edu&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;the exact command to build singularity image:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo /opt/singularity/3.7.1/bin/singularity build output_image.sif build.def
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;builddef&#34;&gt;build.def&lt;/h2&gt;
-&lt;p&gt;Here shows an example head of &lt;code&gt;buid.def&lt;/code&gt; file to build image based on &lt;a href=&#34;https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch&#34;&gt;NVIDIA NGC PyTorch container&lt;/a&gt;.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Boostrap: docker
+&lt;p&gt;Singularity is a container runtime that implements a unique security model to
+mitigate privilege escalation risks and provides a platform to capture a complete
+application environment into a single file (SIF).&lt;/p&gt;
+&lt;p&gt;Singularity is often used in HPC centers.&lt;/p&gt;
+&lt;p&gt;UNiversity of Virginia unfortunately does not allow us to access the full singularity features
+and only allows us to access a single specific command to create images.&lt;/p&gt;
+&lt;p&gt;If you need more features, please submit a ticket to the Rivanna help team with the missing
+feature you need so they can enable it for you.&lt;/p&gt;
+&lt;p&gt;We discuss here how to build and run singularity images.&lt;/p&gt;
+&lt;h3 id=&#34;builddef&#34;&gt;build.def&lt;/h3&gt;
+&lt;p&gt;To build an image you will need a build definition file&lt;/p&gt;
+&lt;p&gt;We show next an exxample of a simple &lt;code&gt;buid.def&lt;/code&gt; file that uses internally a &lt;a href=&#34;https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch&#34;&gt;NVIDIA NGC PyTorch container&lt;/a&gt;.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Bootstrap: docker
 From: nvcr.io/nvidia/pytorch:23.02-py3
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Following the head of definition file, there are several sections for different set up purposes, which you should refer to &lt;a href=&#34;https://docs.sylabs.io/guides/3.7/user-guide/definition_files.html#sections&#34;&gt;https://docs.sylabs.io/guides/3.7/user-guide/definition_files.html#sections&lt;/a&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Next you can follow the steps that are detailed in
+&lt;a href=&#34;https://docs.sylabs.io/guides/3.7/user-guide/definition_files.html#sections&#34;&gt;https://docs.sylabs.io/guides/3.7/user-guide/definition_files.html#sections&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;However, for Rivanna we MUST create the image as discussed next.&lt;/p&gt;
+&lt;h3 id=&#34;creating-the-singularity-image&#34;&gt;Creating the Singularity Image&lt;/h3&gt;
+&lt;p&gt;In order for you to create a singularity container from the
+&lt;code&gt;build.def&lt;/code&gt; file please login to either of the following special nodes
+on Rivanna:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;biihead1.bii.virginia.edu&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;biihead2.bii.virginia.edu&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh &lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;@biihead1.bii.virginia.edu
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;where $USER is your computing ID on Rivanna.&lt;/p&gt;
+&lt;p&gt;Now that you are logged in to the special node, you can create the
+singularity image with the following command:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo /opt/singularity/3.7.1/bin/singularity build output_image.sif build.def
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note: &lt;strong&gt;It is important that you type in only this command. If you modify
+the name output_image.sif or build.def the command will not work and you will
+recieve an authorization error.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In case you need to rename the image to a better name please use the &lt;code&gt;mv&lt;/code&gt; command.&lt;/p&gt;
+&lt;p&gt;In case you also need to have a different name other then build.def the following commands are recommended. We assime you use &lt;code&gt;myimage.def&lt;/code&gt; and &lt;code&gt;myimage.sif&lt;/code&gt;. Bet is to include it into a makefile such as:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;BUILD=myimage.def
+IMAGE=myimage.sif
+
+image:
+	cp $BUILD build.def
+	sudo /opt/singularity/3.7.1/bin/singularity build output_image.sif build.def
+	cp output_image.sif $IMAGE
+	make -f clean
+
+clean:
+	rm -rf build.def output_image.sif
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Placing it in a	&lt;code&gt;Makefile&lt;/code&gt; will now allow you to use the command&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make image
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and the image &lt;code&gt;myimage.sif&lt;/code&gt; will be created. with make clean you will
+delete the temporary files &lt;code&gt;build.def and &lt;/code&gt;output_image.sif`&lt;/p&gt;
 &lt;h3 id=&#34;why-nvidia-ngc&#34;&gt;Why NVIDIA NGC?&lt;/h3&gt;
-&lt;p&gt;Because it is tested and guaranteed for reliability and peformance by NVIDIA, which is the most widely adopted reference environment (base image) for building images using NVIDIA GPU. Besides PyTorch, it also provides images for TensorFlow and many HPC applications.&lt;/p&gt;
+&lt;p&gt;Because it is tested and guaranteed for reliability and peformance by
+NVIDIA, which is the most widely adopted reference environment (base
+image) for building images using NVIDIA GPU. Besides PyTorch, it also
+provides images for TensorFlow and many HPC applications.&lt;/p&gt;
 &lt;h2 id=&#34;work-with-singularity-container&#34;&gt;Work with Singularity container&lt;/h2&gt;
 &lt;p&gt;reference: &lt;a href=&#34;https://www.rc.virginia.edu/userinfo/rivanna/software/containers/&#34;&gt;https://www.rc.virginia.edu/userinfo/rivanna/software/containers/&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;run-gpu-images&#34;&gt;Run GPU images&lt;/h3&gt;
 &lt;p&gt;To use NVIDIA GPU with Singularity, &lt;code&gt;--nv&lt;/code&gt; flag is needed.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-basg&#34; data-lang=&#34;basg&#34;&gt;singularity exec --nv output_image.sif python myscript.py
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Since Python is defined as the default command to be excuted and singularity passes the argument(s) after the image name, i.e. myscript.py, to the Python interpreter. So the above singularity command is equivalent to&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Since Python is defined as the default command to be excuted and
+singularity passes the argument(s) after the image name,
+i.e. myscript.py, to the Python interpreter. So the above singularity
+command is equivalent to&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;singularity run --nv output_image.sif myscript.py
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;run-images-interactively&#34;&gt;Run Images Interactively&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ijob  -A mygroup -p gpu --gres&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;gpu -c &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;
@@ -552,10 +600,18 @@ From: nvcr.io/nvidia/pytorch:23.02-py3
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;singularity run -c -B /scratch/&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt; output_image.sif
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To add the /home directory on the host as /rivanna/home inside the container:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;singularity run -c -B /home:/rivanna/home output_image.sif
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;additional-suggestions&#34;&gt;Additional Suggestions&lt;/h2&gt;
-&lt;p&gt;Manage images like&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;&amp;lt;your-path&amp;gt;/singularity-images/&amp;lt;env-name&amp;gt;/output_image.sif
-&lt;/code&gt;&lt;/pre&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;faq&#34;&gt;FAQ&lt;/h2&gt;
+&lt;h3 id=&#34;adding-singularity-to-slurm-scripts&#34;&gt;Adding singularity to slurm scripts&lt;/h3&gt;
+&lt;p&gt;TBD&lt;/p&gt;
+&lt;h3 id=&#34;running-on-v100&#34;&gt;Running on v100&lt;/h3&gt;
+&lt;p&gt;TBD&lt;/p&gt;
+&lt;h3 id=&#34;running-on-a100-40gb&#34;&gt;Running on a100-40GB&lt;/h3&gt;
+&lt;p&gt;TBD&lt;/p&gt;
+&lt;h3 id=&#34;running-on-a100-80gb&#34;&gt;Running on a100-80GB&lt;/h3&gt;
+&lt;p&gt;TBD&lt;/p&gt;
+&lt;h3 id=&#34;running-on-special-fox-node-a100-80gb&#34;&gt;RUnning on special fox node a100-80GB&lt;/h3&gt;
+&lt;p&gt;TBD&lt;/p&gt;
+
       </description>
     </item>
     
