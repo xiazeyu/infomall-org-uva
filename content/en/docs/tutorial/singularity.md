@@ -1,5 +1,5 @@
 ---
-title: "Rivanna and singularity"
+title: "Rivanna and Singularity"
 linkTitle: "Singularity"
 weight: 100
 description: >-
@@ -20,18 +20,25 @@ and only allows us to access a single specific command to create images.
 If you need more features, please submit a ticket to the Rivanna help team with the missing 
 feature you need so they can enable it for you.
 
+We discuss here how to build and run singularity images.
+
+
+
 ### build.def
 
-Here shows an example head of `buid.def` file to build image based on [NVIDIA NGC PyTorch container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch).
+To build an image you will need a build definition file 
+
+We show next an exxample of a simple `buid.def` file that uses internally a [NVIDIA NGC PyTorch container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch).
 
 ```
 Bootstrap: docker
 From: nvcr.io/nvidia/pytorch:23.02-py3
 ```
 
-Following the head of definition file, there are several sections for
-different set up purposes, which you should refer to
+Next you can follow the steps that are detailed in 
 <https://docs.sylabs.io/guides/3.7/user-guide/definition_files.html#sections>
+
+However, for Rivanna we MUST create the image as discussed next.
 
 ### Creating the Singularity Image
 
@@ -78,7 +85,6 @@ image:
 
 clean:
 	rm -rf build.def output_image.sif
-	
 ```
 
 Placing it in a	`Makefile` will now allow you to use the command
@@ -90,7 +96,6 @@ make image
 and the image `myimage.sif` will be created. with make clean you will
 delete the temporary files `build.def and `output_image.sif`
 	
-
 
 ### Why NVIDIA NGC?
 
@@ -157,10 +162,26 @@ To add the /home directory on the host as /rivanna/home inside the container:
 singularity run -c -B /home:/rivanna/home output_image.sif
 ```
 
-## Additional Suggestions
+## FAQ
 
-Manage images like
+### Adding singularity to slurm scripts
 
-```
-<your-path>/singularity-images/<env-name>/output_image.sif
-```
+TBD
+
+### Running on v100
+
+TBD
+
+### Running on a100-40GB
+
+TBD
+
+### Running on a100-80GB
+
+TBD
+
+### RUnning on special fox node a100-80GB
+
+TBD
+
+
