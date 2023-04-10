@@ -117,9 +117,23 @@ ssh username@rivanna.hpc.virginia.edu
 
 ## Commandline editor
 
-sometimes it is necessary to edit files on Rivanna. For this, we recommend that you learn a command line editor. There are lots of debates on which one is better. When I was young I used vi, but found it too cumbersome. So I spend one-day learning emacs which is just great and all you need to learn. You can install it also on Linux, mac, and windows. This way you have one editor with very advanced features that is easy to learn. 
+Sometimes it is necessary to edit files on Rivanna. For this, we recommend that you learn a command line editor. There are lots of debates on which one is better. When I was young I used vi, but found it too cumbersome. So I spend one-day learning emacs which is just great and all you need to learn. You can install it also on Linux, mac, and windows. This way you have one editor with very advanced features that is easy to learn. 
 
 If you do not have one day to familiarize yourself with editors such as emacs, vim, or vi, you can use editors such as nano and pico.
+
+The best commandline editor is emacs. In contrast to some missinformation on thw Web emacs is extremely easy to learn when using just the basics. The advantage is that the same commands also work in the terminal.
+
+| Keys     | Action |
+| --- | --- |
+| CTRL-x s | Save in emacs is |
+| CTRL-x q | Leave is |
+| CTRL-x g | If something goes wrong | 
+| CTRL a   | Go  beginning line |
+| CTRL e   | end of line | 
+| CTRL k   | delete toll end from curser |
+| cursor   | just works |
+
+
 
 ## PyCharm
 
