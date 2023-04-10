@@ -125,7 +125,7 @@ The best commandline editor is emacs. In contrast to some missinformation on thw
 
 | Keys     | Action |
 | --- | --- |
-| CTRL-x s | Save in emacs is |
+| CTRL-x c | Save in emacs is |
 | CTRL-x q | Leave is |
 | CTRL-x g | If something goes wrong | 
 | CTRL a   | Go  beginning line |
