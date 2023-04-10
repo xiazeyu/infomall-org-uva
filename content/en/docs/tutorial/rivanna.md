@@ -158,7 +158,37 @@ However often scp and rsync may just be sufficient.
 
 ## Example Config file
 
-TODO: add an example config file
+Replace abc2de with your computing id
+
+place this on your computer in `~/.ssh/config`
+
+```
+ServerAliveInterval 60
+
+Host rivanna
+     User abc2de
+     HostName rivanna.hpc.virginia.edu
+     IdentityFile ~/.ssh/id_rsa.pub
+     
+Host b1
+     User abc2de
+     HostName biihead1.hpc.virginia.edu
+     IdentityFile ~/.ssh/id_rsa.pub
+     
+     
+Host b2
+     User abc2de
+     HostName biihead2.hpc.virginia.edu
+     IdentityFile ~/.ssh/id_rsa.pub
+```
+
+Adding it allows you to just ssh to the machines with 
+
+```
+ssh rivanna
+ssh b1
+ssh b2
+```
 
 ## Rivanna's filesystem
 
