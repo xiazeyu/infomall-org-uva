@@ -17,6 +17,15 @@ A100-40GB, A100-80GB.
 
 {{% /pageinfo %}}
 
+## Communication
+
+We have a team discord at: uva-bii-community
+
+<https://discord.gg/uFKJ5TUv>
+
+please subscribe if you participate in order to get Gregor's support.
+
+
 ## Rivanna at UVA
 
 
@@ -199,8 +208,8 @@ The file systems on Rivanna are quite restrictive and policies exist that you ne
 we distinguish 
 
 * home directory: `/home/<uvaid>` or `~`
-* `/scratch/<uvaid>`
-* `/project/projectname/<uvaid>`
+* `/scratch/bii_dsc_community/<uvaid>`
+* `/project/bii_dsc_community/projectname/<uvaid>`
 
 Y
 In your home directory, you will find system directories and files such as 
@@ -306,6 +315,61 @@ The following additional commands are quite useful on HPC systems
 | `allocations`| check available account and balance |
 | `hdquota` | check storage you has used
 | `du -h --max-depth=1` | check which directory uses most space |
+
+## SLURM Batch Parameters
+
+We present next a number of default parameters for using a variety of
+GPUs on rivanna. Please note that you may need to adopt some
+parameters to adjust for cores or memory according to your
+application.
+
+### Running on v100
+
+```
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=12:00:00
+#SBATCH --partition=bii-gpu
+#SBATCH --account=bii_dsc_community
+#SBATCH --gres=gpu:v100:1
+#SBATCH --job-name=MYNAME
+#SBATCH --output=%u-%j.out
+#SBATCH --error=%u-%j.err
+```
+
+
+### Running on a100-40GB
+
+```
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=12:00:00
+#SBATCH --partition=bii-gpu
+#SBATCH --account=bii_dsc_community
+#SBATCH --gres=gpu:q100:1
+#SBATCH --job-name=MYNAME
+#SBATCH --output=%u-%j.out
+#SBATCH --error=%u-%j.err
+```
+ 
+
+### Running on special fox node a100-80GB
+
+```
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=12:00:00
+#SBATCH --partition=bii-gpu
+#SBATCH --account=bii_dsc_community
+#SBATCH --gres=gpu:a100:1
+#SBATCH --job-name=MYNAME
+#SBATCH --output=%u-%j.out
+#SBATCH --error=%u-%j.err
+#SBATCH --reservation=bi_fox_dgx
+#SBATCH --constraint=a100_80gb
+```
+
+
 
 
 ## Some suggestions

@@ -27,12 +27,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://infomall.org/uva/docs/tutorial/rivanna/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-03-31T18:05:36-04:00" /><meta property="og:site_name" content="Infomall.org" />
+<meta property="article:modified_time" content="2023-04-10T10:08:15-04:00" /><meta property="og:site_name" content="Infomall.org" />
 <meta itemprop="name" content="Rivanna">
 <meta itemprop="description" content="Rivanna
 ">
-<meta itemprop="dateModified" content="2023-03-31T18:05:36-04:00" />
-<meta itemprop="wordCount" content="1697">
+<meta itemprop="dateModified" content="2023-04-10T10:08:15-04:00" />
+<meta itemprop="wordCount" content="1951">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rivanna"/>
 <meta name="twitter:description" content="Rivanna
@@ -199,6 +199,7 @@
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
+    <li><a href="#communication">Communication</a></li>
     <li><a href="#rivanna-at-uva">Rivanna at UVA</a></li>
     <li><a href="#getting-permissions-to-use-rivanna">Getting Permissions to use Rivanna</a></li>
     <li><a href="#accessing-an-hpc-computer-via-command-line">Accessing an HPC Computer via command line</a>
@@ -219,6 +220,13 @@
     <li><a href="#load-modules">Load modules</a></li>
     <li><a href="#request-gpus-to-use-interactively">Request GPUs to use interactively</a></li>
     <li><a href="#linux-commands-for-hpc">Linux commands for HPC</a></li>
+    <li><a href="#slurm-batch-parameters">SLURM Batch Parameters</a>
+      <ul>
+        <li><a href="#running-on-v100">Running on v100</a></li>
+        <li><a href="#running-on-a100-40gb">Running on a100-40GB</a></li>
+        <li><a href="#running-on-special-fox-node-a100-80gb">Running on special fox node a100-80GB</a></li>
+      </ul>
+    </li>
     <li><a href="#some-suggestions">Some suggestions</a></li>
     <li><a href="#references">References</a></li>
   </ul>
@@ -304,6 +312,10 @@ A100-40GB, A100-80GB.</p>
 
 </div>
 
+<h2 id="communication">Communication</h2>
+<p>We have a team discord at: uva-bii-community</p>
+<p><a href="https://discord.gg/uFKJ5TUv">https://discord.gg/uFKJ5TUv</a></p>
+<p>please subscribe if you participate in order to get Gregor&rsquo;s support.</p>
 <h2 id="rivanna-at-uva">Rivanna at UVA</h2>
 <p>The official Web page for Rivanna is located at</p>
 <ul>
@@ -364,8 +376,47 @@ Let us know your options so we can add them here.</p>
 </span></span></code></pre></div><p>Please use your password when using <code>ssh-copy-id</code>. Your username is your UVA computing id. Now you should be ready to connect with</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ssh username@rivanna.hpc.virginia.edu
 </span></span></code></pre></div><h2 id="commandline-editor">Commandline editor</h2>
-<p>sometimes it is necessary to edit files on Rivanna. For this, we recommend that you learn a command line editor. There are lots of debates on which one is better. When I was young I used vi, but found it too cumbersome. So I spend one-day learning emacs which is just great and all you need to learn. You can install it also on Linux, mac, and windows. This way you have one editor with very advanced features that is easy to learn.</p>
+<p>Sometimes it is necessary to edit files on Rivanna. For this, we recommend that you learn a command line editor. There are lots of debates on which one is better. When I was young I used vi, but found it too cumbersome. So I spend one-day learning emacs which is just great and all you need to learn. You can install it also on Linux, mac, and windows. This way you have one editor with very advanced features that is easy to learn.</p>
 <p>If you do not have one day to familiarize yourself with editors such as emacs, vim, or vi, you can use editors such as nano and pico.</p>
+<p>The best commandline editor is emacs. In contrast to some missinformation on thw Web emacs is extremely easy to learn when using just the basics. The advantage is that the same commands also work in the terminal.</p>
+<table>
+<thead>
+<tr>
+<th>Keys</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CTRL-x c</td>
+<td>Save in emacs is</td>
+</tr>
+<tr>
+<td>CTRL-x q</td>
+<td>Leave is</td>
+</tr>
+<tr>
+<td>CTRL-x g</td>
+<td>If something goes wrong</td>
+</tr>
+<tr>
+<td>CTRL a</td>
+<td>Go  beginning line</td>
+</tr>
+<tr>
+<td>CTRL e</td>
+<td>end of line</td>
+</tr>
+<tr>
+<td>CTRL k</td>
+<td>delete toll end from curser</td>
+</tr>
+<tr>
+<td>cursor</td>
+<td>just works</td>
+</tr>
+</tbody>
+</table>
 <h2 id="pycharm">PyCharm</h2>
 <p>The best editor to do python development is pyCharm. Install it on your desktop</p>
 <h2 id="vscode">VSCode</h2>
@@ -378,8 +429,30 @@ This will allow you to for example use pyCharm to directly edit files on Rivanna
 <p>Developers however often also use GitHub to push the code to git and then on Rivanna use pull to get the code from git. This has the advantage that you can use pyCharm on your local system while synchronizing the code via git onto Rivanna.</p>
 <p>However often scp and rsync may just be sufficient.</p>
 <h2 id="example-config-file">Example Config file</h2>
-<p>TODO: add an example config file</p>
-<h2 id="rivannas-filesystem">Rivanna&rsquo;s filesystem</h2>
+<p>Replace abc2de with your computing id</p>
+<p>place this on your computer in <code>~/.ssh/config</code></p>
+<pre tabindex="0"><code>ServerAliveInterval 60
+
+Host rivanna
+     User abc2de
+     HostName rivanna.hpc.virginia.edu
+     IdentityFile ~/.ssh/id_rsa.pub
+     
+Host b1
+     User abc2de
+     HostName biihead1.hpc.virginia.edu
+     IdentityFile ~/.ssh/id_rsa.pub
+     
+     
+Host b2
+     User abc2de
+     HostName biihead2.hpc.virginia.edu
+     IdentityFile ~/.ssh/id_rsa.pub
+</code></pre><p>Adding it allows you to just ssh to the machines with</p>
+<pre tabindex="0"><code>ssh rivanna
+ssh b1
+ssh b2
+</code></pre><h2 id="rivannas-filesystem">Rivanna&rsquo;s filesystem</h2>
 <p>The file systems on Rivanna are quite restrictive and policies exist that you need to be inspecting:</p>
 <ul>
 <li>TODO: add link here</li>
@@ -387,8 +460,8 @@ This will allow you to for example use pyCharm to directly edit files on Rivanna
 <p>we distinguish</p>
 <ul>
 <li>home directory: <code>/home/&lt;uvaid&gt;</code> or <code>~</code></li>
-<li><code>/scratch/&lt;uvaid&gt;</code></li>
-<li><code>/project/projectname/&lt;uvaid&gt;</code></li>
+<li><code>/scratch/bii_dsc_community/&lt;uvaid&gt;</code></li>
+<li><code>/project/bii_dsc_community/projectname/&lt;uvaid&gt;</code></li>
 </ul>
 <p>Y
 In your home directory, you will find system directories and files such as
@@ -693,7 +766,44 @@ partions use <code>qlist</code> to check partitions</p>
 </tr>
 </tbody>
 </table>
-<h2 id="some-suggestions">Some suggestions</h2>
+<h2 id="slurm-batch-parameters">SLURM Batch Parameters</h2>
+<p>We present next a number of default parameters for using a variety of
+GPUs on rivanna. Please note that you may need to adopt some
+parameters to adjust for cores or memory according to your
+application.</p>
+<h3 id="running-on-v100">Running on v100</h3>
+<pre tabindex="0"><code>#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=12:00:00
+#SBATCH --partition=bii-gpu
+#SBATCH --account=bii_dsc_community
+#SBATCH --gres=gpu:v100:1
+#SBATCH --job-name=MYNAME
+#SBATCH --output=%u-%j.out
+#SBATCH --error=%u-%j.err
+</code></pre><h3 id="running-on-a100-40gb">Running on a100-40GB</h3>
+<pre tabindex="0"><code>#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=12:00:00
+#SBATCH --partition=bii-gpu
+#SBATCH --account=bii_dsc_community
+#SBATCH --gres=gpu:q100:1
+#SBATCH --job-name=MYNAME
+#SBATCH --output=%u-%j.out
+#SBATCH --error=%u-%j.err
+</code></pre><h3 id="running-on-special-fox-node-a100-80gb">Running on special fox node a100-80GB</h3>
+<pre tabindex="0"><code>#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=12:00:00
+#SBATCH --partition=bii-gpu
+#SBATCH --account=bii_dsc_community
+#SBATCH --gres=gpu:a100:1
+#SBATCH --job-name=MYNAME
+#SBATCH --output=%u-%j.out
+#SBATCH --error=%u-%j.err
+#SBATCH --reservation=bi_fox_dgx
+#SBATCH --constraint=a100_80gb
+</code></pre><h2 id="some-suggestions">Some suggestions</h2>
 <p>When compiling large projects, you may face very slow compilation
 speed which might be caused by the limited memory size on the front
 end (head node). You can try to use FastX node which have larger
@@ -720,7 +830,7 @@ memory and could be much faster.</p>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified March 31, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/6aa8c61c7bd284a69014a3a1be1b7328471305ef">update cybertraining (6aa8c61)</a>
+  Last modified April 10, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/b38e1deb206c78f1015c9660b2dbd5bd26289e3e">Update rivanna.md (b38e1de)</a>
 </div>
 
 </div>

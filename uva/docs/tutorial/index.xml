@@ -67,6 +67,10 @@ A100-40GB, A100-80GB.&lt;/p&gt;
 
 &lt;/div&gt;
 
+&lt;h2 id=&#34;communication&#34;&gt;Communication&lt;/h2&gt;
+&lt;p&gt;We have a team discord at: uva-bii-community&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://discord.gg/uFKJ5TUv&#34;&gt;https://discord.gg/uFKJ5TUv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;please subscribe if you participate in order to get Gregor&amp;rsquo;s support.&lt;/p&gt;
 &lt;h2 id=&#34;rivanna-at-uva&#34;&gt;Rivanna at UVA&lt;/h2&gt;
 &lt;p&gt;The official Web page for Rivanna is located at&lt;/p&gt;
 &lt;ul&gt;
@@ -127,8 +131,47 @@ Let us know your options so we can add them here.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Please use your password when using &lt;code&gt;ssh-copy-id&lt;/code&gt;. Your username is your UVA computing id. Now you should be ready to connect with&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;ssh username@rivanna.hpc.virginia.edu
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;commandline-editor&#34;&gt;Commandline editor&lt;/h2&gt;
-&lt;p&gt;sometimes it is necessary to edit files on Rivanna. For this, we recommend that you learn a command line editor. There are lots of debates on which one is better. When I was young I used vi, but found it too cumbersome. So I spend one-day learning emacs which is just great and all you need to learn. You can install it also on Linux, mac, and windows. This way you have one editor with very advanced features that is easy to learn.&lt;/p&gt;
+&lt;p&gt;Sometimes it is necessary to edit files on Rivanna. For this, we recommend that you learn a command line editor. There are lots of debates on which one is better. When I was young I used vi, but found it too cumbersome. So I spend one-day learning emacs which is just great and all you need to learn. You can install it also on Linux, mac, and windows. This way you have one editor with very advanced features that is easy to learn.&lt;/p&gt;
 &lt;p&gt;If you do not have one day to familiarize yourself with editors such as emacs, vim, or vi, you can use editors such as nano and pico.&lt;/p&gt;
+&lt;p&gt;The best commandline editor is emacs. In contrast to some missinformation on thw Web emacs is extremely easy to learn when using just the basics. The advantage is that the same commands also work in the terminal.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Keys&lt;/th&gt;
+&lt;th&gt;Action&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL-x c&lt;/td&gt;
+&lt;td&gt;Save in emacs is&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL-x q&lt;/td&gt;
+&lt;td&gt;Leave is&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL-x g&lt;/td&gt;
+&lt;td&gt;If something goes wrong&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL a&lt;/td&gt;
+&lt;td&gt;Go  beginning line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL e&lt;/td&gt;
+&lt;td&gt;end of line&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL k&lt;/td&gt;
+&lt;td&gt;delete toll end from curser&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cursor&lt;/td&gt;
+&lt;td&gt;just works&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;pycharm&#34;&gt;PyCharm&lt;/h2&gt;
 &lt;p&gt;The best editor to do python development is pyCharm. Install it on your desktop&lt;/p&gt;
 &lt;h2 id=&#34;vscode&#34;&gt;VSCode&lt;/h2&gt;
@@ -141,8 +184,30 @@ This will allow you to for example use pyCharm to directly edit files on Rivanna
 &lt;p&gt;Developers however often also use GitHub to push the code to git and then on Rivanna use pull to get the code from git. This has the advantage that you can use pyCharm on your local system while synchronizing the code via git onto Rivanna.&lt;/p&gt;
 &lt;p&gt;However often scp and rsync may just be sufficient.&lt;/p&gt;
 &lt;h2 id=&#34;example-config-file&#34;&gt;Example Config file&lt;/h2&gt;
-&lt;p&gt;TODO: add an example config file&lt;/p&gt;
-&lt;h2 id=&#34;rivannas-filesystem&#34;&gt;Rivanna&amp;rsquo;s filesystem&lt;/h2&gt;
+&lt;p&gt;Replace abc2de with your computing id&lt;/p&gt;
+&lt;p&gt;place this on your computer in &lt;code&gt;~/.ssh/config&lt;/code&gt;&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ServerAliveInterval 60
+
+Host rivanna
+     User abc2de
+     HostName rivanna.hpc.virginia.edu
+     IdentityFile ~/.ssh/id_rsa.pub
+     
+Host b1
+     User abc2de
+     HostName biihead1.hpc.virginia.edu
+     IdentityFile ~/.ssh/id_rsa.pub
+     
+     
+Host b2
+     User abc2de
+     HostName biihead2.hpc.virginia.edu
+     IdentityFile ~/.ssh/id_rsa.pub
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Adding it allows you to just ssh to the machines with&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh rivanna
+ssh b1
+ssh b2
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;rivannas-filesystem&#34;&gt;Rivanna&amp;rsquo;s filesystem&lt;/h2&gt;
 &lt;p&gt;The file systems on Rivanna are quite restrictive and policies exist that you need to be inspecting:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;TODO: add link here&lt;/li&gt;
@@ -150,8 +215,8 @@ This will allow you to for example use pyCharm to directly edit files on Rivanna
 &lt;p&gt;we distinguish&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;home directory: &lt;code&gt;/home/&amp;lt;uvaid&amp;gt;&lt;/code&gt; or &lt;code&gt;~&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/scratch/&amp;lt;uvaid&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/project/projectname/&amp;lt;uvaid&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/scratch/bii_dsc_community/&amp;lt;uvaid&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/project/bii_dsc_community/projectname/&amp;lt;uvaid&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Y
 In your home directory, you will find system directories and files such as
@@ -456,7 +521,44 @@ partions use &lt;code&gt;qlist&lt;/code&gt; to check partitions&lt;/p&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;some-suggestions&#34;&gt;Some suggestions&lt;/h2&gt;
+&lt;h2 id=&#34;slurm-batch-parameters&#34;&gt;SLURM Batch Parameters&lt;/h2&gt;
+&lt;p&gt;We present next a number of default parameters for using a variety of
+GPUs on rivanna. Please note that you may need to adopt some
+parameters to adjust for cores or memory according to your
+application.&lt;/p&gt;
+&lt;h3 id=&#34;running-on-v100&#34;&gt;Running on v100&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=12:00:00
+#SBATCH --partition=bii-gpu
+#SBATCH --account=bii_dsc_community
+#SBATCH --gres=gpu:v100:1
+#SBATCH --job-name=MYNAME
+#SBATCH --output=%u-%j.out
+#SBATCH --error=%u-%j.err
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;running-on-a100-40gb&#34;&gt;Running on a100-40GB&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=12:00:00
+#SBATCH --partition=bii-gpu
+#SBATCH --account=bii_dsc_community
+#SBATCH --gres=gpu:q100:1
+#SBATCH --job-name=MYNAME
+#SBATCH --output=%u-%j.out
+#SBATCH --error=%u-%j.err
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;running-on-special-fox-node-a100-80gb&#34;&gt;Running on special fox node a100-80GB&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --time=12:00:00
+#SBATCH --partition=bii-gpu
+#SBATCH --account=bii_dsc_community
+#SBATCH --gres=gpu:a100:1
+#SBATCH --job-name=MYNAME
+#SBATCH --output=%u-%j.out
+#SBATCH --error=%u-%j.err
+#SBATCH --reservation=bi_fox_dgx
+#SBATCH --constraint=a100_80gb
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;some-suggestions&#34;&gt;Some suggestions&lt;/h2&gt;
 &lt;p&gt;When compiling large projects, you may face very slow compilation
 speed which might be caused by the limited memory size on the front
 end (head node). You can try to use FastX node which have larger
