@@ -1,3 +1,11 @@
+---
+title: "Globus"
+linkTitle: "Globus"
+weight: 9
+description: >
+  Fite transfer with Globus
+---
+
 # Getting the Cosmoflow data via globus commandline 
 
 ## Data Directory 
