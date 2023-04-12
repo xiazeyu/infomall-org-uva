@@ -82,6 +82,16 @@ To find out more, please use the documentation at
 
 To access Rivanna from macOS, use the terminal and use ssh to connect to it. We will provide an in depth configuration tutorial on this later on. We will use the same programs as on Linux and Windows so we have to only provide one documentation and it is uniform across platforms.
 
+Please remember to use 
+
+```bash
+$ ssh-agent
+$ ssh-add
+```
+
+
+To activate ssh in your terminal
+
 ### Access Rivanna from Windows
 
 While exploring the various choices for accessing Rivanna from Windows we do not recommend using [putty](https://www.putty.org/) and [MobaXterm](https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/) although they are recommended by Rivanna staff.
