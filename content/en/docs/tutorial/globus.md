@@ -10,7 +10,7 @@ description: >
 
 ## Data Directory 
 
-We will showcase how to transfer the cosmoflow data via globus commandline tools. In our axample we will use the data directory as
+We will showcase how to transfer the cosmoflow data via globus commandline tools. In our example we will use the data directory as
 
 ```bash
 export DATA=/project/bii_dsc_community/$USER/cosmoflow/data
