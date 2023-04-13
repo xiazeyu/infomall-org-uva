@@ -401,3 +401,18 @@ memory and could be much faster.
   * <https://github.com/cloudmesh/cloudmesh-mpi>
   * Tutorials about cybertraining: <https://cybertraining-dsc.github.io/docs/tutorial/>
   * Modules about cybertraining: <https://cybertraining-dsc.github.io/docs/modules/>
+
+## Help Support
+We understand issues may arise when working with Rivanna and are here to help however:
+
+When requesting help from Gregor or anyone make sure to be completley specify the issue, alot of things cannot be solved if you are not clear on the issue and where it is occuring. Include:
+* The issue you are encountering.
+* Where it is occuring.
+* What you have done to try to resolve the issue.
+
+Simply generalizing is not much help.
+
+For example do not write " I am out of space and cannot run things".
+
+Instead write:
+I ran application xyz, from url xyz on Rivanna. I placed code in directory /project/.... or I placed the data in /project/... The download worked and I placed about 600GB. However when I uncompress the data with command xyz I get the error xyz. What should we do now?
