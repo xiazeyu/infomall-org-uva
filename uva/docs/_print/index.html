@@ -18885,20 +18885,31 @@ cybertraining educational activities.</p>
 <div class="td-content" style="page-break-before: always">
     
 	<h1 id="pg-9508af8f3982f4d1b2c92e7e0503e321">4.2 - Globus</h1>
-    <div class="lead">Fite transfer with Globus</div>
+    <div class="lead">File transfer with Globus</div>
 	<h1 id="getting-the-cosmoflow-data-via-globus-commandline">Getting the Cosmoflow data via globus commandline</h1>
 <h2 id="data-directory">Data Directory</h2>
-<p>We will showcase how to transfer the cosmoflow data via globus commandline tools. In our axample we will use the data directory as</p>
+<p>We will showcase how to transfer data via globus
+commandline tools.</p>
+<p>In our axample we will use the data directory as</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">export</span> <span style="color:#000">DATA</span><span style="color:#ce5c00;font-weight:bold">=</span>/project/bii_dsc_community/<span style="color:#000">$USER</span>/cosmoflow/data
 </span></span></code></pre></div><h2 id="globus-set-up-on-rivanna">Globus Set Up on Rivanna</h2>
-<p>Rivanna allows to load the Globus file transfer command line tools via the modules command with the following commands. However, Prior to executing globus login, please visit <a href="https://www.globus.org/">https://www.globus.org/</a> and log in using your UVA credentials.</p>
+<p>Rivanna allows to load the Globus file transfer command line tools via
+the modules command with the following commands. However, prior to
+executing globus login, please visit <a href="https://www.globus.org/">https://www.globus.org/</a> and log
+in using your UVA credentials.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>module load globus_cli
 </span></span><span style="display:flex;"><span>globus login
-</span></span></code></pre></div><p>The <code>globus login</code> method will output a unique link per user that you should paste into a web browser and sign in with using your UVA credentials. Afterwords, the website will present you with a unique sign-in key that you will need to paste back into the command line to verify your login.</p>
-<p>After executing <code>globus login</code> your console should look like the following block.</p>
-<ul>
-<li>NOTE: this is a unique link generated for when I attempted to login, each user will have a different link.</li>
-</ul>
+</span></span></code></pre></div><p>The <code>globus login</code> method will output a unique link per user that you
+should paste into a web browser and sign in with using your UVA
+credentials. Afterwords, the website will present you with a unique
+sign-in key that you will need to paste back into the command line to
+verify your login.</p>
+<p>After executing <code>globus login</code> your console should look like the
+following block.</p>
+<blockquote>
+<p>NOTE: this is a unique link generated for when I attempted to login,
+each user will have a different link.</p>
+</blockquote>
 <pre tabindex="0"><code>-bash-4.2$globus login
 Please authenticate with Globus here:
 ------------------------------------
@@ -18908,8 +18919,13 @@ https://auth.globus.org/v2/oauth2/authorize?client_id=affbecb5-5f93-404e-b342-95
 Enter the resulting Authorization Code here:
 </code></pre><p>Follow the url and input the authorization code to login successfully.</p>
 <h2 id="source-endpoint-search">Source Endpoint Search</h2>
-<p>First, verify that you were able to sign in properly, and verify your identity and then search for the
-source endpoint of the data you want to transfer. In this example, our endpoint is named <code>CosmoFlow benchmark data cosmoUniverse_2019_02_4parE</code>. The following commands will verify your sign in identity and then search for an endpoint within the single quotation marks.</p>
+<p>First, verify that you were able to sign in properly, and verify your
+identity and then search for the source endpoint of the data you want
+to transfer. In this example, our endpoint is named <code>CosmoFlow benchmark data cosmoUniverse_2019_02_4parE</code>. Please note that the file
+to be downloaded is 1.7 TB large. Make sure that the system on which
+you download it has enough space. The following commands
+will verify your sign in identity and then search for an endpoint
+within the single quotation marks.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>globus get-identities -v <span style="color:#4e9a06">&#39;youremail@gmailprobably.com&#39;</span>
 </span></span><span style="display:flex;"><span>globus endpoint search <span style="color:#4e9a06">&#39;CosmoFlow benchmark data cosmoUniverse_2019_02_4parE&#39;</span>
 </span></span></code></pre></div><p>Each globus endpoint has a unique endpoint ID. In this case our source endpoint ID is:</p>
@@ -18920,44 +18936,54 @@ source endpoint of the data you want to transfer. In this example, our endpoint 
 Also set a variable <code>SRC_FILE</code> to indicate the directory with the files to be transferred.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">export</span> <span style="color:#000">SRC_ENDPOINT</span><span style="color:#ce5c00;font-weight:bold">=</span>d0b1b73a-efd3-11e9-993f-0a8c187e8c12
 </span></span><span style="display:flex;"><span><span style="color:#204a87">export</span> <span style="color:#000">SRC_PATH</span><span style="color:#ce5c00;font-weight:bold">=</span>/~/
-</span></span></code></pre></div><p>You can look at the files in the globus endpoint using <code>globus ls</code> to verify that you are looking at the right endpoint.</p>
+</span></span></code></pre></div><p>You can look at the files in the globus endpoint using <code>globus ls</code> to
+verify that you are looking at the right endpoint.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>globus ls <span style="color:#000">$SRC_ENDPOINT</span>
 </span></span></code></pre></div><h2 id="destination-endpoint-set-up">Destination Endpoint Set Up</h2>
-<p>Rivanna HPC has set a special endpoint for data transfers into the <code>/project</code>, <code>/home</code>, or <code>/scratch</code> directories. The name of our destination endpoint will be <code>UVA Standard Security Storage</code>.</p>
-<p>Repeat the above steps with this endpoint and set up the variables including a <code>path</code> variable with the desired path to write to.</p>
+<p>Rivanna HPC has set a special endpoint for data transfers into the
+<code>/project</code>, <code>/home</code>, or <code>/scratch</code> directories. The name of our
+destination endpoint will be <code>UVA Standard Security Storage</code>.</p>
+<p>Repeat the above steps with this endpoint and set up the variables
+including a <code>path</code> variable with the desired path to write to.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>globus endpoint search <span style="color:#4e9a06">&#39;UVA Standard Security Storage&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#204a87">export</span> <span style="color:#000">DEST_ENDPOINT</span><span style="color:#ce5c00;font-weight:bold">=</span>e6b338df-213b-4d31-b02c-1bc2c628ca07
 </span></span><span style="display:flex;"><span><span style="color:#204a87">export</span> <span style="color:#000">DEST_DIR</span><span style="color:#ce5c00;font-weight:bold">=</span>/dtn/landings/users/u/uj/<span style="color:#000">$USER</span>/project/bii_dsc_community/uja2wd/cosmoflow/
-</span></span></code></pre></div><ul>
-<li>NOTE: to find the specific path of where to write to, it is best to sign into the web format of globus and find your desired path variable.
+</span></span></code></pre></div><blockquote>
+<p>NOTE: to find the specific path of where to write to, it is best to
+sign into the web format of globus and find your desired path
+variable.</p>
+</blockquote>
 <ul>
 <li>First sign into the web format of globus</li>
 <li>Locate <code>file manager</code> on the left side of the screen</li>
-<li>In the <code>collections</code> box at the top of the screen begin to search for <code>UVA Standard Security Storage</code></li>
+<li>In the <code>collections</code> box at the top of the screen begin to search
+for <code>UVA Standard Security Storage</code></li>
 <li>Select our destination endpoint</li>
 <li>Use the GUI tool to select exactly where you wish to write to</li>
 <li>Copy the path from the box immedietally below <code>collections</code></li>
-<li>Write this value to the DEST_DIR variable created above (I have included my path to where I wish to write to)</li>
-</ul>
-</li>
+<li>Write this value to the DEST_DIR variable created above (I have
+included my path to where I wish to write to)</li>
 </ul>
 <h2 id="initiate-the-transfer">Initiate the Transfer</h2>
 <p>Finally, execute the transfer</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>globus transfer <span style="color:#000">$SRC_ENDPOINT</span>:<span style="color:#000">$SRC_PATH</span> <span style="color:#000">$DEST_ENDPOINT</span>:<span style="color:#000">$DEST_DIR</span>
-</span></span></code></pre></div><ul>
-<li>NOTE: I anticipate for your first transfer that you will run into an issue where you need to give globus permission to initiate transfers via the CLI instead of via the web tool. I was given the unique command as follows by my terminal:</li>
-</ul>
+</span></span></code></pre></div><p>NOTE: In case your first transfer may have an issue because you need to give
+globus permission to initiate transfers via the CLI instead of via the
+web tool. I was given the unique command as follows by my terminal:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>-bash-4.2<span style="color:#000">$globus</span> transfer <span style="color:#000">$SRC_ENDPOINT</span>:<span style="color:#000">$SRC_PATH</span> <span style="color:#000">$DEST_ENDPOINT</span>:<span style="color:#000">$DEST_DIR</span>
-</span></span><span style="display:flex;"><span>The collection you are trying to access data on requires you to grant consent <span style="color:#204a87;font-weight:bold">for</span> the Globus CLI to access it.
-</span></span><span style="display:flex;"><span>message: Missing required data_access consent
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>Please run
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  globus session consent <span style="color:#4e9a06">&#39;urn:globus:auth:scope:transfer.api.globus.org:all[*https://auth.globus.org/scopes/e6b338df-213b-4d31-b02c-1bc2c628ca07/data_access]&#39;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>to login with the required scopes
-</span></span></code></pre></div><p>After initiating this command, a similar sign in a verification will be conducted compared to the <code>globus login</code> method where the cli will output a url to follow, the user will sign in, and return a verification code.</p>
-<p>After fixing this, remember to re-initiate the transfer with the above <code>globus transfer</code> command.</p>
+</span></span></code></pre></div><pre tabindex="0"><code>The collection you are trying to access data on requires you to grant
+consent for the Globus CLI to access it.  message: Missing required
+data_access consent
+</code></pre><p>Please run</p>
+<pre tabindex="0"><code>  globus session consent &#39;urn:globus:auth:scope:transfer.api.globus.org:all[*https://auth.globus.org/scopes/e6b338df-213b-4d31-b02c-1bc2c628ca07/data_access]&#39;
+</code></pre><p>to login with the required scopes</p>
+<p>After initiating this command, a similar sign in a verification will
+be conducted compared to the <code>globus login</code> method where the cli will
+output a url to follow, the user will sign in, and return a
+verification code.</p>
+<p>After fixing this, remember to re-initiate the transfer with the</p>
+<p><code>globus transfer</code></p>
+<p>command as previously descibed.</p>
 <h2 id="managing-tasks">Managing Tasks</h2>
 <p>To monitor the status of active transfers, use</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>globus task list

@@ -3,14 +3,17 @@ title: "Globus"
 linkTitle: "Globus"
 weight: 9
 description: >
-  Fite transfer with Globus
+  File transfer with Globus
 ---
 
 # Getting the Cosmoflow data via globus commandline 
 
 ## Data Directory 
 
-We will showcase how to transfer the cosmoflow data via globus commandline tools. In our axample we will use the data directory as
+We will showcase how to transfer data via globus
+commandline tools.
+
+In our axample we will use the data directory as
 
 ```bash
 export DATA=/project/bii_dsc_community/$USER/cosmoflow/data
@@ -18,18 +21,27 @@ export DATA=/project/bii_dsc_community/$USER/cosmoflow/data
 
 ## Globus Set Up on Rivanna
 
-Rivanna allows to load the Globus file transfer command line tools via the modules command with the following commands. However, Prior to executing globus login, please visit <https://www.globus.org/> and log in using your UVA credentials. 
+Rivanna allows to load the Globus file transfer command line tools via
+the modules command with the following commands. However, prior to
+executing globus login, please visit <https://www.globus.org/> and log
+in using your UVA credentials.
 
 ```bash 
 module load globus_cli
 globus login
 ```
 
-The `globus login` method will output a unique link per user that you should paste into a web browser and sign in with using your UVA credentials. Afterwords, the website will present you with a unique sign-in key that you will need to paste back into the command line to verify your login. 
+The `globus login` method will output a unique link per user that you
+should paste into a web browser and sign in with using your UVA
+credentials. Afterwords, the website will present you with a unique
+sign-in key that you will need to paste back into the command line to
+verify your login.
 
-After executing `globus login` your console should look like the following block. 
+After executing `globus login` your console should look like the
+following block.
 
-* NOTE: this is a unique link generated for when I attempted to login, each user will have a different link.
+> NOTE: this is a unique link generated for when I attempted to login,
+> each user will have a different link.
 
 ```
 -bash-4.2$globus login
@@ -45,8 +57,15 @@ Follow the url and input the authorization code to login successfully.
 
 ## Source Endpoint Search
 
-First, verify that you were able to sign in properly, and verify your identity and then search for the 
-source endpoint of the data you want to transfer. In this example, our endpoint is named `CosmoFlow benchmark data cosmoUniverse_2019_02_4parE`. The following commands will verify your sign in identity and then search for an endpoint within the single quotation marks.
+
+First, verify that you were able to sign in properly, and verify your
+identity and then search for the source endpoint of the data you want
+to transfer. In this example, our endpoint is named `CosmoFlow
+benchmark data cosmoUniverse_2019_02_4parE`. Please note that the file
+to be downloaded is 1.7 TB large. Make sure that the system on which
+you download it has enough space. The following commands
+will verify your sign in identity and then search for an endpoint
+within the single quotation marks.
 
 ```bash
 globus get-identities -v 'youremail@gmailprobably.com'
@@ -65,7 +84,8 @@ export SRC_ENDPOINT=d0b1b73a-efd3-11e9-993f-0a8c187e8c12
 export SRC_PATH=/~/
 ```
 
-You can look at the files in the globus endpoint using `globus ls` to verify that you are looking at the right endpoint.
+You can look at the files in the globus endpoint using `globus ls` to
+verify that you are looking at the right endpoint.
 
 ```bash
 globus ls $SRC_ENDPOINT
@@ -73,9 +93,12 @@ globus ls $SRC_ENDPOINT
 
 ## Destination Endpoint Set Up
 
-Rivanna HPC has set a special endpoint for data transfers into the `/project`, `/home`, or `/scratch` directories. The name of our destination endpoint will be `UVA Standard Security Storage`.
+Rivanna HPC has set a special endpoint for data transfers into the
+`/project`, `/home`, or `/scratch` directories. The name of our
+destination endpoint will be `UVA Standard Security Storage`.
 
-Repeat the above steps with this endpoint and set up the variables including a `path` variable with the desired path to write to.
+Repeat the above steps with this endpoint and set up the variables
+including a `path` variable with the desired path to write to.
 
 ```bash
 globus endpoint search 'UVA Standard Security Storage'
@@ -83,14 +106,19 @@ export DEST_ENDPOINT=e6b338df-213b-4d31-b02c-1bc2c628ca07
 export DEST_DIR=/dtn/landings/users/u/uj/$USER/project/bii_dsc_community/uja2wd/cosmoflow/
 ```
 
-* NOTE: to find the specific path of where to write to, it is best to sign into the web format of globus and find your desired path variable. 
-    * First sign into the web format of globus
-    * Locate `file manager` on the left side of the screen
-    * In the `collections` box at the top of the screen begin to search for `UVA Standard Security Storage`
-    * Select our destination endpoint
-    * Use the GUI tool to select exactly where you wish to write to
-    * Copy the path from the box immedietally below `collections`
-    * Write this value to the DEST_DIR variable created above (I have included my path to where I wish to write to)
+> NOTE: to find the specific path of where to write to, it is best to
+> sign into the web format of globus and find your desired path
+> variable.
+
+* First sign into the web format of globus
+* Locate `file manager` on the left side of the screen
+* In the `collections` box at the top of the screen begin to search
+  for `UVA Standard Security Storage`
+* Select our destination endpoint
+* Use the GUI tool to select exactly where you wish to write to
+* Copy the path from the box immedietally below `collections`
+* Write this value to the DEST_DIR variable created above (I have
+  included my path to where I wish to write to)
 
 ## Initiate the Transfer
 
@@ -100,23 +128,39 @@ Finally, execute the transfer
 globus transfer $SRC_ENDPOINT:$SRC_PATH $DEST_ENDPOINT:$DEST_DIR
 ```
 
-* NOTE: I anticipate for your first transfer that you will run into an issue where you need to give globus permission to initiate transfers via the CLI instead of via the web tool. I was given the unique command as follows by my terminal:
+NOTE: In case your first transfer may have an issue because you need to give
+globus permission to initiate transfers via the CLI instead of via the
+web tool. I was given the unique command as follows by my terminal:
 
 ```bash
 -bash-4.2$globus transfer $SRC_ENDPOINT:$SRC_PATH $DEST_ENDPOINT:$DEST_DIR
-The collection you are trying to access data on requires you to grant consent for the Globus CLI to access it.
-message: Missing required data_access consent
+```
+
+```
+The collection you are trying to access data on requires you to grant
+consent for the Globus CLI to access it.  message: Missing required
+data_access consent
+```
 
 Please run
 
-  globus session consent 'urn:globus:auth:scope:transfer.api.globus.org:all[*https://auth.globus.org/scopes/e6b338df-213b-4d31-b02c-1bc2c628ca07/data_access]'
-
-to login with the required scopes
 ```
+  globus session consent 'urn:globus:auth:scope:transfer.api.globus.org:all[*https://auth.globus.org/scopes/e6b338df-213b-4d31-b02c-1bc2c628ca07/data_access]'
+  ```
+  
+to login with the required scopes
 
-After initiating this command, a similar sign in a verification will be conducted compared to the `globus login` method where the cli will output a url to follow, the user will sign in, and return a verification code.
 
-After fixing this, remember to re-initiate the transfer with the above `globus transfer` command.
+After initiating this command, a similar sign in a verification will
+be conducted compared to the `globus login` method where the cli will
+output a url to follow, the user will sign in, and return a
+verification code.
+
+After fixing this, remember to re-initiate the transfer with the
+
+`globus transfer`
+
+command as previously descibed.
 
 ## Managing Tasks
 
