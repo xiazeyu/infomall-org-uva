@@ -13,7 +13,7 @@ description: >
 We will showcase how to transfer data via globus
 commandline tools.
 
-In our axample we will use the data directory as
+In our example we will use the data directory as
 
 ```bash
 export DATA=/project/bii_dsc_community/$USER/cosmoflow/data
@@ -40,7 +40,7 @@ verify your login.
 After executing `globus login` your console should look like the
 following block.
 
-> NOTE: this is a unique link generated for when I attempted to login,
+> NOTE: this is a unique link generated for the example login,
 > each user will have a different link.
 
 ```
@@ -77,11 +77,11 @@ Each globus endpoint has a unique endpoint ID. In this case our source endpoint 
 * `d0b1b73a-efd3-11e9-993f-0a8c187e8c12`
 
 Set up a variable `ENDPOINT` so you can use the endpoint more easily without retyping it. 
-Also set a variable `SRC_FILE` to indicate the directory with the files to be transferred.
+Also set a variable `SRC_DIR` to indicate the directory with the files to be transferred.
 
 ```bash
 export SRC_ENDPOINT=d0b1b73a-efd3-11e9-993f-0a8c187e8c12
-export SRC_PATH=/~/
+export SRC_DIR=/~/
 ```
 
 You can look at the files in the globus endpoint using `globus ls` to
@@ -94,7 +94,7 @@ globus ls $SRC_ENDPOINT
 ## Destination Endpoint Set Up
 
 Rivanna HPC has set a special endpoint for data transfers into the
-`/project`, `/home`, or `/scratch` directories. The name of our
+`/project`, `/home`, or `/scratch` directories. The name of this
 destination endpoint will be `UVA Standard Security Storage`.
 
 Repeat the above steps with this endpoint and set up the variables
@@ -106,10 +106,21 @@ export DEST_ENDPOINT=e6b338df-213b-4d31-b02c-1bc2c628ca07
 export DEST_DIR=/dtn/landings/users/u/uj/$USER/project/bii_dsc_community/uja2wd/cosmoflow/
 ```
 
-> NOTE: to find the specific path of where to write to, it is best to
-> sign into the web format of globus and find your desired path
-> variable.
-
+> NOTE: We cannot set the path to start at the root level in rivanna 
+> and instead need to follow a few steps to find the specific path of 
+> where to write to. 
+>
+> To begin, our path must start with `/dtn/landings/users/` 
+> and is then appended on a unique sequence depending on the users computing ID. 
+> The rest of the path is dependent on characters of the users computing ID.
+> As an example, if your computing ID is abc5xy, the next three arguments are
+> `/a/ab/abc5xy` (first char, first two chars, computing id), at this point the 
+> user is essentially in the root level of rivanna and can access 
+> `/home`, `/project`, or `/scratch` how they normally would.
+---
+> Note: If you want to use the web format of Globus to find the path isntead. 
+> Follow the below steps to find the desired value of your path var.
+ 
 * First sign into the web format of globus
 * Locate `file manager` on the left side of the screen
 * In the `collections` box at the top of the screen begin to search
@@ -125,7 +136,7 @@ export DEST_DIR=/dtn/landings/users/u/uj/$USER/project/bii_dsc_community/uja2wd/
 Finally, execute the transfer
 
 ```bash
-globus transfer $SRC_ENDPOINT:$SRC_PATH $DEST_ENDPOINT:$DEST_DIR
+globus transfer $SRC_ENDPOINT:$SRC_DIR $DEST_ENDPOINT:$DEST_DIR
 ```
 
 NOTE: In case your first transfer may have an issue because you need to give
@@ -133,7 +144,7 @@ globus permission to initiate transfers via the CLI instead of via the
 web tool. I was given the unique command as follows by my terminal:
 
 ```bash
--bash-4.2$globus transfer $SRC_ENDPOINT:$SRC_PATH $DEST_ENDPOINT:$DEST_DIR
+-bash-4.2$globus transfer $SRC_ENDPOINT:$SRC_DIR $DEST_ENDPOINT:$DEST_DIR
 ```
 
 ```
