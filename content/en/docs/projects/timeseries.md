@@ -6,7 +6,7 @@ description: >
   Timeseries
 ---
 
-## DL Timeseries
+## Deep Learning Predictions for Hydrology Data
 
 Here is the our research abstract:
 This research strives to approve that one can study several sets of
@@ -55,9 +55,15 @@ will be easily extended to sequence-to-sequence problems.
 
 ## Deliverables
 
-1. TBD
+1. GitHub repo: TBD
+2. Paper: TBD
 
 ## References
 
-1. TBD
-
+1. Newman, A. & Clark, M. & Sampson, Kevin & Wood, A. & Hay, Lauren & Bock, Andy & Viger, Roland & Blodgett, David & Brekke, Levi & Arnold, Jeffrey & Hopson, Thomas & Duan, Qingyun. (2015). Development of a large-sample watershed-scale hydrometeorological data set for the contiguous USA: Data set characteristics and assessment of regional variability in hydrologic model performance. Hydrology and Earth System Sciences. 19. 209-223. 10.5194/hess-19-209-2015. 
+2. Alvarez-Garreton, Camila & Mendoza, Pablo & Boisier, Juan P. & Addor, Nans & Galleguillos, Mauricio & Zambrano-Bigiarini, Mauricio & Lara, Antonio & Puelma, Cristobal & Cortés, Gonzalo & Garreaud, Rene & Mcphee, James & Ayala, Álvaro. (2018). The CAMELS-CL dataset: Catchment attributes and meteorology for large sample studies-Chile dataset. Hydrology and Earth System Sciences. 22. 5817-5846. 10.5194/hess-22-5817-2018. 
+3. Coxon, G. & Addor, Nans & Bloomfield, John & Freer, Jim & Fry, Matt & Hannaford, Jamie & Howden, Nicholas & Lane, Rosanna & Lewis, Melinda & Robinson, Emma & Wagener, Thorsten & Woods, Ross. (2020). CAMELS-GB: hydrometeorological time series and landscape attributes for 671 catchments in Great Britain. Earth System Science Data. 12. 2459-2483. 10.5194/essd-12-2459-2020. 
+4. Sit, Muhammed & Demiray, Bekir & Xiang, Zhongrun & Ewing, Gregory & Sermet, Yusuf & Demir, Ibrahim. (2020). A comprehensive review of deep learning applications in hydrology and water resources. Water Science and Technology. 82. 10.2166/wst.2020.369. 
+5. Fox, Geoffrey & Rundle, John & Donnellan, Andrea & Feng, Bo. (2021). Earthquake Nowcasting with Deep Learning. 10.13140/RG.2.2.27588.14722.
+6.  Vaswani, Ashish & Shazeer, Noam & Parmar, Niki & Uszkoreit, Jakob & Jones, Llion & Gomez, Aidan & Kaiser, Lukasz & Polosukhin, Illia. (2017). Attention Is All You Need. 
+7. Huang, Xinyuan & Fox, Geoffrey & Serebryakov, Sergey & Mohan, Ankur & Morkisz, Pawel & Dutta, Debojyoti. (2019). Benchmarking Deep Learning for Time Series: Challenges and Directions. 5679-5682. 10.1109/BigData47090.2019.9005496.  
