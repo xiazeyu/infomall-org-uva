@@ -105,7 +105,7 @@ However, if you have a Linux machine you can follow the
 If you have issues installing it, attend an online support session
 with the Rivanna staff.
 
-### Access via the Web Browser (discouraged)
+### Access via the Web Browser
 
 Rivanna can be accessed right from the Web browser. Although this may
 be helpful for those with systems where a proper terminal can not be
