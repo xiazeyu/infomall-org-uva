@@ -265,12 +265,12 @@ Host rivanna
      
 Host b1
      User abc2de
-     HostName biihead1.hpc.virginia.edu
+     HostName biihead1.bii.virginia.edu
      IdentityFile ~/.ssh/id_rsa.pub
      
 Host b2
      User abc2de
-     HostName biihead2.hpc.virginia.edu
+     HostName biihead2.bii.virginia.edu
      IdentityFile ~/.ssh/id_rsa.pub
 ```
 
