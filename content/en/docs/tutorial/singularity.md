@@ -77,9 +77,9 @@ BUILD=myimage.def
 IMAGE=myimage.sif
 
 image:
-	cp $BUILD build.def
+	cp ${BUILD} build.def
 	sudo /opt/singularity/3.7.1/bin/singularity build output_image.sif build.def
-	cp output_image.sif $IMAGE
+	cp output_image.sif ${IMAGE}
 	make -f clean
 
 clean:
@@ -95,6 +95,9 @@ make image
 and the image `myimage.sif` will be created. with make clean you will
 delete the temporary files `build.def` and `output_image.sif`
 	
+## Create a singularity image for tensorflow
+
+TODO
 
 ## Work with Singularity container
 
