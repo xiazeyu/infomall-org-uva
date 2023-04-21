@@ -12,7 +12,7 @@ Rivanna is the University of Virginia’s High-Performance Computing
 (HPC) system. As a centralized resource and has many software packages
 available. Currently, the Rivanna supercomputer has 603 nodes with
 over 20476 cores and 8PB of various storage. Rivanna has multiple
-nodes equipped with GPUs including RTX2080, K80, P100, V100,
+nodes equipped with GPUs including RTX2080, RTX3090, K80, P100, V100,
 A100-40GB, A100-80GB.
 
 {{% /pageinfo %}}
@@ -23,7 +23,8 @@ We have a team discord at: uva-bii-community
 
 <https://discord.gg/uFKJ5TUv>
 
-please subscribe if you participate in order to get Gregor's support.
+please subscribe if you work on rivanna and are part of the
+bii_dsc_community.
 
 
 ## Rivanna at UVA
@@ -33,54 +34,100 @@ The official Web page for Rivanna is located at
 
 * <https://www.rc.virginia.edu/userinfo/rivanna/overview/>
 
-In case you need support you can ask the staff using a ticket system at
+In case you need support you can ask the staff using a ticket system
+at
 
 * <https://www.rc.virginia.edu/support/> 
 * This page also contains zoom office hours [Tue 3-5 pm](https://virginia.zoom.us/j/304271094?pwd=Szdib1kzK1QySlE4eGRGL1BiclpLUT09),  [Thu 10-12 pm](https://virginia.zoom.us/j/723009972?pwd=SWJMV09xMUp6M0lJY04yRXIwM1ZNdz09)
 
-It is important that before you use Rivanna to attend a seminar that upon request is given every Wednesday. To sign up, use the link:
+It is important that before you use Rivanna to attend a seminar that
+upon request is given every Wednesday. To sign up, use the link:
 
 * [Wednesday 3-4 pm Introduction](https://www.rc.virginia.edu/form/support-request/?category=Rivanna&request_title=Intro%20to%20Rivanna%20Orientation%20Session&description=I%27d%20like%20to%20reserve%20a%20seat%20for%20the%20next%20%22Intro%20to%20Rivanna%,%203-4pm.)
 
-Please note that in this introduction we will provide you with some information that may not be provided by the Rivanna support team. We encourage you to pick the information that is most useful for you.
+Please note that in this introduction we will provide you with
+additional inforamation that may make the use of Rivanna easier.  We
+encourage you to add to this information and share your tips,
 
 ## Getting Permissions to use Rivanna
 
-To use Rivanna you need to have special authorization. In case you work with a faculty member you will need to be added to a special group (or multiple) to be able to access it. The faculty member will know which group it is. This is managed via the [group management portal](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=ea1dffc7db3ac744f032f1f51d96193a) by the faculty member. Please do not use the previous link and instead communicate with your faculty member first. 
+To use Rivanna you need to have special authorization. In case you
+work with a faculty member you will need to be added to a special
+group (or multiple) to be able to access it. The faculty member will
+know which group it is. This is managed via the
+[group management portal](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=ea1dffc7db3ac744f032f1f51d96193a)
+by the faculty member. Please do not use the previous link and instead
+communicate with your faculty member first.
 
-* *Note: For BII work conducted with Geoffrey Fox or Gregor von Laszewski, please contact Gregor at <laszewski@gmail.com>*
+* *Note: For BII work conducted with Geoffrey Fox or Gregor von
+  Laszewski, please contact Gregor at <laszewski@gmail.com>*
 
- 
-Once you are added to the group, you will receive an invitation email to set up the password for the research computing support portal. This password is also the password that you will use to log into the system. 
 
-After the password is ready, you can try to log in through the [Web-based access](https://www.rc.virginia.edu/userinfo/rivanna/login/) to make sure you have the proper access already. However, we will not use the online portal further as it has significant limitations when doing software development for Rivanna.
+TODO: IS THIS THE CASE?
+
+Once you are added to the group, you will receive an invitation email
+to set up password for the research computing support portal.
+If you do not recive such an email, please visit the support portal at
+
+TBD
+
+This
+password is also the password that you will use to log into the
+system.
+
+END TODO IS THIS THE CASE
+
+After your account is set up, you can try to log in through the
+[Web-based access](https://www.rc.virginia.edu/userinfo/rivanna/login/).
+Please test it to make sure you have the proper access already.
+
+However, we will typically notuse the online portal but instead use
+the more advanced batch system as it provides  significant advantages
+for you when managing multiple jobs to Fivanna.
 
 ## Accessing an HPC Computer via command line
 
-We do not discuss here the use of X11 on Rivanna as we found this feature is not needed for most of our applications. In case you need to run [jupyter](https://www.rc.virginia.edu/userinfo/rivanna/software/jupyterlab/) notebooks directly on Rivanna, please consult with the Rivanna documentation.
+If you need to use  X11 on Rivanna you can finde documentation at
+the rivanna documentation.
+In case you need
+to run
+[jupyter](https://www.rc.virginia.edu/userinfo/rivanna/software/jupyterlab/)
+notebooks directly on Rivanna, please consult with the Rivanna
+documentation.
 
 ### VPN (required)
 
 As you know UVA requires you to use the VPN to access any computer on campus.
-VPN is offered by IT services but is only supported for [Mac and Windows](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).
+VPN is offered by IT services but oficially only supported for [Mac and Windows](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).
 
-However, if you have a Linux machine you can follow the [VPN install instructions for Linux](https://www.rc.virginia.edu/userinfo/linux/uva-anywhere-vpn-linux/). If you have issues installing it, attend an online support session with the Rivanna staff.
+However, if you have a Linux machine you can follow the
+[VPN install instructions for Linux](https://www.rc.virginia.edu/userinfo/linux/uva-anywhere-vpn-linux/).
+If you have issues installing it, attend an online support session
+with the Rivanna staff.
 
 ### Access via the Web Browser (discouraged)
 
-Rivanna can be accessed right from the Web browser. Although this may be helpful for those with systems where a proper terminal can not be accessed it is typically not as useful as you can not leverage the advantages of your own desktop or laptop while using for example advanced editors or keeping the file system of your machine in sync with the HPC file system. 
+Rivanna can be accessed right from the Web browser. Although this may
+be helpful for those with systems where a proper terminal can not be
+accessed it can not leverage the
+features of your own desktop or laptop while using for example
+advanced editors or keeping the file system of your machine in sync
+with the HPC file system.
 
-Therefore, practical experience shows that only at the very beginning such an interface may be helpful and users should immediately use more suitable environments. 
+Therefore, practical experience shows that you benefit while using a
+terminal and your own computer for software development.
 
-For this reason, we do not discuss this option in more detail here.
-
-To find out more, please use the documentation at 
+Additiional documentation by the rivanna system staff is provided at 
 
 * <https://www.rc.virginia.edu/userinfo/rivanna/ood/overview/>
 
 ### Access Rivanna from macOS and Linux
 
-To access Rivanna from macOS, use the terminal and use ssh to connect to it. We will provide an in depth configuration tutorial on this later on. We will use the same programs as on Linux and Windows so we have to only provide one documentation and it is uniform across platforms.
+To access Rivanna from macOS, use the terminal and use ssh to connect
+to it. We will provide an in depth configuration tutorial on this
+later on. We will use the same programs as on Linux and Windows so we
+have to only provide one documentation and it is uniform across
+platforms.
 
 Please remember to use 
 
@@ -94,9 +141,11 @@ To activate ssh in your terminal
 
 ### Access Rivanna from Windows
 
-While exploring the various choices for accessing Rivanna from Windows we do not recommend using [putty](https://www.putty.org/) and [MobaXterm](https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/) although they are recommended by Rivanna staff.
+While exploring the various choices for accessing Rivanna from Windows
+you can use [putty](https://www.putty.org/) and [MobaXterm](https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/).
 
-Instead, we recommend that you use [gitbash](https://gitforwindows.org/). Git bash is trivial to install. However, you need to read the configuration options carefully. **READ CAREFULLY**
+However, most recently a possible better choice is available while
+using  [gitbash](https://gitforwindows.org/). Git bash is trivial to install. However, you need to read the configuration options carefully. **READ CAREFULLY**
 Let us know your options so we can add them here.
 
 To simplify the setup of a Windows computer for research we have prepared a separate 
@@ -109,7 +158,8 @@ With git bash, you get a bash terminal that works the same as a Linux bash termi
 
 ## Set up the connection (mac/Linux)
 
-The first thing to do when trying to connect to Rivanna is to create an ssh key if you have not yet done so.
+The first thing to do when trying to connect to Rivanna is to create
+an ssh key if you have not yet done so.
 
 To do this use the command
 
@@ -117,18 +167,27 @@ To do this use the command
 ssh-keygen
 ```
 
-Please make sure you use a passphrase when generating the key. Sometimes inexperienced people may suggest you to not use a passphrase to be able to log into the machine without needing a password. However this is **WRONG** and you should be instead finding out that this is a violation of security practices. If you do not like to use a passphrase you can use `ssh-agent` and  `ssh-add`.
+Please make sure you use a passphrase when generating the key. Make
+sure to not just skip the passphrase by typing in ENTER but instead
+use a real not easy to guess passphrase as this is best practice and
+not in violation violation of security policies. You always can use 
+use `ssh-agent` and `ssh-add` so you do not have to repeatedly enter
+your passphrase.
 
-The `ssh-keygen` program will generate a public-private keypair in the directory `~/.ssh/id_rsa.pub` (public key) and `~/.ssh/id_rsa`. Please never share the private key with anyone.
+The `ssh-keygen` program will generate a public-private keypair in the
+directory `~/.ssh/id_rsa.pub` (public key) and `~/.ssh/id_rsa`. Please
+never share the private key with anyone.
 
-Next, we need to add the public key to Rivanna's `rivanna:~/.ssh/authorized_keys file`. The easiest way to do this is to use the program 
-`ssh-copy-id`.
+Next, we need to add the public key to Rivanna's
+`rivanna:~/.ssh/authorized_keys file`. The easiest way to do this is
+to use the program `ssh-copy-id`.
 
 ```bash
 ssh-copy-id username@rivanna.hpc.virginia.edu
 ```
 
-Please use your password when using `ssh-copy-id`. Your username is your UVA computing id. Now you should be ready to connect with 
+Please use your password when using `ssh-copy-id`. Your username is
+your UVA computing id. Now you should be ready to connect with
 
 ```bash
 ssh username@rivanna.hpc.virginia.edu
@@ -136,31 +195,43 @@ ssh username@rivanna.hpc.virginia.edu
 
 ## Commandline editor
 
-Sometimes it is necessary to edit files on Rivanna. For this, we recommend that you learn a command line editor. There are lots of debates on which one is better. When I was young I used vi, but found it too cumbersome. So I spend one-day learning emacs which is just great and all you need to learn. You can install it also on Linux, mac, and windows. This way you have one editor with very advanced features that is easy to learn. 
+Sometimes it is necessary to edit files on Rivanna. For this, we
+recommend that you learn a command line editor. There are lots of
+debates on which one is better. When I was young I used vi, but found
+it too cumbersome. So I spend one-day learning emacs which is just
+great and all you need to learn. You can install it also on Linux,
+Mac, and Windows. This way you have one editor with very advanced
+features that is easy to learn.
 
-If you do not have one day to familiarize yourself with editors such as emacs, vim, or vi, you can use editors such as nano and pico.
+If you do not have one day to familiarize yourself with editors such
+as emacs, vim, or vi, you can use editors such as nano and pico.
 
-The best commandline editor is emacs. In contrast to some missinformation on thw Web emacs is extremely easy to learn when using just the basics. The advantage is that the same commands also work in the terminal.
+The best commandline editor is emacs. It is extremely easy to learn when using
+just the basics. The advantage is that the same commands also work in
+the terminal.
 
 | Keys     | Action |
 | --- | --- |
-| CTRL-x c | Save in emacs is |
-| CTRL-x q | Leave is |
+| CTRL-x c | Save in emacs  |
+| CTRL-x q | Leave |
 | CTRL-x g | If something goes wrong | 
-| CTRL a   | Go  beginning line |
-| CTRL e   | end of line | 
-| CTRL k   | delete toll end from curser |
-| cursor   | just works |
+| CTRL a   | Go  to beginning line |
+| CTRL e   | Go to end of line | 
+| CTRL k   | Delete till end of line from curser |
+| cursor   | Just works  ;-) |
 
 
 
 ## PyCharm
 
-The best editor to do python development is pyCharm. Install it on your desktop
+The best editor to do python development is pyCharm. Install it on
+your desktop. The education version is free.
 
 ## VSCode
 
-An inferior editor for python development is VSCode. It can be configured to also use a [Remote-SSH](https://code.visualstudio.com/docs/remote/ssh) plugin.
+An inferior editor for python development is VSCode. It can be
+configured to also use a
+[Remote-SSH](https://code.visualstudio.com/docs/remote/ssh) plugin.
 
 ## Moving data from your desktop to Rivanna
 
@@ -171,7 +242,10 @@ If only a few lines have changed use `rsync`
 To mount Rivannas file system onto your computer use `fuse-ssh`.
 This will allow you to for example use pyCharm to directly edit files on Rivanna.
 
-Developers however often also use GitHub to push the code to git and then on Rivanna use pull to get the code from git. This has the advantage that you can use pyCharm on your local system while synchronizing the code via git onto Rivanna.
+Developers however often also use GitHub to push the code to git and
+then on Rivanna use pull to get the code from git. This has the
+advantage that you can use pyCharm on your local system while
+synchronizing the code via git onto Rivanna.
 
 However often scp and rsync may just be sufficient.
 
@@ -194,7 +268,6 @@ Host b1
      HostName biihead1.hpc.virginia.edu
      IdentityFile ~/.ssh/id_rsa.pub
      
-     
 Host b2
      User abc2de
      HostName biihead2.hpc.virginia.edu
@@ -211,7 +284,8 @@ ssh b2
 
 ## Rivanna's filesystem
 
-The file systems on Rivanna are quite restrictive and policies exist that you need to be inspecting:
+The file systems on Rivanna have some restrictions that are set by
+system wide policies that you need to be inspecting:
 
 * TODO: add link here
 
@@ -237,7 +311,9 @@ TODO: explain what modules are
 module spider cmake # check whether cmake is available and details
 ```
 
-Load the needed module (you can add version info). Note that some modules are dependent on other modules (`clang/10.0.1` depends on `gcc/9.2.0` so `gcc` needs to be loaded first.
+Load the needed module (you can add version info). Note that some
+modules are dependent on other modules (`clang/10.0.1` depends on
+`gcc/9.2.0` so `gcc` needs to be loaded first.
 
 ```bash
 # module load gcc/9.2.0 clang/10.0.1
@@ -384,10 +460,10 @@ application.
 
 ## Some suggestions
 
-When compiling large projects, you may face very slow compilation
-speed which might be caused by the limited memory size on the front
-end (head node). You can try to use FastX node which have larger
-memory and could be much faster.
+When compiling large projects, you may neeed to make surue you have
+enough time and memory to conduct such compiles. This can be best
+achieved by using an interactive node, possibly from the large memory
+partition. 
 
 
 ## References
@@ -403,16 +479,18 @@ memory and could be much faster.
   * Modules about cybertraining: <https://cybertraining-dsc.github.io/docs/modules/>
 
 ## Help Support
-We understand issues may arise when working with Rivanna and are here to help however:
 
-When requesting help from Gregor or anyone make sure to be completley specify the issue, alot of things cannot be solved if you are not clear on the issue and where it is occuring. Include:
+When requesting help from Gregor or anyone make sure to be completley
+specify the issue, alot of things cannot be solved if you are not
+clear on the issue and where it is occuring. Include:
+
 * The issue you are encountering.
 * Where it is occuring.
 * What you have done to try to resolve the issue.
 
-Simply generalizing is not much help.
+A good example is:
 
-For example do not write " I am out of space and cannot run things".
-
-Instead write:
-I ran application xyz, from url xyz on Rivanna. I placed code in directory /project/.... or I placed the data in /project/... The download worked and I placed about 600GB. However when I uncompress the data with command xyz I get the error xyz. What should we do now?
+I ran application xyz, from url xyz on Rivanna. I placed code in
+directory /project/.... or I placed the data in /project/... The
+download worked and I placed about 600GB. However when I uncompress
+the data with command xyz I get the error xyz. What should we do now?

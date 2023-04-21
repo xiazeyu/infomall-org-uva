@@ -14,21 +14,18 @@ application environment into a single file (SIF).
 
 Singularity is often used in HPC centers.
 
-UNiversity of Virginia unfortunately does not allow us to access the full singularity features 
-and only allows us to access a single specific command to create images.
-
-If you need more features, please submit a ticket to the Rivanna help team with the missing 
-feature you need so they can enable it for you.
-
-We discuss here how to build and run singularity images.
-
+University of Virginia granted us special permission to create
+Singularity images on rivanna. We discuss here how to build and run
+singularity images.
 
 
 ### build.def
 
-To build an image you will need a build definition file 
+To build an image you will need a build definition file
 
-We show next an exxample of a simple `buid.def` file that uses internally a [NVIDIA NGC PyTorch container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch).
+We show next an exxample of a simple `buid.def` file that uses
+internally a
+[NVIDIA NGC PyTorch container](https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch).
 
 ```
 Bootstrap: docker
@@ -71,7 +68,9 @@ recieve an authorization error.**
 In case you need to rename the image to a better name please use the `mv` command.
 
 
-In case you also need to have a different name other then build.def the following commands are recommended. We assime you use `myimage.def` and `myimage.sif`. Bet is to include it into a makefile such as:
+In case you also need to have a different name other then build.def
+the following Makefile is very useful. We assume you use `myimage.def`
+and `myimage.sif`. Include it into a makefile such as:
 
 ```
 BUILD=myimage.def
@@ -87,26 +86,21 @@ clean:
 	rm -rf build.def output_image.sif
 ```
 
-Placing it in a	`Makefile` will now allow you to use the command
+Having such a `Makefile` will allow you to use the command
 
 ```bash
 make image
 ```
 
 and the image `myimage.sif` will be created. with make clean you will
-delete the temporary files `build.def and `output_image.sif`
+delete the temporary files `build.def` and `output_image.sif`
 	
-
-### Why NVIDIA NGC?
-
-Because it is tested and guaranteed for reliability and peformance by
-NVIDIA, which is the most widely adopted reference environment (base
-image) for building images using NVIDIA GPU. Besides PyTorch, it also
-provides images for TensorFlow and many HPC applications.
 
 ## Work with Singularity container
 
-reference: <https://www.rc.virginia.edu/userinfo/rivanna/software/containers/>
+Now that you have an image, you can use it while using the
+documentation provided at 
+<https://www.rc.virginia.edu/userinfo/rivanna/software/containers/>
 
 
 ### Run GPU images
@@ -116,6 +110,8 @@ To use NVIDIA GPU with Singularity, `--nv` flag is needed.
 ```basg
 singularity exec --nv output_image.sif python myscript.py
 ```
+
+TODO: THE NEXT PARAGRAPH IS WRONG
 
 Since Python is defined as the default command to be excuted and
 singularity passes the argument(s) after the image name,
@@ -150,7 +146,9 @@ The following paths are exposed to the container by default
 
 ### Adding Custom Bind Paths
 
-For example, the following command adds the /scratch/$USER directory as an overlay without overlaying any other user directories provided by the host:
+For example, the following command adds the /scratch/$USER directory
+as an overlay without overlaying any other user directories provided
+by the host:
 
 ```bash
 singularity run -c -B /scratch/$USER output_image.sif

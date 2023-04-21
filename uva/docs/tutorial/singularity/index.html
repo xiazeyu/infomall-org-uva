@@ -29,7 +29,7 @@
 <meta itemprop="name" content="Rivanna and Singularity">
 <meta itemprop="description" content="Singularity.">
 <meta itemprop="dateModified" content="2023-04-05T09:15:46-04:00" />
-<meta itemprop="wordCount" content="591">
+<meta itemprop="wordCount" content="524">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rivanna and Singularity"/>
 <meta name="twitter:description" content="Singularity."/>
@@ -205,7 +205,6 @@
       <ul>
         <li><a href="#builddef">build.def</a></li>
         <li><a href="#creating-the-singularity-image">Creating the Singularity Image</a></li>
-        <li><a href="#why-nvidia-ngc">Why NVIDIA NGC?</a></li>
       </ul>
     </li>
     <li><a href="#work-with-singularity-container">Work with Singularity container</a>
@@ -304,14 +303,14 @@
 mitigate privilege escalation risks and provides a platform to capture a complete
 application environment into a single file (SIF).</p>
 <p>Singularity is often used in HPC centers.</p>
-<p>UNiversity of Virginia unfortunately does not allow us to access the full singularity features
-and only allows us to access a single specific command to create images.</p>
-<p>If you need more features, please submit a ticket to the Rivanna help team with the missing
-feature you need so they can enable it for you.</p>
-<p>We discuss here how to build and run singularity images.</p>
+<p>University of Virginia granted us special permission to create
+Singularity images on rivanna. We discuss here how to build and run
+singularity images.</p>
 <h3 id="builddef">build.def</h3>
 <p>To build an image you will need a build definition file</p>
-<p>We show next an exxample of a simple <code>buid.def</code> file that uses internally a <a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch">NVIDIA NGC PyTorch container</a>.</p>
+<p>We show next an exxample of a simple <code>buid.def</code> file that uses
+internally a
+<a href="https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch">NVIDIA NGC PyTorch container</a>.</p>
 <pre tabindex="0"><code>Bootstrap: docker
 From: nvcr.io/nvidia/pytorch:23.02-py3
 </code></pre><p>Next you can follow the steps that are detailed in
@@ -335,7 +334,9 @@ singularity image with the following command:</p>
 the name output_image.sif or build.def the command will not work and you will
 recieve an authorization error.</strong></p>
 <p>In case you need to rename the image to a better name please use the <code>mv</code> command.</p>
-<p>In case you also need to have a different name other then build.def the following commands are recommended. We assime you use <code>myimage.def</code> and <code>myimage.sif</code>. Bet is to include it into a makefile such as:</p>
+<p>In case you also need to have a different name other then build.def
+the following Makefile is very useful. We assume you use <code>myimage.def</code>
+and <code>myimage.sif</code>. Include it into a makefile such as:</p>
 <pre tabindex="0"><code>BUILD=myimage.def
 IMAGE=myimage.sif
 
@@ -347,21 +348,19 @@ image:
 
 clean:
 	rm -rf build.def output_image.sif
-</code></pre><p>Placing it in a	<code>Makefile</code> will now allow you to use the command</p>
+</code></pre><p>Having such a <code>Makefile</code> will allow you to use the command</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make image
 </span></span></code></pre></div><p>and the image <code>myimage.sif</code> will be created. with make clean you will
-delete the temporary files <code>build.def and </code>output_image.sif`</p>
-<h3 id="why-nvidia-ngc">Why NVIDIA NGC?</h3>
-<p>Because it is tested and guaranteed for reliability and peformance by
-NVIDIA, which is the most widely adopted reference environment (base
-image) for building images using NVIDIA GPU. Besides PyTorch, it also
-provides images for TensorFlow and many HPC applications.</p>
+delete the temporary files <code>build.def</code> and <code>output_image.sif</code></p>
 <h2 id="work-with-singularity-container">Work with Singularity container</h2>
-<p>reference: <a href="https://www.rc.virginia.edu/userinfo/rivanna/software/containers/">https://www.rc.virginia.edu/userinfo/rivanna/software/containers/</a></p>
+<p>Now that you have an image, you can use it while using the
+documentation provided at
+<a href="https://www.rc.virginia.edu/userinfo/rivanna/software/containers/">https://www.rc.virginia.edu/userinfo/rivanna/software/containers/</a></p>
 <h3 id="run-gpu-images">Run GPU images</h3>
 <p>To use NVIDIA GPU with Singularity, <code>--nv</code> flag is needed.</p>
 <pre tabindex="0"><code class="language-basg" data-lang="basg">singularity exec --nv output_image.sif python myscript.py
-</code></pre><p>Since Python is defined as the default command to be excuted and
+</code></pre><p>TODO: THE NEXT PARAGRAPH IS WRONG</p>
+<p>Since Python is defined as the default command to be excuted and
 singularity passes the argument(s) after the image name,
 i.e. myscript.py, to the Python interpreter. So the above singularity
 command is equivalent to</p>
@@ -384,7 +383,9 @@ command is equivalent to</p>
 <li>/project</li>
 </ul>
 <h3 id="adding-custom-bind-paths">Adding Custom Bind Paths</h3>
-<p>For example, the following command adds the /scratch/$USER directory as an overlay without overlaying any other user directories provided by the host:</p>
+<p>For example, the following command adds the /scratch/$USER directory
+as an overlay without overlaying any other user directories provided
+by the host:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>singularity run -c -B /scratch/<span style="color:#000">$USER</span> output_image.sif
 </span></span></code></pre></div><p>To add the /home directory on the host as /rivanna/home inside the container:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>singularity run -c -B /home:/rivanna/home output_image.sif
