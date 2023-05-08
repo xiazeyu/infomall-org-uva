@@ -139,7 +139,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>4: <a href="#pg-331baa741d6f960b42c86262b1b1009d">Raspberry Pi Cluster</a></li>
+<li>4: <a href="#pg-fdfc236b7bc9effe2f6b84b8a5973f91">Rivanna Pod</a></li>
 
 
     
@@ -147,7 +147,15 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>5: <a href="#pg-08eb86e861174df1aecb3731c39c41c8">Rivanna and Singularity</a></li>
+<li>5: <a href="#pg-331baa741d6f960b42c86262b1b1009d">Raspberry Pi Cluster</a></li>
+
+
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-08eb86e861174df1aecb3731c39c41c8">Rivanna and Singularity</a></li>
 
 
     
@@ -573,12 +581,12 @@ Host rivanna
      
 Host b1
      User abc2de
-     HostName biihead1.hpc.virginia.edu
+     HostName biihead1.bii.virginia.edu
      IdentityFile ~/.ssh/id_rsa.pub
      
 Host b2
      User abc2de
-     HostName biihead2.hpc.virginia.edu
+     HostName biihead2.bii.virginia.edu
      IdentityFile ~/.ssh/id_rsa.pub
 </code></pre><p>Adding it allows you to just ssh to the machines with</p>
 <pre tabindex="0"><code>ssh rivanna
@@ -990,7 +998,137 @@ the data with command xyz I get the error xyz. What should we do now?</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-331baa741d6f960b42c86262b1b1009d">4 - Raspberry Pi Cluster</h1>
+	<h1 id="pg-fdfc236b7bc9effe2f6b84b8a5973f91">4 - Rivanna Pod</h1>
+    <div class="lead">Rivanna</div>
+	
+
+<div class="pageinfo pageinfo-primary">
+<p>This documentation is so far only useful for betatesters. In this
+group we have</p>
+<ul>
+<li>Gregor von Laszewski</li>
+</ul>
+
+</div>
+
+<p>Dear GPU beta testers,</p>
+<p>Thank you for signing up as beta testers for the new GPU <em>POD</em> on
+Rivanna. We appreciate your patience during the longer-than-expected
+installation phase. This email will unveil some details about the new
+hardware and provide instructions on access and usage.</p>
+<h2 id="introducing-the-nvidia-dgx-basepod">Introducing the NVIDIA DGX BasePOD</h2>
+<p>You might have seen/heard the term <em>SuperPOD</em> in our earlier
+communications or from other sources. Since then the vendor has
+rebranded the specific type purchased by UVA as <em>BasePOD,</em> which as of
+today is comprised of 10 DGX A100 nodes 8 A100 GPU devices and 2 TB
+local node memory (per node) 80 GB GPU memory (per GPU device) I’ll
+just refer to it as the <em>POD</em> for the remainder of the email.</p>
+<p>Unbeknown to most users, these nodes have been up and running on
+Rivanna since last summer as regular GPU nodes. We are pleased to
+inform you that the following Advanced Features have now been enabled
+on the POD:</p>
+<ul>
+<li>NVLink for fast multi-GPU communication</li>
+<li>GPUDirect RDMA Peer Memory for fast multi-node multi-GPU communication</li>
+<li>GPUDirect Storage with 200 TB IBM ESS3200 (NVMe) SpectrumScale storage array</li>
+</ul>
+<p>What this means to you is that the POD is ideal for the following scenarios:</p>
+<ul>
+<li>The job needs multiple GPUs and/or even multiple nodes.</li>
+<li>The job (can be single- or multi-GPU) is I/O intensive.</li>
+<li>The job (can be single- or multi-GPU) requires more than 40 GB GPU
+memory. (We have 12 A100 nodes in total, 10 of which are the POD and
+2 are regular with 40 GB GPU memory per device.)</li>
+</ul>
+<p>Detailed specs can be found in the official document (Chapter 3.1):</p>
+<ul>
+<li><a href="https://docs.nvidia.com/dgx-basepod-reference-architecture-dgx-a100-and-dgx-h100.pdf">https://docs.nvidia.com/dgx-basepod-reference-architecture-dgx-a100-and-dgx-h100.pdf</a></li>
+</ul>
+<h2 id="accessing-the-pod">Accessing the POD</h2>
+<h3 id="allocation">Allocation</h3>
+<p>As a token of appreciation, we have created a <em>superpodtest</em>
+allocation such that you may run benchmarks and tests without spending
+your own allocation. A single job can request up to 4 nodes with 32
+GPUs. Before running multi-node jobs, please make sure it can scale
+well to 8 GPUs on a single node.</p>
+<p>We kindly ask you to keep other beta testers and the general users in
+mind by refraining from dominating the queue with high-throughput jobs
+through this allocation.</p>
+<p>If you are the PI and wish to delegate the testing work to someone
+else in your group, you are welcome to provide one or two names with
+their computing IDs.</p>
+<p>Slurm script
+Please include the following lines:</p>
+<pre tabindex="0"><code>#SBATCH -p gpu
+#SBATCH --gres=gpu:a100:X # replace X with the number of GPUs per node
+#SBATCH -C gpupod
+#SBATCH -A superpodtest
+</code></pre><h3 id="open-ondemand">Open OnDemand</h3>
+<p>In <em>Optional: Slurm Option</em> write:</p>
+<pre tabindex="0"><code>-C gpupod
+</code></pre><h3 id="remarks">Remarks</h3>
+<p>Many of you may have already used the POD by simply requesting an A100
+node, since 10 out of the total 12 A100 nodes are POD nodes. Hence, if
+you do not see any performance improvement, do not be disappointed.
+As we expand our infrastructure, there could be changes to the Slurm
+directives and job resource limitations in the future. Please keep an
+eye out for our announcements.</p>
+<h2 id="usage-examples">Usage examples</h2>
+<h3 id="deep-learning">Deep learning</h3>
+<p>We will be migrating toward NVIDIA’s NGC containers for deep learning
+frameworks such as PyTorch and TensorFlow, as they have been heavily
+optimized to achieve excellent multi-GPU performance. These containers
+have not yet been installed as modules but can be accessed under
+/share/resources/containers/singularity:</p>
+<ul>
+<li>pytorch_23.03-py3.sif</li>
+<li>tensorflow_23.03-tf1-py3.sif</li>
+<li>tensorflow_23.03-tf2-py3.sif</li>
+</ul>
+<p>(NGC has their own versioning scheme. The PyTorch and TensorFlow
+versions are 2.0.0, 1.15.5, 2.11.0, respectively.)</p>
+<p>The singularity command is of the form:</p>
+<pre tabindex="0"><code>singularity run --nv /path/to/sif python /path/to/python/script
+</code></pre><p><strong>Warning:</strong> Distributed training is not automatic! Your code must be
+parallelizable. If you are not familiar with this concept, please
+visit:</p>
+<ul>
+<li>TF distributed training <a href="https://www.tensorflow.org/guide/distributed_training">https://www.tensorflow.org/guide/distributed_training</a></li>
+<li>PyTorch DDP <a href="https://pytorch.org/docs/stable/notes/ddp.html">https://pytorch.org/docs/stable/notes/ddp.html</a></li>
+</ul>
+<h3 id="mpi-codes">MPI codes</h3>
+<p>Please check the manual for your code regarding the relationship
+between the number of MPI ranks and the number of GPUs. For
+computational chemistry codes (e.g. VASP, QuantumEspresso, LAMMPS) the
+two are oftentimes equal, e.g.</p>
+<pre tabindex="0"><code>#SBATCH --gres=gpu:a100:8
+#SBATCH --ntasks-per-node=8
+</code></pre><p>If you are building your own code, please load the modules nvhpc and
+cuda which provide NVIDIA compilers and CUDA libraries. The compute
+capability of the POD A100 is 8.0.</p>
+<p>For documentation and demos, refer to the <em>Resources</em> section at the
+bottom of this page: <a href="https://developer.nvidia.com/hpc-sdk">https://developer.nvidia.com/hpc-sdk</a></p>
+<p>We will be updating our website documentation gradually in the near
+future as we iron out some operational specifics. GPU-enabled modules
+are now marked with a (g) in the <em>module avail</em> command as shown
+below:</p>
+<p>TODO: output from maodule avail to be included</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-331baa741d6f960b42c86262b1b1009d">5 - Raspberry Pi Cluster</h1>
     <div class="lead">Raspberry Pi Cluster</div>
 	<h2 id="links">Links</h2>
 <p>The main web page for this is at <a href="https://piplanet.org">https://piplanet.org</a></p>
@@ -1013,7 +1151,7 @@ the data with command xyz I get the error xyz. What should we do now?</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-08eb86e861174df1aecb3731c39c41c8">5 - Rivanna and Singularity</h1>
+	<h1 id="pg-08eb86e861174df1aecb3731c39c41c8">6 - Rivanna and Singularity</h1>
     <div class="lead">Singularity.</div>
 	<h2 id="singularity">Singularity</h2>
 <p>Singularity is a container runtime that implements a unique security model to
@@ -1058,9 +1196,9 @@ and <code>myimage.sif</code>. Include it into a makefile such as:</p>
 IMAGE=myimage.sif
 
 image:
-	cp $BUILD build.def
+	cp ${BUILD} build.def
 	sudo /opt/singularity/3.7.1/bin/singularity build output_image.sif build.def
-	cp output_image.sif $IMAGE
+	cp output_image.sif ${IMAGE}
 	make -f clean
 
 clean:
@@ -1069,6 +1207,8 @@ clean:
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make image
 </span></span></code></pre></div><p>and the image <code>myimage.sif</code> will be created. with make clean you will
 delete the temporary files <code>build.def</code> and <code>output_image.sif</code></p>
+<h2 id="create-a-singularity-image-for-tensorflow">Create a singularity image for tensorflow</h2>
+<p>TODO</p>
 <h2 id="work-with-singularity-container">Work with Singularity container</h2>
 <p>Now that you have an image, you can use it while using the
 documentation provided at

@@ -400,12 +400,12 @@ Host rivanna
      
 Host b1
      User abc2de
-     HostName biihead1.hpc.virginia.edu
+     HostName biihead1.bii.virginia.edu
      IdentityFile ~/.ssh/id_rsa.pub
      
 Host b2
      User abc2de
-     HostName biihead2.hpc.virginia.edu
+     HostName biihead2.bii.virginia.edu
      IdentityFile ~/.ssh/id_rsa.pub
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Adding it allows you to just ssh to the machines with&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh rivanna
@@ -807,6 +807,132 @@ the data with command xyz I get the error xyz. What should we do now?&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: Rivanna Pod</title>
+      <link>https://infomall.org/uva/docs/tutorial/rivanna-superpod/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/tutorial/rivanna-superpod/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;p&gt;This documentation is so far only useful for betatesters. In this
+group we have&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Gregor von Laszewski&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;Dear GPU beta testers,&lt;/p&gt;
+&lt;p&gt;Thank you for signing up as beta testers for the new GPU &lt;em&gt;POD&lt;/em&gt; on
+Rivanna. We appreciate your patience during the longer-than-expected
+installation phase. This email will unveil some details about the new
+hardware and provide instructions on access and usage.&lt;/p&gt;
+&lt;h2 id=&#34;introducing-the-nvidia-dgx-basepod&#34;&gt;Introducing the NVIDIA DGX BasePOD&lt;/h2&gt;
+&lt;p&gt;You might have seen/heard the term &lt;em&gt;SuperPOD&lt;/em&gt; in our earlier
+communications or from other sources. Since then the vendor has
+rebranded the specific type purchased by UVA as &lt;em&gt;BasePOD,&lt;/em&gt; which as of
+today is comprised of 10 DGX A100 nodes 8 A100 GPU devices and 2 TB
+local node memory (per node) 80 GB GPU memory (per GPU device) I’ll
+just refer to it as the &lt;em&gt;POD&lt;/em&gt; for the remainder of the email.&lt;/p&gt;
+&lt;p&gt;Unbeknown to most users, these nodes have been up and running on
+Rivanna since last summer as regular GPU nodes. We are pleased to
+inform you that the following Advanced Features have now been enabled
+on the POD:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NVLink for fast multi-GPU communication&lt;/li&gt;
+&lt;li&gt;GPUDirect RDMA Peer Memory for fast multi-node multi-GPU communication&lt;/li&gt;
+&lt;li&gt;GPUDirect Storage with 200 TB IBM ESS3200 (NVMe) SpectrumScale storage array&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;What this means to you is that the POD is ideal for the following scenarios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The job needs multiple GPUs and/or even multiple nodes.&lt;/li&gt;
+&lt;li&gt;The job (can be single- or multi-GPU) is I/O intensive.&lt;/li&gt;
+&lt;li&gt;The job (can be single- or multi-GPU) requires more than 40 GB GPU
+memory. (We have 12 A100 nodes in total, 10 of which are the POD and
+2 are regular with 40 GB GPU memory per device.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Detailed specs can be found in the official document (Chapter 3.1):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.nvidia.com/dgx-basepod-reference-architecture-dgx-a100-and-dgx-h100.pdf&#34;&gt;https://docs.nvidia.com/dgx-basepod-reference-architecture-dgx-a100-and-dgx-h100.pdf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;accessing-the-pod&#34;&gt;Accessing the POD&lt;/h2&gt;
+&lt;h3 id=&#34;allocation&#34;&gt;Allocation&lt;/h3&gt;
+&lt;p&gt;As a token of appreciation, we have created a &lt;em&gt;superpodtest&lt;/em&gt;
+allocation such that you may run benchmarks and tests without spending
+your own allocation. A single job can request up to 4 nodes with 32
+GPUs. Before running multi-node jobs, please make sure it can scale
+well to 8 GPUs on a single node.&lt;/p&gt;
+&lt;p&gt;We kindly ask you to keep other beta testers and the general users in
+mind by refraining from dominating the queue with high-throughput jobs
+through this allocation.&lt;/p&gt;
+&lt;p&gt;If you are the PI and wish to delegate the testing work to someone
+else in your group, you are welcome to provide one or two names with
+their computing IDs.&lt;/p&gt;
+&lt;p&gt;Slurm script
+Please include the following lines:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#SBATCH -p gpu
+#SBATCH --gres=gpu:a100:X # replace X with the number of GPUs per node
+#SBATCH -C gpupod
+#SBATCH -A superpodtest
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;open-ondemand&#34;&gt;Open OnDemand&lt;/h3&gt;
+&lt;p&gt;In &lt;em&gt;Optional: Slurm Option&lt;/em&gt; write:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-C gpupod
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;remarks&#34;&gt;Remarks&lt;/h3&gt;
+&lt;p&gt;Many of you may have already used the POD by simply requesting an A100
+node, since 10 out of the total 12 A100 nodes are POD nodes. Hence, if
+you do not see any performance improvement, do not be disappointed.
+As we expand our infrastructure, there could be changes to the Slurm
+directives and job resource limitations in the future. Please keep an
+eye out for our announcements.&lt;/p&gt;
+&lt;h2 id=&#34;usage-examples&#34;&gt;Usage examples&lt;/h2&gt;
+&lt;h3 id=&#34;deep-learning&#34;&gt;Deep learning&lt;/h3&gt;
+&lt;p&gt;We will be migrating toward NVIDIA’s NGC containers for deep learning
+frameworks such as PyTorch and TensorFlow, as they have been heavily
+optimized to achieve excellent multi-GPU performance. These containers
+have not yet been installed as modules but can be accessed under
+/share/resources/containers/singularity:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;pytorch_23.03-py3.sif&lt;/li&gt;
+&lt;li&gt;tensorflow_23.03-tf1-py3.sif&lt;/li&gt;
+&lt;li&gt;tensorflow_23.03-tf2-py3.sif&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;(NGC has their own versioning scheme. The PyTorch and TensorFlow
+versions are 2.0.0, 1.15.5, 2.11.0, respectively.)&lt;/p&gt;
+&lt;p&gt;The singularity command is of the form:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;singularity run --nv /path/to/sif python /path/to/python/script
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;Warning:&lt;/strong&gt; Distributed training is not automatic! Your code must be
+parallelizable. If you are not familiar with this concept, please
+visit:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;TF distributed training &lt;a href=&#34;https://www.tensorflow.org/guide/distributed_training&#34;&gt;https://www.tensorflow.org/guide/distributed_training&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PyTorch DDP &lt;a href=&#34;https://pytorch.org/docs/stable/notes/ddp.html&#34;&gt;https://pytorch.org/docs/stable/notes/ddp.html&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;mpi-codes&#34;&gt;MPI codes&lt;/h3&gt;
+&lt;p&gt;Please check the manual for your code regarding the relationship
+between the number of MPI ranks and the number of GPUs. For
+computational chemistry codes (e.g. VASP, QuantumEspresso, LAMMPS) the
+two are oftentimes equal, e.g.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#SBATCH --gres=gpu:a100:8
+#SBATCH --ntasks-per-node=8
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you are building your own code, please load the modules nvhpc and
+cuda which provide NVIDIA compilers and CUDA libraries. The compute
+capability of the POD A100 is 8.0.&lt;/p&gt;
+&lt;p&gt;For documentation and demos, refer to the &lt;em&gt;Resources&lt;/em&gt; section at the
+bottom of this page: &lt;a href=&#34;https://developer.nvidia.com/hpc-sdk&#34;&gt;https://developer.nvidia.com/hpc-sdk&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We will be updating our website documentation gradually in the near
+future as we iron out some operational specifics. GPU-enabled modules
+are now marked with a (g) in the &lt;em&gt;module avail&lt;/em&gt; command as shown
+below:&lt;/p&gt;
+&lt;p&gt;TODO: output from maodule avail to be included&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Raspberry Pi Cluster</title>
       <link>https://infomall.org/uva/docs/tutorial/raspberry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -877,9 +1003,9 @@ and &lt;code&gt;myimage.sif&lt;/code&gt;. Include it into a makefile such as:&lt
 IMAGE=myimage.sif
 
 image:
-	cp $BUILD build.def
+	cp ${BUILD} build.def
 	sudo /opt/singularity/3.7.1/bin/singularity build output_image.sif build.def
-	cp output_image.sif $IMAGE
+	cp output_image.sif ${IMAGE}
 	make -f clean
 
 clean:
@@ -888,6 +1014,8 @@ clean:
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make image
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;and the image &lt;code&gt;myimage.sif&lt;/code&gt; will be created. with make clean you will
 delete the temporary files &lt;code&gt;build.def&lt;/code&gt; and &lt;code&gt;output_image.sif&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;create-a-singularity-image-for-tensorflow&#34;&gt;Create a singularity image for tensorflow&lt;/h2&gt;
+&lt;p&gt;TODO&lt;/p&gt;
 &lt;h2 id=&#34;work-with-singularity-container&#34;&gt;Work with Singularity container&lt;/h2&gt;
 &lt;p&gt;Now that you have an image, you can use it while using the
 documentation provided at
