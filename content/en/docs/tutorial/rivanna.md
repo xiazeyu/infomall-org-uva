@@ -97,8 +97,10 @@ documentation.
 
 ### VPN (required)
 
-As you know UVA requires you to use the VPN to access any computer on campus.
-VPN is offered by IT services but oficially only supported for [Mac and Windows](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).
+You can access rivanna via ssh only via VPN.  UVA requires you to use
+the VPN to access any computer on campus.  VPN is offered by IT
+services but oficially only supported for
+[Mac and Windows](https://virginia.service-now.com/its/?id=itsweb_kb_article&sys_id=f24e5cdfdb3acb804f32fb671d9619d0).
 
 However, if you have a Linux machine you can follow the
 [VPN install instructions for Linux](https://www.rc.virginia.edu/userinfo/linux/uva-anywhere-vpn-linux/).
@@ -109,10 +111,9 @@ with the Rivanna staff.
 
 Rivanna can be accessed right from the Web browser. Although this may
 be helpful for those with systems where a proper terminal can not be
-accessed it can not leverage the
-features of your own desktop or laptop while using for example
-advanced editors or keeping the file system of your machine in sync
-with the HPC file system.
+accessed it can not leverage the features of your own desktop or
+laptop while using for example advanced editors or keeping the file
+system of your machine in sync with the HPC file system.
 
 Therefore, practical experience shows that you benefit while using a
 terminal and your own computer for software development.
@@ -142,19 +143,25 @@ To activate ssh in your terminal
 ### Access Rivanna from Windows
 
 While exploring the various choices for accessing Rivanna from Windows
-you can use [putty](https://www.putty.org/) and [MobaXterm](https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/).
+you can use [putty](https://www.putty.org/) and
+[MobaXterm](https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/).
 
 However, most recently a possible better choice is available while
-using  [gitbash](https://gitforwindows.org/). Git bash is trivial to install. However, you need to read the configuration options carefully. **READ CAREFULLY**
-Let us know your options so we can add them here.
+using [gitbash](https://gitforwindows.org/). Git bash is trivial to
+install. However, you need to read the configuration options
+carefully. **READ CAREFULLY** Let us know your options so we can add
+them here.
 
-To simplify the setup of a Windows computer for research we have prepared a separate 
+To simplify the setup of a Windows computer for research we have
+prepared a separate
 
 * [help page to set up your Windows computer](https://github.com/cybertraining-dsc/reu2022/blob/main/project/windows-configuration.md).
 
-It addresses the installation of gitbash, Python, PyCharm (much better than VSCode), and other useful tools such as chocolate. 
+It addresses the installation of gitbash, Python, PyCharm (much better
+than VSCode), and other useful tools such as chocolate.
 
-With git bash, you get a bash terminal that works the same as a Linux bash terminal and which is similar to the zsh terminal for a Mac.
+With git bash, you get a bash terminal that works the same as a Linux
+bash terminal and which is similar to the zsh terminal for a Mac.
 
 ## Set up the connection (mac/Linux)
 
@@ -303,9 +310,114 @@ The difference in the file systems is explained at
 
 * <https://www.rc.virginia.edu/userinfo/rivanna/storage/>.
 
+## Dealing with limited space under HOME
+
+As we conduct research you may find that the file spece in your home
+directory is insufficient. This is especially the case when using
+conda. Therefore, it is recommended that you create softlinks from
+your home directory to a location where you have more space. This is
+typically soemwhere under `/project`.
+
+We describe next how to relocate some of the directories to `/project`
+
+In `~/.bashrc`, add the following lines, for creating a project
+directory. 
+
+```bash
+$ vi ~/.bashrc
+
+$ PS1="\w \$"
+$ alias project='cd /project/bii_dsc_community/$USER'
+$ export PROJECT="/project/bii_dsc_community/$USER"
+```
+
+At the end of the .bashrc file use 
+
+```bash
+$ cd $PROJECT
+```
+
+So you always cd directly into your project directory instead of home.
+
+The home directory only has 50GB. Installing everything on the home
+directory will exceed the allocation and have problems with any
+execution.  So it’s better to move conda all other package
+installation directories to $PROJECT.
+
+First explore what is in your home directory and how much space it
+consumes with the following commands.
+
+```bash
+cd $HOME
+$ ls -lisa
+$ du -h .
+```
+
+Select from this list directories that you want to  move (thise that
+you not already have moved).
+
+Let us assume you want to move the directories `.local`,
+`.vscode-server`, and `.conda`.
+Imporatnt is that you want to make sure that .conda and .local are
+moved as they may include lots of files and you may run out of memory
+quickly.
+Hence you do next the following.
+
+
+```bash
+$ cd $PROJECT
+$ mv ~/.local .
+$ mv ~/.vscode-server .
+$ mv ~/.conda .
+```
+
+Then create symbolic links to the home directory installed folder. 
+
+```bash
+$ cd $PROJECT
+$ ln -s $PROJECT/.local ~/.local
+$ ln -s $PROJECT/.vscode-server ~/.vscode-server
+$ ln -s $PROJECT/.conda ~/.conda
+```
+
+Check all symbolic links:
+
+```
+$ ls -lisa
+
+20407358289   4 lrwxrwxrwx    1 $USER users          40 May  5 10:58 .local -> /project/bii_dsc_community/djy8hg/.local
+20407358290   4 lrwxrwxrwx    1 $USER users          48 May  5 10:58 .vscode-server -> /project/bii_dsc_community/djy8hg/.vscode-server
+```
+
+In case you use python venv, do not place them in home but under
+project.
+
+```
+module load python3.8
+python -m venv $PROJECT/ENV3
+source $PROJECT/ENV3/bin/activate
+```
+
+If you succesd, you can also place the source line in your .bashrcs
+file.
+
+In case you use conda and python, we also recommend that you create a
+venv from the conda pythin, so you have a copy of that in ENV3 and if
+something goes wrong its easy to recreate from your default
+python. Thise that use that path ought to improve how to do this here.
+
+
+
+
+
+
 ## Load modules
 
-TODO: explain what modules are
+Modules are preconfigured packages that allow you to use a specific
+software to be loaded into your environment without needing you to
+install it from source.
+To find out more about a particular package such as cmake you can use
+the command
 
 ```bash
 module spider cmake # check whether cmake is available and details

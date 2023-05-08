@@ -778,8 +778,10 @@ to run
 notebooks directly on Rivanna, please consult with the Rivanna
 documentation.&lt;/p&gt;
 &lt;h3 id=&#34;vpn-required&#34;&gt;VPN (required)&lt;/h3&gt;
-&lt;p&gt;As you know UVA requires you to use the VPN to access any computer on campus.
-VPN is offered by IT services but oficially only supported for &lt;a href=&#34;https://virginia.service-now.com/its/?id=itsweb_kb_article&amp;amp;sys_id=f24e5cdfdb3acb804f32fb671d9619d0&#34;&gt;Mac and Windows&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You can access rivanna via ssh only via VPN.  UVA requires you to use
+the VPN to access any computer on campus.  VPN is offered by IT
+services but oficially only supported for
+&lt;a href=&#34;https://virginia.service-now.com/its/?id=itsweb_kb_article&amp;amp;sys_id=f24e5cdfdb3acb804f32fb671d9619d0&#34;&gt;Mac and Windows&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;However, if you have a Linux machine you can follow the
 &lt;a href=&#34;https://www.rc.virginia.edu/userinfo/linux/uva-anywhere-vpn-linux/&#34;&gt;VPN install instructions for Linux&lt;/a&gt;.
 If you have issues installing it, attend an online support session
@@ -787,10 +789,9 @@ with the Rivanna staff.&lt;/p&gt;
 &lt;h3 id=&#34;access-via-the-web-browser&#34;&gt;Access via the Web Browser&lt;/h3&gt;
 &lt;p&gt;Rivanna can be accessed right from the Web browser. Although this may
 be helpful for those with systems where a proper terminal can not be
-accessed it can not leverage the
-features of your own desktop or laptop while using for example
-advanced editors or keeping the file system of your machine in sync
-with the HPC file system.&lt;/p&gt;
+accessed it can not leverage the features of your own desktop or
+laptop while using for example advanced editors or keeping the file
+system of your machine in sync with the HPC file system.&lt;/p&gt;
 &lt;p&gt;Therefore, practical experience shows that you benefit while using a
 terminal and your own computer for software development.&lt;/p&gt;
 &lt;p&gt;Additiional documentation by the rivanna system staff is provided at&lt;/p&gt;
@@ -809,16 +810,22 @@ platforms.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To activate ssh in your terminal&lt;/p&gt;
 &lt;h3 id=&#34;access-rivanna-from-windows&#34;&gt;Access Rivanna from Windows&lt;/h3&gt;
 &lt;p&gt;While exploring the various choices for accessing Rivanna from Windows
-you can use &lt;a href=&#34;https://www.putty.org/&#34;&gt;putty&lt;/a&gt; and &lt;a href=&#34;https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/&#34;&gt;MobaXterm&lt;/a&gt;.&lt;/p&gt;
+you can use &lt;a href=&#34;https://www.putty.org/&#34;&gt;putty&lt;/a&gt; and
+&lt;a href=&#34;https://www.rc.virginia.edu/userinfo/rivanna/logintools/mobaxterm/&#34;&gt;MobaXterm&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;However, most recently a possible better choice is available while
-using  &lt;a href=&#34;https://gitforwindows.org/&#34;&gt;gitbash&lt;/a&gt;. Git bash is trivial to install. However, you need to read the configuration options carefully. &lt;strong&gt;READ CAREFULLY&lt;/strong&gt;
-Let us know your options so we can add them here.&lt;/p&gt;
-&lt;p&gt;To simplify the setup of a Windows computer for research we have prepared a separate&lt;/p&gt;
+using &lt;a href=&#34;https://gitforwindows.org/&#34;&gt;gitbash&lt;/a&gt;. Git bash is trivial to
+install. However, you need to read the configuration options
+carefully. &lt;strong&gt;READ CAREFULLY&lt;/strong&gt; Let us know your options so we can add
+them here.&lt;/p&gt;
+&lt;p&gt;To simplify the setup of a Windows computer for research we have
+prepared a separate&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/cybertraining-dsc/reu2022/blob/main/project/windows-configuration.md&#34;&gt;help page to set up your Windows computer&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;It addresses the installation of gitbash, Python, PyCharm (much better than VSCode), and other useful tools such as chocolate.&lt;/p&gt;
-&lt;p&gt;With git bash, you get a bash terminal that works the same as a Linux bash terminal and which is similar to the zsh terminal for a Mac.&lt;/p&gt;
+&lt;p&gt;It addresses the installation of gitbash, Python, PyCharm (much better
+than VSCode), and other useful tools such as chocolate.&lt;/p&gt;
+&lt;p&gt;With git bash, you get a bash terminal that works the same as a Linux
+bash terminal and which is similar to the zsh terminal for a Mac.&lt;/p&gt;
 &lt;h2 id=&#34;set-up-the-connection-maclinux&#34;&gt;Set up the connection (mac/Linux)&lt;/h2&gt;
 &lt;p&gt;The first thing to do when trying to connect to Rivanna is to create
 an ssh key if you have not yet done so.&lt;/p&gt;
@@ -950,8 +957,71 @@ In your home directory, you will find system directories and files such as
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.rc.virginia.edu/userinfo/rivanna/storage/&#34;&gt;https://www.rc.virginia.edu/userinfo/rivanna/storage/&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;dealing-with-limited-space-under-home&#34;&gt;Dealing with limited space under HOME&lt;/h2&gt;
+&lt;p&gt;As we conduct research you may find that the file spece in your home
+directory is insufficient. This is especially the case when using
+conda. Therefore, it is recommended that you create softlinks from
+your home directory to a location where you have more space. This is
+typically soemwhere under &lt;code&gt;/project&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;We describe next how to relocate some of the directories to &lt;code&gt;/project&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;In &lt;code&gt;~/.bashrc&lt;/code&gt;, add the following lines, for creating a project
+directory.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ vi ~/.bashrc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ &lt;span style=&#34;color:#000&#34;&gt;PS1&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;\w \$&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ &lt;span style=&#34;color:#204a87&#34;&gt;alias&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;project&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;cd /project/bii_dsc_community/$USER&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ &lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PROJECT&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;/project/bii_dsc_community/&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;At the end of the .bashrc file use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;So you always cd directly into your project directory instead of home.&lt;/p&gt;
+&lt;p&gt;The home directory only has 50GB. Installing everything on the home
+directory will exceed the allocation and have problems with any
+execution.  So it’s better to move conda all other package
+installation directories to $PROJECT.&lt;/p&gt;
+&lt;p&gt;First explore what is in your home directory and how much space it
+consumes with the following commands.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$HOME&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ls -lisa
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ du -h .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Select from this list directories that you want to  move (thise that
+you not already have moved).&lt;/p&gt;
+&lt;p&gt;Let us assume you want to move the directories &lt;code&gt;.local&lt;/code&gt;,
+&lt;code&gt;.vscode-server&lt;/code&gt;, and &lt;code&gt;.conda&lt;/code&gt;.
+Imporatnt is that you want to make sure that .conda and .local are
+moved as they may include lots of files and you may run out of memory
+quickly.
+Hence you do next the following.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mv ~/.local .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mv ~/.vscode-server .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mv ~/.conda .
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then create symbolic links to the home directory installed folder.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ln -s &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;/.local ~/.local
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ln -s &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;/.vscode-server ~/.vscode-server
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ln -s &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;/.conda ~/.conda
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Check all symbolic links:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ls -lisa
+
+20407358289   4 lrwxrwxrwx    1 $USER users          40 May  5 10:58 .local -&amp;gt; /project/bii_dsc_community/djy8hg/.local
+20407358290   4 lrwxrwxrwx    1 $USER users          48 May  5 10:58 .vscode-server -&amp;gt; /project/bii_dsc_community/djy8hg/.vscode-server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In case you use python venv, do not place them in home but under
+project.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;module load python3.8
+python -m venv $PROJECT/ENV3
+source $PROJECT/ENV3/bin/activate
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you succesd, you can also place the source line in your .bashrcs
+file.&lt;/p&gt;
+&lt;p&gt;In case you use conda and python, we also recommend that you create a
+venv from the conda pythin, so you have a copy of that in ENV3 and if
+something goes wrong its easy to recreate from your default
+python. Thise that use that path ought to improve how to do this here.&lt;/p&gt;
 &lt;h2 id=&#34;load-modules&#34;&gt;Load modules&lt;/h2&gt;
-&lt;p&gt;TODO: explain what modules are&lt;/p&gt;
+&lt;p&gt;Modules are preconfigured packages that allow you to use a specific
+software to be loaded into your environment without needing you to
+install it from source.
+To find out more about a particular package such as cmake you can use
+the command&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module spider cmake &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# check whether cmake is available and details&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Load the needed module (you can add version info). Note that some
 modules are dependent on other modules (&lt;code&gt;clang/10.0.1&lt;/code&gt; depends on
@@ -1949,7 +2019,8 @@ Syracuse University PhD November 7 2003&lt;/p&gt;
       <description>
         
         
-        &lt;h2 id=&#34;singularity&#34;&gt;Singularity&lt;/h2&gt;
+        &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;TODO: thats where the images are /share/resources/containers/singularity
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;singularity&#34;&gt;Singularity&lt;/h2&gt;
 &lt;p&gt;Singularity is a container runtime that implements a unique security model to
 mitigate privilege escalation risks and provides a platform to capture a complete
 application environment into a single file (SIF).&lt;/p&gt;
@@ -1957,6 +2028,16 @@ application environment into a single file (SIF).&lt;/p&gt;
 &lt;p&gt;University of Virginia granted us special permission to create
 Singularity images on rivanna. We discuss here how to build and run
 singularity images.&lt;/p&gt;
+&lt;h3 id=&#34;access&#34;&gt;Access&lt;/h3&gt;
+&lt;p&gt;In order for you to be able to access singularity and build images, you must be in the
+following groups:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;biocomplexity
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;nssac_students
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;bii_dsc_community
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To find out if you are, ssh into rivanna and issue the command&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ groups
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If any of the groups is missing, please send Gregor an e-mail at
+&lt;code&gt;laszewski@gmail.com&lt;/code&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;builddef&#34;&gt;build.def&lt;/h3&gt;
 &lt;p&gt;To build an image you will need a build definition file&lt;/p&gt;
 &lt;p&gt;We show next an exxample of a simple &lt;code&gt;buid.def&lt;/code&gt; file that uses

@@ -22,6 +22,25 @@ University of Virginia granted us special permission to create
 Singularity images on rivanna. We discuss here how to build and run
 singularity images.
 
+### Access
+
+In order for you to be able to access singularity and build images, you must be in the
+following groups:
+
+```bash
+biocomplexity
+nssac_students
+bii_dsc_community
+```
+
+To find out if you are, ssh into rivanna and issue the command
+
+```bash
+$ groups
+```
+
+If any of the groups is missing, please send Gregor an e-mail at
+`laszewski@gmail.com`.
 
 ### build.def
 

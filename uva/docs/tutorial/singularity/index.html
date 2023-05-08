@@ -25,11 +25,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://infomall.org/uva/docs/tutorial/singularity/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-04-21T17:31:52-04:00" /><meta property="og:site_name" content="Infomall.org" />
+<meta property="article:modified_time" content="2023-04-28T19:18:59-04:00" /><meta property="og:site_name" content="Infomall.org" />
 <meta itemprop="name" content="Rivanna and Singularity">
 <meta itemprop="description" content="Singularity.">
-<meta itemprop="dateModified" content="2023-04-21T17:31:52-04:00" />
-<meta itemprop="wordCount" content="531">
+<meta itemprop="dateModified" content="2023-04-28T19:18:59-04:00" />
+<meta itemprop="wordCount" content="591">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rivanna and Singularity"/>
 <meta name="twitter:description" content="Singularity."/>
@@ -205,6 +205,7 @@
   <ul>
     <li><a href="#singularity">Singularity</a>
       <ul>
+        <li><a href="#access">Access</a></li>
         <li><a href="#builddef">build.def</a></li>
         <li><a href="#creating-the-singularity-image">Creating the Singularity Image</a></li>
       </ul>
@@ -301,7 +302,8 @@
 
 		
 	</header>    
-	<h2 id="singularity">Singularity</h2>
+	<pre tabindex="0"><code>TODO: thats where the images are /share/resources/containers/singularity
+</code></pre><h2 id="singularity">Singularity</h2>
 <p>Singularity is a container runtime that implements a unique security model to
 mitigate privilege escalation risks and provides a platform to capture a complete
 application environment into a single file (SIF).</p>
@@ -309,6 +311,16 @@ application environment into a single file (SIF).</p>
 <p>University of Virginia granted us special permission to create
 Singularity images on rivanna. We discuss here how to build and run
 singularity images.</p>
+<h3 id="access">Access</h3>
+<p>In order for you to be able to access singularity and build images, you must be in the
+following groups:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>biocomplexity
+</span></span><span style="display:flex;"><span>nssac_students
+</span></span><span style="display:flex;"><span>bii_dsc_community
+</span></span></code></pre></div><p>To find out if you are, ssh into rivanna and issue the command</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ groups
+</span></span></code></pre></div><p>If any of the groups is missing, please send Gregor an e-mail at
+<code>laszewski@gmail.com</code>.</p>
 <h3 id="builddef">build.def</h3>
 <p>To build an image you will need a build definition file</p>
 <p>We show next an exxample of a simple <code>buid.def</code> file that uses
@@ -409,7 +421,7 @@ by the host:</p>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified April 21, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/690eeb5bd9078c6b65f27ced13da360bbdc0af56">Update singularity.md (690eeb5)</a>
+  Last modified April 28, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/743d35b342e90f68bdca512fe942db5e9b9446cb">Update singularity.md (743d35b)</a>
 </div>
 
 </div>
