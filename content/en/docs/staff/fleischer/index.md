@@ -18,7 +18,7 @@ Jacques is an undergraduate computer science major
 who is a part of the Computing for Global Challenges
 program of the Biocomplexity Institute at the University
 of Virginia. His interests include leveraging artificial
-intelligence to analyze and predict timeseries; he also
+intelligence to analyze timeseries; he also
 uses high performance computing to conduct geospatial 
 AI predictions.
  {{% /pageinfo %}}

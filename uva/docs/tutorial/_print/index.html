@@ -573,12 +573,12 @@ Host rivanna
      
 Host b1
      User abc2de
-     HostName biihead1.hpc.virginia.edu
+     HostName biihead1.bii.virginia.edu
      IdentityFile ~/.ssh/id_rsa.pub
      
 Host b2
      User abc2de
-     HostName biihead2.hpc.virginia.edu
+     HostName biihead2.bii.virginia.edu
      IdentityFile ~/.ssh/id_rsa.pub
 </code></pre><p>Adding it allows you to just ssh to the machines with</p>
 <pre tabindex="0"><code>ssh rivanna
@@ -1015,7 +1015,8 @@ the data with command xyz I get the error xyz. What should we do now?</p>
     
 	<h1 id="pg-08eb86e861174df1aecb3731c39c41c8">5 - Rivanna and Singularity</h1>
     <div class="lead">Singularity.</div>
-	<h2 id="singularity">Singularity</h2>
+	<pre tabindex="0"><code>TODO: thats where the images are /share/resources/containers/singularity
+</code></pre><h2 id="singularity">Singularity</h2>
 <p>Singularity is a container runtime that implements a unique security model to
 mitigate privilege escalation risks and provides a platform to capture a complete
 application environment into a single file (SIF).</p>
@@ -1058,9 +1059,9 @@ and <code>myimage.sif</code>. Include it into a makefile such as:</p>
 IMAGE=myimage.sif
 
 image:
-	cp $BUILD build.def
+	cp ${BUILD} build.def
 	sudo /opt/singularity/3.7.1/bin/singularity build output_image.sif build.def
-	cp output_image.sif $IMAGE
+	cp output_image.sif ${IMAGE}
 	make -f clean
 
 clean:
@@ -1069,6 +1070,8 @@ clean:
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>make image
 </span></span></code></pre></div><p>and the image <code>myimage.sif</code> will be created. with make clean you will
 delete the temporary files <code>build.def</code> and <code>output_image.sif</code></p>
+<h2 id="create-a-singularity-image-for-tensorflow">Create a singularity image for tensorflow</h2>
+<p>TODO</p>
 <h2 id="work-with-singularity-container">Work with Singularity container</h2>
 <p>Now that you have an image, you can use it while using the
 documentation provided at
