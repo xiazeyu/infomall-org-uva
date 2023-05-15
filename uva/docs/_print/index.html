@@ -403,7 +403,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>4.3: <a href="#pg-de0dac4e9a919562224c35394e294222">Rivanna</a></li>
+<li>4.3: <a href="#pg-6bd196a8cf3257ed13db70f16c80afff">Rclone on Rivanna</a></li>
 
 
     
@@ -411,7 +411,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>4.4: <a href="#pg-331baa741d6f960b42c86262b1b1009d">Raspberry Pi Cluster</a></li>
+<li>4.4: <a href="#pg-de0dac4e9a919562224c35394e294222">Rivanna</a></li>
 
 
     
@@ -419,7 +419,15 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>4.5: <a href="#pg-08eb86e861174df1aecb3731c39c41c8">Rivanna and Singularity</a></li>
+<li>4.5: <a href="#pg-331baa741d6f960b42c86262b1b1009d">Raspberry Pi Cluster</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4.6: <a href="#pg-08eb86e861174df1aecb3731c39c41c8">Rivanna and Singularity</a></li>
 
 
     
@@ -19082,7 +19090,92 @@ verification code.</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-de0dac4e9a919562224c35394e294222">4.3 - Rivanna</h1>
+	<h1 id="pg-6bd196a8cf3257ed13db70f16c80afff">4.3 - Rclone on Rivanna</h1>
+    <div class="lead">Using Rclone to upload and download from cloud services</div>
+	<h1 id="using-the-rclone-module-on-rivanna">Using the Rclone Module on Rivanna</h1>
+<p>Rclone is a useful tool to upload and download from cloud
+services such as Google Drive by using the commandline.
+However, a web browser is required for initial setup,
+which can be done from the computer that logs into Rivanna.</p>
+<h2 id="setup-rclone-on-rivanna">Setup Rclone on Rivanna</h2>
+<p>First, load the newer version of module; otherwise, Rivanna
+loads an incompatible, older version by default. Then, initialize
+a new rclone configuration and enter the following inputs:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ module load rclone/1.61.1
+</span></span><span style="display:flex;"><span>$ rclone config
+</span></span><span style="display:flex;"><span>n/s/q&gt; n
+</span></span><span style="display:flex;"><span>name&gt; gdrive
+</span></span><span style="display:flex;"><span>Storage&gt; drive
+</span></span></code></pre></div><p>A client ID is required to create a provision that interfaces
+with Google Drive. Follow the instructions at
+<a href="https://rclone.org/drive/#making-your-own-client-id">https://rclone.org/drive/#making-your-own-client-id</a> to create
+a client ID and then input the values into Rivanna.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>client_id&gt; myCoolID..
+</span></span><span style="display:flex;"><span>client_secret&gt; verySecretClientSecret..
+</span></span><span style="display:flex;"><span>scope&gt; <span style="color:#0000cf;font-weight:bold">2</span> <span style="color:#8f5902;font-style:italic"># read only</span>
+</span></span><span style="display:flex;"><span>service_account_file&gt; <span style="color:#8f5902;font-style:italic"># just press enter</span>
+</span></span><span style="display:flex;"><span>Edit advanced config?
+</span></span><span style="display:flex;"><span>y<span style="color:#ce5c00;font-weight:bold">)</span> Yes
+</span></span><span style="display:flex;"><span>n<span style="color:#ce5c00;font-weight:bold">)</span> No <span style="color:#ce5c00;font-weight:bold">(</span>default<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>y/n&gt; n
+</span></span><span style="display:flex;"><span>Use web browser to automatically authenticate rclone with remote?
+</span></span><span style="display:flex;"><span>y/n&gt; n
+</span></span></code></pre></div><h2 id="install-rclone-on-client-computer">Install Rclone on Client Computer</h2>
+<p>If the computer used to log on to Rivanna is running Windows,
+and the computer has Chocolatey, then download Rclone using an
+administrative Git Bash instance with</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ choco install rclone -y
+</span></span></code></pre></div><p>Otherwise, for Linux and macOS, use</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo -v <span style="color:#000;font-weight:bold">;</span> curl https://rclone.org/install.sh <span style="color:#000;font-weight:bold">|</span> sudo bash
+</span></span></code></pre></div><p>Then, after opening a new instance of the terminal, paste the command given
+into Git Bash and follow the instructions.</p>
+<h2 id="rclone-authentication">Rclone Authentication</h2>
+<p>In the web browser, click Advanced when google says that they
+have not verified this app; it is safe and expected. Then click
+Go to rclone, then Continue.</p>
+<p>When Rclone gives the config token, ensure that all new line
+characters are removed. This can be done by pasting the code
+into an application such as Notepad and manually ensuring that
+all characters are on the same line. Otherwise, the code will
+be split across new prompts, breaking the setup.</p>
+<p>This is bad:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sjgnkajdfnkj
+</span></span><span style="display:flex;"><span>fdnskjafnkad
+</span></span><span style="display:flex;"><span>asdfnasjkffd
+</span></span></code></pre></div><p>This is good:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sjgnkajdfnkjfdnskjafnkadasdfnasjkffd
+</span></span></code></pre></div><p>Paste the fixed token into Rivanna.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>config_token&gt; myCoolCodeThatHasNoNewLineCharacters
+</span></span><span style="display:flex;"><span>Configure this as a Shared Drive <span style="color:#ce5c00;font-weight:bold">(</span>Team Drive<span style="color:#ce5c00;font-weight:bold">)</span>?
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>y<span style="color:#ce5c00;font-weight:bold">)</span> Yes
+</span></span><span style="display:flex;"><span>n<span style="color:#ce5c00;font-weight:bold">)</span> No <span style="color:#ce5c00;font-weight:bold">(</span>default<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>y/n&gt; n
+</span></span><span style="display:flex;"><span>Keep this <span style="color:#4e9a06">&#34;gdrive&#34;</span> remote?
+</span></span><span style="display:flex;"><span>y<span style="color:#ce5c00;font-weight:bold">)</span> Yes this is OK <span style="color:#ce5c00;font-weight:bold">(</span>default<span style="color:#ce5c00;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span>y/e/d&gt; y
+</span></span><span style="display:flex;"><span>q<span style="color:#ce5c00;font-weight:bold">)</span> Quit config
+</span></span><span style="display:flex;"><span>e/n/d/r/c/s/q&gt; q
+</span></span></code></pre></div><p>An example command to use Rclone is as follows.
+The flag <code>--drive-shared-with-me</code> restricts the scope to
+only shared files.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ rclone copy --drive-shared-with-me gdrive:Colab<span style="color:#4e9a06">\ </span>Datasets/EarthquakeDec2020  /scratch/<span style="color:#000">$USER</span>/EarthquakeDec2020 -P
+</span></span></code></pre></div>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-de0dac4e9a919562224c35394e294222">4.4 - Rivanna</h1>
     <div class="lead">Rivanna</div>
 	
 
@@ -19715,7 +19808,7 @@ the data with command xyz I get the error xyz. What should we do now?</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-331baa741d6f960b42c86262b1b1009d">4.4 - Raspberry Pi Cluster</h1>
+	<h1 id="pg-331baa741d6f960b42c86262b1b1009d">4.5 - Raspberry Pi Cluster</h1>
     <div class="lead">Raspberry Pi Cluster</div>
 	<h2 id="links">Links</h2>
 <p>The main web page for this is at <a href="https://piplanet.org">https://piplanet.org</a></p>
@@ -19738,7 +19831,7 @@ the data with command xyz I get the error xyz. What should we do now?</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-08eb86e861174df1aecb3731c39c41c8">4.5 - Rivanna and Singularity</h1>
+	<h1 id="pg-08eb86e861174df1aecb3731c39c41c8">4.6 - Rivanna and Singularity</h1>
     <div class="lead">Singularity.</div>
 	<pre tabindex="0"><code>TODO: thats where the images are /share/resources/containers/singularity
 </code></pre><h2 id="singularity">Singularity</h2>
