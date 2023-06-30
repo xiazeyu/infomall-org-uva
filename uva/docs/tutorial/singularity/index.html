@@ -25,11 +25,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://infomall.org/uva/docs/tutorial/singularity/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-05-08T09:54:31-04:00" /><meta property="og:site_name" content="Infomall.org" />
+<meta property="article:modified_time" content="2023-06-30T05:42:24-04:00" /><meta property="og:site_name" content="Infomall.org" />
 <meta itemprop="name" content="Rivanna and Singularity">
 <meta itemprop="description" content="Singularity.">
-<meta itemprop="dateModified" content="2023-05-08T09:54:31-04:00" />
-<meta itemprop="wordCount" content="591">
+<meta itemprop="dateModified" content="2023-06-30T05:42:24-04:00" />
+<meta itemprop="wordCount" content="639">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rivanna and Singularity"/>
 <meta name="twitter:description" content="Singularity."/>
@@ -177,6 +177,8 @@
   <a href="/uva/docs/tutorial/rivanna/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-uvadocstutorialrivanna"><span class="">Rivanna</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-uvadocstutorialrivanna-superpod-li">
   <a href="/uva/docs/tutorial/rivanna-superpod/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-uvadocstutorialrivanna-superpod"><span class="">Rivanna Pod</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-uvadocstutorialcreate-web-site-li">
+  <a href="/uva/docs/tutorial/create-web-site/" title="Create infomall.org" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-uvadocstutorialcreate-web-site"><span class="">Create infomall</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-uvadocstutorialraspberry-li">
   <a href="/uva/docs/tutorial/raspberry/" title="Raspberry Pi Cluster" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-uvadocstutorialraspberry"><span class="">Pi</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-uvadocstutorialsingularity-li">
@@ -210,6 +212,7 @@
     <li><a href="#singularity">Singularity</a>
       <ul>
         <li><a href="#access">Access</a></li>
+        <li><a href="#singularity-cache">Singularity cache</a></li>
         <li><a href="#builddef">build.def</a></li>
         <li><a href="#creating-the-singularity-image">Creating the Singularity Image</a></li>
       </ul>
@@ -306,8 +309,7 @@
 
 		
 	</header>    
-	<pre tabindex="0"><code>TODO: thats where the images are /share/resources/containers/singularity
-</code></pre><h2 id="singularity">Singularity</h2>
+	<h2 id="singularity">Singularity</h2>
 <p>Singularity is a container runtime that implements a unique security model to
 mitigate privilege escalation risks and provides a platform to capture a complete
 application environment into a single file (SIF).</p>
@@ -325,7 +327,14 @@ following groups:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ groups
 </span></span></code></pre></div><p>If any of the groups is missing, please send Gregor an e-mail at
 <code>laszewski@gmail.com</code>.</p>
-<h3 id="builddef">build.def</h3>
+<h3 id="singularity-cache">Singularity cache</h3>
+<p>Before you can build images you need to set the singularity cache. This is due to the fact that the cache usually
+is created in your home directory and is often far too small for even our small projects. Thus you need to
+set it as follows</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
+</span></span><span style="display:flex;"><span>  mkdir -p /project/<span style="color:#000">$USER</span>/.singularity/cache
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87">export</span> <span style="color:#000">SINGULARITY_CACHEDIR</span><span style="color:#ce5c00;font-weight:bold">=</span>/project/<span style="color:#000">$USER</span>/.singularity/cache
+</span></span></code></pre></div><h3 id="builddef">build.def</h3>
 <p>To build an image you will need a build definition file</p>
 <p>We show next an exxample of a simple <code>buid.def</code> file that uses
 internally a
@@ -425,7 +434,7 @@ by the host:</p>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified May 8, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/01d57f033c149c94eeae4a9c7d69cd988e778f5e">update groups (01d57f0)</a>
+  Last modified June 30, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/18614fc49c96a9e0c946f8f41e8465ec400033a8">Update singularity.md (18614fc)</a>
 </div>
 
 </div>

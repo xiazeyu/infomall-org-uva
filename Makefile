@@ -8,11 +8,11 @@ hugo:
 clean:
 	rm -rf uva
 
-cp: 
+cp: hugo
 	scp -r uva rivanna:www/infomall
 	make -f Makefile chmod
 
-rsync: 
+rsync: hugo
 	rsync -rv uva rivanna:www/infomall
 	make -f Makefile chmod
 

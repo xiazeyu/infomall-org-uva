@@ -1072,7 +1072,10 @@ system wide policies that you need to be inspecting:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;TODO: add link here&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;we distinguish&lt;/p&gt;
+&lt;p&gt;You can alls see your quote with&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rivanna&amp;gt;
+  hdquota
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;we distinguish&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;home directory: &lt;code&gt;/home/&amp;lt;uvaid&amp;gt;&lt;/code&gt; or &lt;code&gt;~&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;/scratch/bii_dsc_community/&amp;lt;uvaid&amp;gt;&lt;/code&gt;&lt;/li&gt;
@@ -1086,11 +1089,11 @@ In your home directory, you will find system directories and files such as
 &lt;li&gt;&lt;a href=&#34;https://www.rc.virginia.edu/userinfo/rivanna/storage/&#34;&gt;https://www.rc.virginia.edu/userinfo/rivanna/storage/&lt;/a&gt;.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;dealing-with-limited-space-under-home&#34;&gt;Dealing with limited space under HOME&lt;/h2&gt;
-&lt;p&gt;As we conduct research you may find that the file spece in your home
+&lt;p&gt;As we conduct research you may find that the file space in your home
 directory is insufficient. This is especially the case when using
 conda. Therefore, it is recommended that you create softlinks from
 your home directory to a location where you have more space. This is
-typically soemwhere under &lt;code&gt;/project&lt;/code&gt;.&lt;/p&gt;
+typically somewhere under &lt;code&gt;/project&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;We describe next how to relocate some of the directories to &lt;code&gt;/project&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;In &lt;code&gt;~/.bashrc&lt;/code&gt;, add the following lines, for creating a project
 directory.&lt;/p&gt;
@@ -1106,61 +1109,90 @@ directory.&lt;/p&gt;
 directory will exceed the allocation and have problems with any
 execution.  So it’s better to move conda all other package
 installation directories to $PROJECT.&lt;/p&gt;
-&lt;p&gt;First explore what is in your home directory and how much space it
+&lt;p&gt;First, explore what is in your home directory and how much space it
 consumes with the following commands.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$HOME&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ls -lisa
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ du -h .
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Select from this list directories that you want to  move (thise that
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Select from this list of directories that you want to  move (those that
 you not already have moved).&lt;/p&gt;
 &lt;p&gt;Let us assume you want to move the directories &lt;code&gt;.local&lt;/code&gt;,
 &lt;code&gt;.vscode-server&lt;/code&gt;, and &lt;code&gt;.conda&lt;/code&gt;.
-Imporatnt is that you want to make sure that .conda and .local are
+Important is that you want to make sure that .conda and .local are
 moved as they may include lots of files and you may run out of memory
 quickly.
 Hence you do next the following.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mv ~/.local .
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mv ~/.vscode-server .
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ mv ~/.conda .
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  $ &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  $ mv ~/.local .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  $ mv ~/.vscode-server .
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  $ mv ~/.conda .
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then create symbolic links to the home directory installed folder.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ln -s &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;/.local ~/.local
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ln -s &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;/.vscode-server ~/.vscode-server
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ ln -s &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;/.conda ~/.conda
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  $ &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  $ ln -s &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;/.local ~/.local
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  $ ln -s &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;/.vscode-server ~/.vscode-server
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  $ ln -s &lt;span style=&#34;color:#000&#34;&gt;$PROJECT&lt;/span&gt;/.conda ~/.conda
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Check all symbolic links:&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ ls -lisa
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rivanna&amp;gt;
+  $ ls -lisa
 
 20407358289   4 lrwxrwxrwx    1 $USER users          40 May  5 10:58 .local -&amp;gt; /project/bii_dsc_community/djy8hg/.local
 20407358290   4 lrwxrwxrwx    1 $USER users          48 May  5 10:58 .vscode-server -&amp;gt; /project/bii_dsc_community/djy8hg/.vscode-server
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;In case you use python venv, do not place them in home but under
-project.&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;module load python3.8
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;singularity-cache&#34;&gt;Singularity Cache&lt;/h3&gt;
+&lt;p&gt;In case you use singularity  you can build images you need to set the singularity cache. This is due to the fact that the cache usually
+is created in your home directory and is often far too small for even our small projects. Thus you need to
+set it as follows&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  mkdir -p /project/&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;/.singularity/cache
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SINGULARITY_CACHEDIR&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;/project/&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;/.singularity/cache
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;### Python&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;In &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;case&lt;/span&gt; you use python venv, &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;do&lt;/span&gt; not place them in home but under
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;project.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;rivanna&amp;gt;
+module load python3.8
 python -m venv $PROJECT/ENV3
-source $PROJECT/ENV3/bin/activate
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you succesd, you can also place the source line in your .bashrcs
-file.&lt;/p&gt;
-&lt;p&gt;In case you use conda and python, we also recommend that you create a
-venv from the conda pythin, so you have a copy of that in ENV3 and if
-something goes wrong its easy to recreate from your default
-python. Thise that use that path ought to improve how to do this here.&lt;/p&gt;
-&lt;h2 id=&#34;load-modules&#34;&gt;Load modules&lt;/h2&gt;
-&lt;p&gt;Modules are preconfigured packages that allow you to use a specific
+source $PROJECT/ENV3/bin/activate&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
+If you succeed, you can also place the source line in your .bashrc
+file.
+
+In case you use conda and python, we also recommend that you create a
+venv from the conda python, so you have a copy of that in ENV3 and if
+something goes wrong it is easy to recreate from your default
+python. Those that use that path ought to improve how to do this here.
+
+
+
+
+
+
+## Load modules
+
+Modules are preconfigured packages that allow you to use a specific
 software to be loaded into your environment without needing you to
 install it from source.
 To find out more about a particular package such as cmake you can use
-the command&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module spider cmake &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# check whether cmake is available and details&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Load the needed module (you can add version info). Note that some
+the command
+
+```bash
+rivanna&amp;gt;
+  module spider cmake # check whether cmake is available and details
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Load the needed module (you can add version info). Note that some
 modules are dependent on other modules (&lt;code&gt;clang/10.0.1&lt;/code&gt; depends on
 &lt;code&gt;gcc/9.2.0&lt;/code&gt; so &lt;code&gt;gcc&lt;/code&gt; needs to be loaded first.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# module load gcc/9.2.0 clang/10.0.1&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module load clanggcc
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module load cmake/3.23.3 git/2.4.1 ninja/1.10.2-py3.8 llvm cuda/11.4.2
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# module load gcc/9.2.0 clang/10.0.1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  module load clanggcc
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  module load cmake/3.23.3 git/2.4.1 ninja/1.10.2-py3.8 llvm cuda/11.4.2
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;check currently loaded modules&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module list
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  module list
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;clean all the modules&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;module purge
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  module purge
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;request-gpus-to-use-interactively&#34;&gt;Request GPUs to use interactively&lt;/h2&gt;
 &lt;p&gt;TODO: explain what -A is&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna$ ijob -c number_of_cpus
@@ -1173,7 +1205,7 @@ modules are dependent on other modules (&lt;code&gt;clang/10.0.1&lt;/code&gt; de
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Rivanna has different partitions with different resource availability
 and charging rate. &lt;code&gt;dev&lt;/code&gt; is free but limited to 1 hour for each
 session/allocation and no GPU is available. To list the different
-partions use &lt;code&gt;qlist&lt;/code&gt; to check partitions&lt;/p&gt;
+partitons use &lt;code&gt;qlist&lt;/code&gt; to check partitions&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1507,19 +1539,18 @@ partition.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;help-support&#34;&gt;Help Support&lt;/h2&gt;
-&lt;p&gt;When requesting help from Gregor or anyone make sure to be completley
-specify the issue, alot of things cannot be solved if you are not
-clear on the issue and where it is occuring. Include:&lt;/p&gt;
+&lt;p&gt;When requesting help from Gregor or anyone make sure to completely specify the issue, a lot of things cannot be solved if you are not
+clear on the issue and where it is occurring. Include:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;The issue you are encountering.&lt;/li&gt;
-&lt;li&gt;Where it is occuring.&lt;/li&gt;
+&lt;li&gt;Where it is occurring.&lt;/li&gt;
 &lt;li&gt;What you have done to try to resolve the issue.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;A good example is:&lt;/p&gt;
-&lt;p&gt;I ran application xyz, from url xyz on Rivanna. I placed code in
-directory /project/&amp;hellip;. or I placed the data in /project/&amp;hellip; The
+&lt;p&gt;I ran the application xyz, from url xyz on Rivanna. I placed code in
+the directory /project/&amp;hellip;. or I placed the data in /project/&amp;hellip; The
 download worked and I placed about 600GB. However when I uncompress
-the data with command xyz I get the error xyz. What should we do now?&lt;/p&gt;
+the data with the command xyz I get the error xyz. What should we do now?&lt;/p&gt;
 
       </description>
     </item>
@@ -2120,6 +2151,41 @@ Syracuse University PhD November 7 2003&lt;/p&gt;
     </item>
     
     <item>
+      <title>Docs: Create infomall.org</title>
+      <link>https://infomall.org/uva/docs/tutorial/create-web-site/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/tutorial/create-web-site/</guid>
+      <description>
+        
+        
+        &lt;p&gt;We assume you have hugo installed and cloudmesh-vpn is installed&lt;/p&gt;
+&lt;p&gt;You need to have python 3&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;python -m venv ~/ENV3
+source ~/ENV3/bin/activate  # if windows in gitbash source ~/ENV3/Scripts/activate
+pip install cloudmesh-vpn -U
+cms help
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;creating-a-draft&#34;&gt;Creating a draft&lt;/h2&gt;
+&lt;p&gt;To create a new version of the code from the repository use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna terminal 1&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  git clone git@github.com:DSC-SPIDAL/infomall-org-uva.git
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  make serve
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To view the content say&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna terminal 2&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  make view
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;publish&#34;&gt;Publish&lt;/h2&gt;
+&lt;p&gt;The Web site is currently published by Gregor as follows&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;computer&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  cms vpn info &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# make sure vpn is set tu UVA&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  cms vpn connect &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# only needed if vpn is off&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  make huge
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  make rsync
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  cms vpn disconnect &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#optional to make sure vpn is off&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Raspberry Pi Cluster</title>
       <link>https://infomall.org/uva/docs/tutorial/raspberry/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -2147,8 +2213,7 @@ Syracuse University PhD November 7 2003&lt;/p&gt;
       <description>
         
         
-        &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;TODO: thats where the images are /share/resources/containers/singularity
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;singularity&#34;&gt;Singularity&lt;/h2&gt;
+        &lt;h2 id=&#34;singularity&#34;&gt;Singularity&lt;/h2&gt;
 &lt;p&gt;Singularity is a container runtime that implements a unique security model to
 mitigate privilege escalation risks and provides a platform to capture a complete
 application environment into a single file (SIF).&lt;/p&gt;
@@ -2166,7 +2231,14 @@ following groups:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ groups
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;If any of the groups is missing, please send Gregor an e-mail at
 &lt;code&gt;laszewski@gmail.com&lt;/code&gt;.&lt;/p&gt;
-&lt;h3 id=&#34;builddef&#34;&gt;build.def&lt;/h3&gt;
+&lt;h3 id=&#34;singularity-cache&#34;&gt;Singularity cache&lt;/h3&gt;
+&lt;p&gt;Before you can build images you need to set the singularity cache. This is due to the fact that the cache usually
+is created in your home directory and is often far too small for even our small projects. Thus you need to
+set it as follows&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  mkdir -p /project/&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;/.singularity/cache
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SINGULARITY_CACHEDIR&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;/project/&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;/.singularity/cache
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;builddef&#34;&gt;build.def&lt;/h3&gt;
 &lt;p&gt;To build an image you will need a build definition file&lt;/p&gt;
 &lt;p&gt;We show next an exxample of a simple &lt;code&gt;buid.def&lt;/code&gt; file that uses
 internally a

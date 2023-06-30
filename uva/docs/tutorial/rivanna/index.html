@@ -27,12 +27,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://infomall.org/uva/docs/tutorial/rivanna/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-05-08T09:54:31-04:00" /><meta property="og:site_name" content="Infomall.org" />
+<meta property="article:modified_time" content="2023-06-30T05:50:55-04:00" /><meta property="og:site_name" content="Infomall.org" />
 <meta itemprop="name" content="Rivanna">
 <meta itemprop="description" content="Rivanna
 ">
-<meta itemprop="dateModified" content="2023-05-08T09:54:31-04:00" />
-<meta itemprop="wordCount" content="2523">
+<meta itemprop="dateModified" content="2023-06-30T05:50:55-04:00" />
+<meta itemprop="wordCount" content="2608">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rivanna"/>
 <meta name="twitter:description" content="Rivanna
@@ -181,6 +181,8 @@
   <a href="/uva/docs/tutorial/rivanna/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-uvadocstutorialrivanna"><span class="td-sidebar-nav-active-item">Rivanna</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-uvadocstutorialrivanna-superpod-li">
   <a href="/uva/docs/tutorial/rivanna-superpod/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-uvadocstutorialrivanna-superpod"><span class="">Rivanna Pod</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-uvadocstutorialcreate-web-site-li">
+  <a href="/uva/docs/tutorial/create-web-site/" title="Create infomall.org" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-uvadocstutorialcreate-web-site"><span class="">Create infomall</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-uvadocstutorialraspberry-li">
   <a href="/uva/docs/tutorial/raspberry/" title="Raspberry Pi Cluster" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-uvadocstutorialraspberry"><span class="">Pi</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-uvadocstutorialsingularity-li">
@@ -229,8 +231,11 @@
     <li><a href="#moving-data-from-your-desktop-to-rivanna">Moving data from your desktop to Rivanna</a></li>
     <li><a href="#example-config-file">Example Config file</a></li>
     <li><a href="#rivannas-filesystem">Rivanna&rsquo;s filesystem</a></li>
-    <li><a href="#dealing-with-limited-space-under-home">Dealing with limited space under HOME</a></li>
-    <li><a href="#load-modules">Load modules</a></li>
+    <li><a href="#dealing-with-limited-space-under-home">Dealing with limited space under HOME</a>
+      <ul>
+        <li><a href="#singularity-cache">Singularity Cache</a></li>
+      </ul>
+    </li>
     <li><a href="#request-gpus-to-use-interactively">Request GPUs to use interactively</a></li>
     <li><a href="#linux-commands-for-hpc">Linux commands for HPC</a></li>
     <li><a href="#slurm-batch-parameters">SLURM Batch Parameters</a>
@@ -552,7 +557,10 @@ system wide policies that you need to be inspecting:</p>
 <ul>
 <li>TODO: add link here</li>
 </ul>
-<p>we distinguish</p>
+<p>You can alls see your quote with</p>
+<pre tabindex="0"><code>rivanna&gt;
+  hdquota
+</code></pre><p>we distinguish</p>
 <ul>
 <li>home directory: <code>/home/&lt;uvaid&gt;</code> or <code>~</code></li>
 <li><code>/scratch/bii_dsc_community/&lt;uvaid&gt;</code></li>
@@ -566,11 +574,11 @@ In your home directory, you will find system directories and files such as
 <li><a href="https://www.rc.virginia.edu/userinfo/rivanna/storage/">https://www.rc.virginia.edu/userinfo/rivanna/storage/</a>.</li>
 </ul>
 <h2 id="dealing-with-limited-space-under-home">Dealing with limited space under HOME</h2>
-<p>As we conduct research you may find that the file spece in your home
+<p>As we conduct research you may find that the file space in your home
 directory is insufficient. This is especially the case when using
 conda. Therefore, it is recommended that you create softlinks from
 your home directory to a location where you have more space. This is
-typically soemwhere under <code>/project</code>.</p>
+typically somewhere under <code>/project</code>.</p>
 <p>We describe next how to relocate some of the directories to <code>/project</code></p>
 <p>In <code>~/.bashrc</code>, add the following lines, for creating a project
 directory.</p>
@@ -586,61 +594,90 @@ directory.</p>
 directory will exceed the allocation and have problems with any
 execution.  So it’s better to move conda all other package
 installation directories to $PROJECT.</p>
-<p>First explore what is in your home directory and how much space it
+<p>First, explore what is in your home directory and how much space it
 consumes with the following commands.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#204a87">cd</span> <span style="color:#000">$HOME</span>
 </span></span><span style="display:flex;"><span>$ ls -lisa
 </span></span><span style="display:flex;"><span>$ du -h .
-</span></span></code></pre></div><p>Select from this list directories that you want to  move (thise that
+</span></span></code></pre></div><p>Select from this list of directories that you want to  move (those that
 you not already have moved).</p>
 <p>Let us assume you want to move the directories <code>.local</code>,
 <code>.vscode-server</code>, and <code>.conda</code>.
-Imporatnt is that you want to make sure that .conda and .local are
+Important is that you want to make sure that .conda and .local are
 moved as they may include lots of files and you may run out of memory
 quickly.
 Hence you do next the following.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#204a87">cd</span> <span style="color:#000">$PROJECT</span>
-</span></span><span style="display:flex;"><span>$ mv ~/.local .
-</span></span><span style="display:flex;"><span>$ mv ~/.vscode-server .
-</span></span><span style="display:flex;"><span>$ mv ~/.conda .
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
+</span></span><span style="display:flex;"><span>  $ <span style="color:#204a87">cd</span> <span style="color:#000">$PROJECT</span>
+</span></span><span style="display:flex;"><span>  $ mv ~/.local .
+</span></span><span style="display:flex;"><span>  $ mv ~/.vscode-server .
+</span></span><span style="display:flex;"><span>  $ mv ~/.conda .
 </span></span></code></pre></div><p>Then create symbolic links to the home directory installed folder.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#204a87">cd</span> <span style="color:#000">$PROJECT</span>
-</span></span><span style="display:flex;"><span>$ ln -s <span style="color:#000">$PROJECT</span>/.local ~/.local
-</span></span><span style="display:flex;"><span>$ ln -s <span style="color:#000">$PROJECT</span>/.vscode-server ~/.vscode-server
-</span></span><span style="display:flex;"><span>$ ln -s <span style="color:#000">$PROJECT</span>/.conda ~/.conda
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
+</span></span><span style="display:flex;"><span>  $ <span style="color:#204a87">cd</span> <span style="color:#000">$PROJECT</span>
+</span></span><span style="display:flex;"><span>  $ ln -s <span style="color:#000">$PROJECT</span>/.local ~/.local
+</span></span><span style="display:flex;"><span>  $ ln -s <span style="color:#000">$PROJECT</span>/.vscode-server ~/.vscode-server
+</span></span><span style="display:flex;"><span>  $ ln -s <span style="color:#000">$PROJECT</span>/.conda ~/.conda
 </span></span></code></pre></div><p>Check all symbolic links:</p>
-<pre tabindex="0"><code>$ ls -lisa
+<pre tabindex="0"><code>rivanna&gt;
+  $ ls -lisa
 
 20407358289   4 lrwxrwxrwx    1 $USER users          40 May  5 10:58 .local -&gt; /project/bii_dsc_community/djy8hg/.local
 20407358290   4 lrwxrwxrwx    1 $USER users          48 May  5 10:58 .vscode-server -&gt; /project/bii_dsc_community/djy8hg/.vscode-server
-</code></pre><p>In case you use python venv, do not place them in home but under
-project.</p>
-<pre tabindex="0"><code>module load python3.8
+</code></pre><h3 id="singularity-cache">Singularity Cache</h3>
+<p>In case you use singularity  you can build images you need to set the singularity cache. This is due to the fact that the cache usually
+is created in your home directory and is often far too small for even our small projects. Thus you need to
+set it as follows</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
+</span></span><span style="display:flex;"><span>  mkdir -p /project/<span style="color:#000">$USER</span>/.singularity/cache
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87">export</span> <span style="color:#000">SINGULARITY_CACHEDIR</span><span style="color:#ce5c00;font-weight:bold">=</span>/project/<span style="color:#000">$USER</span>/.singularity/cache
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">### Python</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>In <span style="color:#204a87;font-weight:bold">case</span> you use python venv, <span style="color:#204a87;font-weight:bold">do</span> not place them in home but under
+</span></span><span style="display:flex;"><span>project.
+</span></span></code></pre></div><p>rivanna&gt;
+module load python3.8
 python -m venv $PROJECT/ENV3
-source $PROJECT/ENV3/bin/activate
-</code></pre><p>If you succesd, you can also place the source line in your .bashrcs
-file.</p>
-<p>In case you use conda and python, we also recommend that you create a
-venv from the conda pythin, so you have a copy of that in ENV3 and if
-something goes wrong its easy to recreate from your default
-python. Thise that use that path ought to improve how to do this here.</p>
-<h2 id="load-modules">Load modules</h2>
-<p>Modules are preconfigured packages that allow you to use a specific
+source $PROJECT/ENV3/bin/activate</p>
+<pre tabindex="0"><code>
+If you succeed, you can also place the source line in your .bashrc
+file.
+
+In case you use conda and python, we also recommend that you create a
+venv from the conda python, so you have a copy of that in ENV3 and if
+something goes wrong it is easy to recreate from your default
+python. Those that use that path ought to improve how to do this here.
+
+
+
+
+
+
+## Load modules
+
+Modules are preconfigured packages that allow you to use a specific
 software to be loaded into your environment without needing you to
 install it from source.
 To find out more about a particular package such as cmake you can use
-the command</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>module spider cmake <span style="color:#8f5902;font-style:italic"># check whether cmake is available and details</span>
-</span></span></code></pre></div><p>Load the needed module (you can add version info). Note that some
+the command
+
+```bash
+rivanna&gt;
+  module spider cmake # check whether cmake is available and details
+</code></pre><p>Load the needed module (you can add version info). Note that some
 modules are dependent on other modules (<code>clang/10.0.1</code> depends on
 <code>gcc/9.2.0</code> so <code>gcc</code> needs to be loaded first.</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"># module load gcc/9.2.0 clang/10.0.1</span>
-</span></span><span style="display:flex;"><span>module load clanggcc
-</span></span><span style="display:flex;"><span>module load cmake/3.23.3 git/2.4.1 ninja/1.10.2-py3.8 llvm cuda/11.4.2
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
+</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic"># module load gcc/9.2.0 clang/10.0.1</span>
+</span></span><span style="display:flex;"><span>  module load clanggcc
+</span></span><span style="display:flex;"><span>  module load cmake/3.23.3 git/2.4.1 ninja/1.10.2-py3.8 llvm cuda/11.4.2
 </span></span></code></pre></div><p>check currently loaded modules</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>module list
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
+</span></span><span style="display:flex;"><span>  module list
 </span></span></code></pre></div><p>clean all the modules</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>module purge
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
+</span></span><span style="display:flex;"><span>  module purge
 </span></span></code></pre></div><h2 id="request-gpus-to-use-interactively">Request GPUs to use interactively</h2>
 <p>TODO: explain what -A is</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna$ ijob -c number_of_cpus
@@ -653,7 +690,7 @@ modules are dependent on other modules (<code>clang/10.0.1</code> depends on
 </span></span></code></pre></div><p>Rivanna has different partitions with different resource availability
 and charging rate. <code>dev</code> is free but limited to 1 hour for each
 session/allocation and no GPU is available. To list the different
-partions use <code>qlist</code> to check partitions</p>
+partitons use <code>qlist</code> to check partitions</p>
 <table>
 <thead>
 <tr>
@@ -987,24 +1024,23 @@ partition.</p>
 </li>
 </ul>
 <h2 id="help-support">Help Support</h2>
-<p>When requesting help from Gregor or anyone make sure to be completley
-specify the issue, alot of things cannot be solved if you are not
-clear on the issue and where it is occuring. Include:</p>
+<p>When requesting help from Gregor or anyone make sure to completely specify the issue, a lot of things cannot be solved if you are not
+clear on the issue and where it is occurring. Include:</p>
 <ul>
 <li>The issue you are encountering.</li>
-<li>Where it is occuring.</li>
+<li>Where it is occurring.</li>
 <li>What you have done to try to resolve the issue.</li>
 </ul>
 <p>A good example is:</p>
-<p>I ran application xyz, from url xyz on Rivanna. I placed code in
-directory /project/&hellip;. or I placed the data in /project/&hellip; The
+<p>I ran the application xyz, from url xyz on Rivanna. I placed code in
+the directory /project/&hellip;. or I placed the data in /project/&hellip; The
 download worked and I placed about 600GB. However when I uncompress
-the data with command xyz I get the error xyz. What should we do now?</p>
+the data with the command xyz I get the error xyz. What should we do now?</p>
 
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified May 8, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/01d57f033c149c94eeae4a9c7d69cd988e778f5e">update groups (01d57f0)</a>
+  Last modified June 30, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/cc0b90f65bb6b2bef2df2775679a9d1f0f796fb8">Update rivanna.md (cc0b90f)</a>
 </div>
 
 </div>
