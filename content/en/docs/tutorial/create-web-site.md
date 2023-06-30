@@ -36,7 +36,7 @@ rivanna terminal 2>
 
 ## Publish
 
-The Web site is currently published by Gregor as follows
+The Web site is currently published by Gregor as follows. No other person must publish it.
 
 ```bash
 computer>
