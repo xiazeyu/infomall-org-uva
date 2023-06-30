@@ -41,8 +41,8 @@ If any of the groups is missing, please send Gregor an e-mail at
 
 ### Singularity cache
 
-before you can build images you need to set the singularity cache. This is due to the fact that the cache usually 
-is created in your home directory and is far to small for even our small projects. Thus you need to 
+Before you can build images you need to set the singularity cache. This is due to the fact that the cache usually 
+is created in your home directory and is often far too small for even our small projects. Thus you need to 
 set it as follows
 
 ```bash
