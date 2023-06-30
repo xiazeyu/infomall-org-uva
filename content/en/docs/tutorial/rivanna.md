@@ -296,6 +296,13 @@ system wide policies that you need to be inspecting:
 
 * TODO: add link here
 
+You can alls see your quote with 
+
+```
+rivanna>
+  hdquota
+```
+
 we distinguish 
 
 * home directory: `/home/<uvaid>` or `~`
@@ -312,11 +319,11 @@ The difference in the file systems is explained at
 
 ## Dealing with limited space under HOME
 
-As we conduct research you may find that the file spece in your home
+As we conduct research you may find that the file space in your home
 directory is insufficient. This is especially the case when using
 conda. Therefore, it is recommended that you create softlinks from
 your home directory to a location where you have more space. This is
-typically soemwhere under `/project`.
+typically somewhere under `/project`.
 
 We describe next how to relocate some of the directories to `/project`
 
@@ -344,7 +351,7 @@ directory will exceed the allocation and have problems with any
 execution.  So it’s better to move conda all other package
 installation directories to $PROJECT.
 
-First explore what is in your home directory and how much space it
+First, explore what is in your home directory and how much space it
 consumes with the following commands.
 
 ```bash
@@ -353,58 +360,75 @@ $ ls -lisa
 $ du -h .
 ```
 
-Select from this list directories that you want to  move (thise that
+Select from this list of directories that you want to  move (those that
 you not already have moved).
 
 Let us assume you want to move the directories `.local`,
 `.vscode-server`, and `.conda`.
-Imporatnt is that you want to make sure that .conda and .local are
+Important is that you want to make sure that .conda and .local are
 moved as they may include lots of files and you may run out of memory
 quickly.
 Hence you do next the following.
 
 
 ```bash
-$ cd $PROJECT
-$ mv ~/.local .
-$ mv ~/.vscode-server .
-$ mv ~/.conda .
+rivanna>
+  $ cd $PROJECT
+  $ mv ~/.local .
+  $ mv ~/.vscode-server .
+  $ mv ~/.conda .
 ```
 
 Then create symbolic links to the home directory installed folder. 
 
 ```bash
-$ cd $PROJECT
-$ ln -s $PROJECT/.local ~/.local
-$ ln -s $PROJECT/.vscode-server ~/.vscode-server
-$ ln -s $PROJECT/.conda ~/.conda
+rivanna>
+  $ cd $PROJECT
+  $ ln -s $PROJECT/.local ~/.local
+  $ ln -s $PROJECT/.vscode-server ~/.vscode-server
+  $ ln -s $PROJECT/.conda ~/.conda
 ```
 
 Check all symbolic links:
 
 ```
-$ ls -lisa
+rivanna>
+  $ ls -lisa
 
 20407358289   4 lrwxrwxrwx    1 $USER users          40 May  5 10:58 .local -> /project/bii_dsc_community/djy8hg/.local
 20407358290   4 lrwxrwxrwx    1 $USER users          48 May  5 10:58 .vscode-server -> /project/bii_dsc_community/djy8hg/.vscode-server
 ```
 
+### Singularity Cache
+
+In case you use singularity  you can build images you need to set the singularity cache. This is due to the fact that the cache usually 
+is created in your home directory and is often far too small for even our small projects. Thus you need to 
+set it as follows
+
+```bash
+rivanna>
+  mkdir -p /project/$USER/.singularity/cache
+  export SINGULARITY_CACHEDIR=/project/$USER/.singularity/cache
+
+### Python
+
 In case you use python venv, do not place them in home but under
 project.
 
 ```
-module load python3.8
-python -m venv $PROJECT/ENV3
-source $PROJECT/ENV3/bin/activate
+rivanna>
+  module load python3.8
+  python -m venv $PROJECT/ENV3
+  source $PROJECT/ENV3/bin/activate
 ```
 
-If you succesd, you can also place the source line in your .bashrcs
+If you succeed, you can also place the source line in your .bashrc
 file.
 
 In case you use conda and python, we also recommend that you create a
-venv from the conda pythin, so you have a copy of that in ENV3 and if
-something goes wrong its easy to recreate from your default
-python. Thise that use that path ought to improve how to do this here.
+venv from the conda python, so you have a copy of that in ENV3 and if
+something goes wrong it is easy to recreate from your default
+python. Those that use that path ought to improve how to do this here.
 
 
 
@@ -420,7 +444,8 @@ To find out more about a particular package such as cmake you can use
 the command
 
 ```bash
-module spider cmake # check whether cmake is available and details
+rivanna>
+  module spider cmake # check whether cmake is available and details
 ```
 
 Load the needed module (you can add version info). Note that some
@@ -428,21 +453,24 @@ modules are dependent on other modules (`clang/10.0.1` depends on
 `gcc/9.2.0` so `gcc` needs to be loaded first.
 
 ```bash
-# module load gcc/9.2.0 clang/10.0.1
-module load clanggcc
-module load cmake/3.23.3 git/2.4.1 ninja/1.10.2-py3.8 llvm cuda/11.4.2
+rivanna>
+  # module load gcc/9.2.0 clang/10.0.1
+  module load clanggcc
+  module load cmake/3.23.3 git/2.4.1 ninja/1.10.2-py3.8 llvm cuda/11.4.2
 ```
 
 check currently loaded modules
 
 ```bash
-module list
+rivanna>
+  module list
 ```
 
 clean all the modules
 
 ```bash
-module purge
+rivanna>
+  module purge
 ```
 
 ## Request GPUs to use interactively
@@ -467,7 +495,7 @@ rivanna$ ijob -c 1 -A bii_dsc_community -p gpu --gres=gpu:a100:1 --time=0-00:10:
 Rivanna has different partitions with different resource availability
 and charging rate. `dev` is free but limited to 1 hour for each
 session/allocation and no GPU is available. To list the different
-partions use `qlist` to check partitions 
+partitons use `qlist` to check partitions 
 
 
 | Queue          | Total   | Free    | Jobs    | Jobs    | Time       | SU     |    
@@ -592,17 +620,16 @@ partition.
 
 ## Help Support
 
-When requesting help from Gregor or anyone make sure to be completley
-specify the issue, alot of things cannot be solved if you are not
-clear on the issue and where it is occuring. Include:
+When requesting help from Gregor or anyone make sure to completely specify the issue, a lot of things cannot be solved if you are not
+clear on the issue and where it is occurring. Include:
 
 * The issue you are encountering.
-* Where it is occuring.
+* Where it is occurring.
 * What you have done to try to resolve the issue.
 
 A good example is:
 
-I ran application xyz, from url xyz on Rivanna. I placed code in
-directory /project/.... or I placed the data in /project/... The
+I ran the application xyz, from url xyz on Rivanna. I placed code in
+the directory /project/.... or I placed the data in /project/... The
 download worked and I placed about 600GB. However when I uncompress
-the data with command xyz I get the error xyz. What should we do now?
+the data with the command xyz I get the error xyz. What should we do now?
