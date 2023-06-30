@@ -10,9 +10,11 @@ clean:
 
 cp: 
 	scp -r uva rivanna:www/infomall
+	make -f Makefile chmod
 
 rsync: 
 	rsync -rv uva rivanna:www/infomall
+	make -f Makefile chmod
 
 chmod:
 	ssh rivanna "cd www/infomall/uva; sh ../../permissions.sh"
