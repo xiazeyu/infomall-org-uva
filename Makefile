@@ -12,6 +12,11 @@ cp: hugo
 	scp -r uva rivanna:www/infomall
 	make -f Makefile chmod
 
+publish:
+	# cms vpn connect
+	make -f Makefile rsync
+
+
 rsync: hugo
 	rsync -rv uva rivanna:www/infomall
 	make -f Makefile chmod

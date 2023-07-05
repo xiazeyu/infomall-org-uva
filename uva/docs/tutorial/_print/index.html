@@ -163,7 +163,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>7: <a href="#pg-331baa741d6f960b42c86262b1b1009d">Raspberry Pi Cluster</a></li>
+<li>7: <a href="#pg-6394124e64e1a4fc19bfb3fa080e8919">Getting Started with the bii_dsc_community</a></li>
 
 
     
@@ -171,7 +171,23 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>8: <a href="#pg-08eb86e861174df1aecb3731c39c41c8">Rivanna and Singularity</a></li>
+<li>8: <a href="#pg-331baa741d6f960b42c86262b1b1009d">Raspberry Pi Cluster</a></li>
+
+
+    
+  
+    
+    
+	
+<li>9: <a href="#pg-08eb86e861174df1aecb3731c39c41c8">Rivanna and Singularity</a></li>
+
+
+    
+  
+    
+    
+	
+<li>10: <a href="#pg-512be8c6e504f6d5ab899c130b8dfff2"></a></li>
 
 
     
@@ -1369,7 +1385,234 @@ cms help
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-331baa741d6f960b42c86262b1b1009d">7 - Raspberry Pi Cluster</h1>
+	<h1 id="pg-6394124e64e1a4fc19bfb3fa080e8919">7 - Getting Started with the bii_dsc_community</h1>
+    <div class="lead">Getting Started</div>
+	<h2 id="contributing-your-tutorial-and-experiences">Contributing your tutorial and experiences</h2>
+<p>Please contribute to infomall.org as your experiences
+will help. Please remember that technology evolves fast,
+and we like to stay up to date by improving information.</p>
+<p>Each page as an edit here feature, that you ca use to propose changes.
+The changes will be reviewed by Gregor and are not automatically posted
+online.</p>
+<p>Once a change is accepted, the Web site will be published and
+updates are visible. Send an e-mail to Gergor for urgent updates.</p>
+<h2 id="activating-your-account">Activating your account</h2>
+<p>Do the following while sending an e-mail to Gregor:</p>
+<p><strong>Subject</strong>: Activate my account <Lastname>, <Firstname></p>
+<p><strong>Body:</strong> (fill in lastname and firstname. Do not use all caps)</p>
+<pre tabindex="0"><code>Firstname: 
+Lastname:
+e-mail:
+github.com:
+
+* [ ] Please add me to the `discord` 
+* [ ] Please add me to the unix groups:
+  * [ ] `biocomplexity`
+  * [ ] `nssac_students`
+  * [ ] `bii_dsc_community`
+</code></pre><h2 id="preparing-your-computer-for-research">Preparing your computer for research</h2>
+<p>Seee the documentation at</p>
+<ul>
+<li><a href="https://github.com/cybertraining-dsc/reu2022/blob/main/project/windows-configuration.md">Configuring Windows for Research</a></li>
+<li><a href="https://github.com/cybertraining-dsc/reu2022/blob/main/project/git-bash-pseudo-console.md#using-git-bash-on-windows">Using Git Bash on Windows</a></li>
+</ul>
+<h2 id="using-docker-on-your-computer">Using Docker on your computer</h2>
+<p>To isolate your computer form changes and to develop portable code we recommend
+using docker images. This is especially the case when using GPUs on your computer
+as this is these days the default distribution mechanism for NVIDIA software for
+research.</p>
+<h2 id="using-singularity-on-your-computer">Using Singularity on your computer</h2>
+<p>As Rivanna is using singularity, it is also beneficial to use singularity on
+your loacl computer as this can be used to create images for rivanna. However,
+note that due to the transfer speeds to rivanna the experience may be limited
+For that reason. we recommend you visit our
+[https://infomall.org/uva/docs/tutorial/singularity/](Tutorial on Singularity on Rivanna)</p>
+<h2 id="getting-an-account-on-rivanna">Getting an account on Rivanna</h2>
+<p>Please read</p>
+<ul>
+<li>
+<p><a href="https://infomall.org/uva/docs/tutorial/">See our infomall.org tutorials about rivanna</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cybertraining-dsc/reu2022/blob/main/project/windows-configuration.md">Configuring Windows for Research</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cybertraining-dsc/reu2022/blob/main/project/git-bash-pseudo-console.md#using-git-bash-on-windows">Using Git Bash on Windows</a></p>
+</li>
+<li>
+<p><a href="https://www.rc.virginia.edu/userinfo/rivanna/login/#secure-shell-access-ssh">Rivanna doc: Secure Shell access to Rivanna</a></p>
+</li>
+<li>
+<p><a href="https://www.rc.virginia.edu/userinfo/rivanna/logintools/rivanna-ssh/">Rivanna doc</a></p>
+</li>
+<li>
+<p><a href="https://www.rc.virginia.edu/support/">Please attend RIVANNA TUTORIAL </a> See
+section &ldquo;New to rivanna&rdquo; on that page.
+If you can not attend, ask if they have recording of it. If you know the
+recording link, please add it here.</p>
+</li>
+</ul>
+<p><strong>Do not make your account insecure</strong>. On Rivanna&rsquo;s documentation you will find
+a statement that we do <strong>NOT RECOMMEND TO FOLLOW</strong> as it is not
+best security practice and can be handled in almost all cases differently.
+The statement on the official UVA Rivanna Web Site states:</p>
+<blockquote>
+<p>Sometimes you will need to enable passwordless ssh.
+We allow passwordless ssh to frontend nodes from UVA
+IP addresses. Key authentication works by matching two
+halves of an encrypted keypair. The “public” key is
+placed within your home directory on the remote server
+and the “private” key is kept safely on your own workstation.
+You should treat private keys as securely as you would any password.&quot;</p>
+</blockquote>
+<p>Instead you need to use</p>
+<pre tabindex="0"><code>computer&gt; 
+  eval `ssh-agent`
+  ssh-add
+</code></pre><h2 id="using-python">Using Python</h2>
+<p>When using anaconda, be careful as it takes over your python instalation and may not
+provide a level of inconsistant libraries when you do more complex stuff.
+Evaluate if you need anaconda or not. IN many cases it is best to just use vanilla
+python and use pip.</p>
+<p>You can also switch between anaconda and regular python. for that you <strong>DO NOT USE</strong></p>
+<p><code>conda init</code></p>
+<p>Fix or outcomment anaconde from your .bashrc or .zshrc files.</p>
+<p>If you are a conda expert, give us some tips and tutorials on this topic.</p>
+<p>Always check if you use the correct version of python with</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>computer&gt;
+</span></span><span style="display:flex;"><span>  which python
+</span></span><span style="display:flex;"><span>  python --version
+</span></span></code></pre></div><p>Please keep in mind: When attending university classes some teachers may give
+you convenient but inssuficcient instructions on how to use python. They are
+typically designed to make the use
+of python easy for a specific class and not necessarily easy for research.</p>
+<p>Please keep in mind that you may have python versions that do not work properly
+on your computer if you have attended classes some years back. You will likely
+need to update your python. Often its good to unisntall your previous verison
+and reinstall.</p>
+<p>If you need multiple python versions such as teacher A wants version X and
+wants version Y, this is possible. Just use python virtual environments,
+containers, or virtual machines. What you chose is your choice.</p>
+<h2 id="using-rivanna">Using Rivanna</h2>
+<p>Read</p>
+<ul>
+<li>
+<p><a href="https://infomall.org/uva/docs/tutorial/rivanna/">Using Rivanna</a></p>
+</li>
+<li>
+<p>Copy Files</p>
+</li>
+<li>
+<p>rsync</p>
+</li>
+<li>
+<p>scp</p>
+</li>
+<li>
+<p>sftp</p>
+</li>
+<li>
+<p><a href="https://github.com/libfuse/sshfs#sshfs">sshfs</a></p>
+</li>
+<li>
+<p>[Copy files with rclone](Rclone on Rivanna)</p>
+</li>
+<li>
+<p><a href="https://infomall.org/uva/docs/tutorial/globus/">Copy files with globus</a></p>
+</li>
+</ul>
+<h2 id="using-singularity-on-rivanna">Using Singularity on Rivanna</h2>
+<p>Read</p>
+<ul>
+<li><a href="https://infomall.org/uva/docs/tutorial/singularity/">Using singularity on Rivanna</a></li>
+</ul>
+<h3 id="using-docker-on-rivanna-via-singularity">Using Docker on Rivanna via Singularity</h3>
+<p>Which they do not document but we do on infomall.org</p>
+<p>I will go into this in tutorial. If you already have created a passwordless key,
+please redo it with a password &hellip;.</p>
+<h2 id="onramping-tutorial-with-gregor">Onramping Tutorial with Gregor</h2>
+<p>If you need help on assessing your computer for research you can optionally
+send the folloing info to me.</p>
+<pre tabindex="0"><code>os:
+size ram:
+size hdd/ssd:
+free space on hdd/ssd
+date purchased:
+</code></pre><p>We observed that when using chrome and pycharm and zoom you may need lots of
+memory. Shut down all over applications. We recommend 16GB ram these days.
+However, many students have 8GB which may lead to slowing things down in
+some cases as you may hit the memory</p>
+<p>For example, when Gregor runs chrome and
+pycharm he uses up 8.1GB RAM, so if you were to have an 8GB machine it would
+slow down. However, your usage of the RAM may vary dependent on what plugins and
+which version of software as well as the OS you use.</p>
+<ul>
+<li>Please make sure to have some space on your computers HDD, send me how much
+free space you have</li>
+<li>if windows, please install gitbash before meeting</li>
+<li>if windows I recommend chocolatey, but be careful what you install</li>
+<li>make sure you know how to use UVA vpn</li>
+<li>set up ssh key with ssh-keygen and use password WRITE PASSWORD DOWN</li>
+<li>set up ~/.ssh/config as</li>
+<li>upload sshkey to github</li>
+</ul>
+<p>Make sure you employ backup strategy on external HDD or google or something
+like that. I have seen to many computer HDD break and this is standard best
+practice. We can discuss in meeting.</p>
+<p>If anythinig unclear or you have questions let me know we will also go through
+the sshkey things
+if you do not understand.</p>
+<h2 id="editor">Editor</h2>
+<ul>
+<li>use pycharm (best) on your local computer alternatively vscode</li>
+<li>learn commandline edtor for rivanna emacs best. alternatives nano, pico, vim</li>
+</ul>
+<h2 id="cloudmesh-is-useful">Cloudmesh is useful</h2>
+<p>You will see that cloudmesh has many features that you will find useful.
+We focus here on a number of libraries useful for rivanna.</p>
+<p>Please create venv, this depends on your os on how to do.</p>
+<p>Name it ~/ENV3 (if you do conda do it in whatever fashion conda does, as I do
+not use conda you can help us writing documentation about it)</p>
+<p>activate it and do</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>computer&gt;
+</span></span><span style="display:flex;"><span>  python -m venv ~/ENV3
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87">source</span> ~/ENV3
+</span></span><span style="display:flex;"><span>  pip install pip -U
+</span></span><span style="display:flex;"><span>  pip install cloudmesh-common
+</span></span><span style="display:flex;"><span>  pip install cloudmesh-sbatch
+</span></span><span style="display:flex;"><span>  pip install cloudmesh-rivanna
+</span></span><span style="display:flex;"><span>  cms <span style="color:#204a87">help</span>
+</span></span></code></pre></div><p>On rivanna</p>
+<p>computer&gt;
+python -m venv /project/bii_dsc_community/$USER/ENV3
+source /project/bii_dsc_community/$USER/ENV3
+pip install pip -U
+pip install cloudmesh-common
+pip install cloudmesh-sbatch
+pip install cloudmesh-rivanna
+pip install cloudmesh-gpu
+cms help</p>
+<p>Make sure you are in Gregors discord</p>
+<p>In future learn how to do cloudmesh StopWatch so you conveniently augment
+your code with timers</p>
+<p>Gregor von Laszewski
+<a href="mailto:laszewski@gmail.com">laszewski@gmail.com</a></p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-331baa741d6f960b42c86262b1b1009d">8 - Raspberry Pi Cluster</h1>
     <div class="lead">Raspberry Pi Cluster</div>
 	<h2 id="links">Links</h2>
 <p>The main web page for this is at <a href="https://piplanet.org">https://piplanet.org</a></p>
@@ -1392,7 +1635,7 @@ cms help
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-08eb86e861174df1aecb3731c39c41c8">8 - Rivanna and Singularity</h1>
+	<h1 id="pg-08eb86e861174df1aecb3731c39c41c8">9 - Rivanna and Singularity</h1>
     <div class="lead">Singularity.</div>
 	<h2 id="singularity">Singularity</h2>
 <p>Singularity is a container runtime that implements a unique security model to
@@ -1515,6 +1758,42 @@ by the host:</p>
 <p>TBD</p>
 <h3 id="running-on-special-fox-node-a100-80gb">RUnning on special fox node a100-80GB</h3>
 <p>TBD</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-512be8c6e504f6d5ab899c130b8dfff2">10 - </h1>
+    
+	<h2 id="install-gpu-drivers-in-a-docker-image">Install GPU drivers in a docker image</h2>
+<p>NVIDIA GPU drivers can be installed into docker images.
+As the software may frequently cange, we recommend to look at
+the <a href="https://nvidia.github.io/nvidia-container-runtime">Nvidia documentation</a></p>
+<p>An example to add to a debian based Dockerfile to install the GPU drivers (this may be incomplete and you need to check the instructions):</p>
+<pre tabindex="0"><code>RUN curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey | \
+    apt-key add - \ &amp;&amp;
+    distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \ &amp;&amp;
+    curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list | 
+RUN apt-get update \ &amp;&amp;
+apt-get install -y nvidia-container-runtime
+</code></pre><ul>
+<li>
+<p><a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#debian-installation">https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#debian-installation</a></p>
+</li>
+<li>
+<p><a href="https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html">https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html</a></p>
+</li>
+</ul>
 
 </div>
 
