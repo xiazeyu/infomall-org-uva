@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with the bii_dsc_community"
 linkTitle: "Getting Started"
-weight: 100
+weight: 1
 description: >-
      Getting Started     
 ---
@@ -235,6 +235,7 @@ computer>
 
 On rivanna 
 
+```
 computer>
   python -m venv /project/bii_dsc_community/$USER/ENV3
   source /project/bii_dsc_community/$USER/ENV3
@@ -244,6 +245,7 @@ computer>
   pip install cloudmesh-rivanna
   pip install cloudmesh-gpu
   cms help
+```
 
 Make sure you are in Gregors discord
 

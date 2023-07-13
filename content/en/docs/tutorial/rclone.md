@@ -1,7 +1,7 @@
 ---
 title: "Rclone on Rivanna"
 linkTitle: "Rclone"
-weight: 9
+weight: 30
 description: >-
      Using Rclone to upload and download from cloud services
 ---

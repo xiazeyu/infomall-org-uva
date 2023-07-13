@@ -1,7 +1,7 @@
 ---
 title: "Rivanna and Singularity"
 linkTitle: "Singularity"
-weight: 100
+weight: 20
 description: >-
      Singularity.
 ---

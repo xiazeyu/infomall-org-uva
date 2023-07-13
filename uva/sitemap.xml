@@ -5,6 +5,9 @@
     <loc>https://infomall.org/uva/docs/staff/fox/</loc>
     <lastmod>2023-03-22T07:29:23-04:00</lastmod>
   </url><url>
+    <loc>https://infomall.org/uva/docs/tutorial/getting_started/</loc>
+    <lastmod>2023-07-05T05:38:19-04:00</lastmod>
+  </url><url>
     <loc>https://infomall.org/uva/docs/projects/cylon/</loc>
     <lastmod>2023-03-23T10:18:28-04:00</lastmod>
   </url><url>
@@ -35,14 +38,8 @@
     <loc>https://infomall.org/uva/docs/projects/</loc>
     <lastmod>2023-03-23T09:47:20-04:00</lastmod>
   </url><url>
-    <loc>https://infomall.org/uva/docs/tutorial/cybertraining/</loc>
-    <lastmod>2023-03-31T19:50:11-04:00</lastmod>
-  </url><url>
     <loc>https://infomall.org/uva/docs/staff/fleischer/</loc>
     <lastmod>2023-05-13T17:53:33-04:00</lastmod>
-  </url><url>
-    <loc>https://infomall.org/uva/docs/tutorial/globus/</loc>
-    <lastmod>2023-04-14T15:01:11-04:00</lastmod>
   </url><url>
     <loc>https://infomall.org/uva/docs/staff/grimmelbein/</loc>
     <lastmod>2023-05-13T17:53:33-04:00</lastmod>
@@ -56,15 +53,6 @@
     <loc>https://infomall.org/uva/docs/staff/pavuloori/</loc>
     <lastmod>2023-03-31T07:48:53-04:00</lastmod>
   </url><url>
-    <loc>https://infomall.org/uva/docs/tutorial/rclone/</loc>
-    <lastmod>2023-05-14T22:57:49-04:00</lastmod>
-  </url><url>
-    <loc>https://infomall.org/uva/docs/tutorial/rivanna/</loc>
-    <lastmod>2023-06-30T05:50:55-04:00</lastmod>
-  </url><url>
-    <loc>https://infomall.org/uva/docs/tutorial/rivanna-superpod/</loc>
-    <lastmod>2023-05-08T09:26:03-04:00</lastmod>
-  </url><url>
     <loc>https://infomall.org/uva/docs/staff/sarker/</loc>
     <lastmod>2023-03-23T10:18:28-04:00</lastmod>
   </url><url>
@@ -77,6 +65,12 @@
     <loc>https://infomall.org/uva/docs/staff/zhong/</loc>
     <lastmod>2023-03-31T07:48:53-04:00</lastmod>
   </url><url>
+    <loc>https://infomall.org/uva/docs/tutorial/rivanna/</loc>
+    <lastmod>2023-07-06T18:19:45-04:00</lastmod>
+  </url><url>
+    <loc>https://infomall.org/uva/docs/tutorial/rivanna-superpod/</loc>
+    <lastmod>2023-05-08T09:26:03-04:00</lastmod>
+  </url><url>
     <loc>https://infomall.org/uva/docs/</loc>
     <lastmod>2023-03-20T18:25:13-04:00</lastmod>
   </url><url>
@@ -86,25 +80,35 @@
     <loc>https://infomall.org/uva/docs/publications/</loc>
     <lastmod>2023-03-22T16:55:24-04:00</lastmod>
   </url><url>
+    <loc>https://infomall.org/uva/docs/tutorial/singularity/</loc>
+    <lastmod>2023-06-30T05:42:24-04:00</lastmod>
+  </url><url>
     <loc>https://infomall.org/uva/docs/staff/</loc>
     <lastmod>2023-03-22T16:55:24-04:00</lastmod>
   </url><url>
     <loc>https://infomall.org/uva/docs/tutorial/</loc>
     <lastmod>2023-03-24T15:41:24-04:00</lastmod>
   </url><url>
-    <loc>https://infomall.org/uva/docs/publications/2023/</loc>
-    <lastmod>2023-04-01T07:30:34-04:00</lastmod>
+    <loc>https://infomall.org/uva/docs/tutorial/rclone/</loc>
+    <lastmod>2023-05-14T22:57:49-04:00</lastmod>
   </url><url>
-    <loc>https://infomall.org/uva/docs/tutorial/create-web-site/</loc>
-    <lastmod>2023-06-30T06:27:31-04:00</lastmod>
+    <loc>https://infomall.org/uva/docs/tutorial/docker/</loc>
+    <lastmod>2023-07-05T05:38:19-04:00</lastmod>
   </url><url>
-    <loc>https://infomall.org/uva/docs/tutorial/getting_started/</loc>
+    <loc>https://infomall.org/uva/docs/tutorial/globus/</loc>
+    <lastmod>2023-04-14T15:01:11-04:00</lastmod>
+  </url><url>
+    <loc>https://infomall.org/uva/docs/tutorial/cybertraining/</loc>
+    <lastmod>2023-03-31T19:50:11-04:00</lastmod>
   </url><url>
     <loc>https://infomall.org/uva/docs/tutorial/raspberry/</loc>
     <lastmod>2023-03-30T11:32:54-04:00</lastmod>
   </url><url>
-    <loc>https://infomall.org/uva/docs/tutorial/singularity/</loc>
-    <lastmod>2023-06-30T05:42:24-04:00</lastmod>
+    <loc>https://infomall.org/uva/docs/publications/2023/</loc>
+    <lastmod>2023-06-30T07:05:49-04:00</lastmod>
+  </url><url>
+    <loc>https://infomall.org/uva/docs/tutorial/create-web-site/</loc>
+    <lastmod>2023-06-30T06:27:31-04:00</lastmod>
   </url><url>
     <loc>https://infomall.org/uva/blog/2023/03/20/new-infomall.org-site/</loc>
     <lastmod>2023-03-20T18:25:13-04:00</lastmod>
@@ -126,8 +130,6 @@
   </url><url>
     <loc>https://infomall.org/uva/docs/publications/sites/</loc>
     <lastmod>2023-03-27T12:30:17-04:00</lastmod>
-  </url><url>
-    <loc>https://infomall.org/uva/docs/tutorial/docker/</loc>
   </url><url>
     <loc>https://infomall.org/uva/about/</loc>
     <lastmod>2023-03-20T18:25:13-04:00</lastmod>

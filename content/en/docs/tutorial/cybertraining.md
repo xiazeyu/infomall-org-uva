@@ -1,7 +1,7 @@
 ---
 title: "Cybertraining"
 linkTitle: "Cybertraining"
-weight: 9
+weight: 50
 description: >
   Cybertraining Links
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Rivanna Pod"
 linkTitle: "Rivanna Pod"
-weight: 9
+weight: 15
 description: >
   Rivanna
 ---
@@ -15,28 +15,22 @@ group we have
 
 {{% /pageinfo %}}
 
-Dear GPU beta testers,
+The rivanna documentation for the basic pod is available at 
+
+<https://www.rc.virginia.edu/userinfo/rivanna/basepod/>
+
  
-Thank you for signing up as beta testers for the new GPU *POD* on
-Rivanna. We appreciate your patience during the longer-than-expected
-installation phase. This email will unveil some details about the new
-hardware and provide instructions on access and usage.
- 
- 
- 
+
 ## Introducing the NVIDIA DGX BasePOD
 
-You might have seen/heard the term *SuperPOD* in our earlier
-communications or from other sources. Since then the vendor has
-rebranded the specific type purchased by UVA as *BasePOD,* which as of
-today is comprised of 10 DGX A100 nodes 8 A100 GPU devices and 2 TB
-local node memory (per node) 80 GB GPU memory (per GPU device) I’ll
-just refer to it as the *POD* for the remainder of the email.
+Rivanna contains a BasePod with 
+
+* 10 DGX A100 nodes 
+* 8 A100 GPU devices 
+* 2 TB local node memory (per node) 
+* 80 GB GPU memory (per GPU device)
  
-Unbeknown to most users, these nodes have been up and running on
-Rivanna since last summer as regular GPU nodes. We are pleased to
-inform you that the following Advanced Features have now been enabled
-on the POD:
+The following Advanced Features have now been enabled  on the BasePOD:
 
 * NVLink for fast multi-GPU communication
 * GPUDirect RDMA Peer Memory for fast multi-node multi-GPU communication
@@ -59,19 +53,11 @@ Detailed specs can be found in the official document (Chapter 3.1):
  
 ### Allocation
 
-As a token of appreciation, we have created a *superpodtest*
-allocation such that you may run benchmarks and tests without spending
-your own allocation. A single job can request up to 4 nodes with 32
+A single job can request up to 4 nodes with 32
 GPUs. Before running multi-node jobs, please make sure it can scale
 well to 8 GPUs on a single node.
  
-We kindly ask you to keep other beta testers and the general users in
-mind by refraining from dominating the queue with high-throughput jobs
-through this allocation.
  
-If you are the PI and wish to delegate the testing work to someone
-else in your group, you are welcome to provide one or two names with
-their computing IDs.
  
 Slurm script
 Please include the following lines:
@@ -80,7 +66,6 @@ Please include the following lines:
 #SBATCH -p gpu
 #SBATCH --gres=gpu:a100:X # replace X with the number of GPUs per node
 #SBATCH -C gpupod
-#SBATCH -A superpodtest
  ```
 
 ### Open OnDemand
@@ -91,16 +76,22 @@ In *Optional: Slurm Option* write:
 -C gpupod
 ```
 
-### Remarks
+### Interactive login
 
-Many of you may have already used the POD by simply requesting an A100
-node, since 10 out of the total 12 A100 nodes are POD nodes. Hence, if
-you do not see any performance improvement, do not be disappointed.
-As we expand our infrastructure, there could be changes to the Slurm
-directives and job resource limitations in the future. Please keep an
-eye out for our announcements.
+Interactive login to the nodes should be **VERY** limited and you need to use 
+for most activities the batch queue. In case you need to look at thisng you can 
+use our cloudmesh progarm to do so
+
+Make sure to have vpn enabled and cloumdesh-rivanna installed via pip.
+
+```computer>
+  cms rivanna login a100-pod
+```
  
- 
+Will log you into a node. The time is set by default to 30 minutes. 
+Please immediatly log out after you are done with your work interactive 
+work.
+
 ## Usage examples
  
 ### Deep learning

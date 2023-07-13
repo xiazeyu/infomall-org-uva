@@ -1,7 +1,7 @@
 ---
 title: "Globus"
 linkTitle: "Globus"
-weight: 9
+weight: 40
 description: >
   File transfer with Globus
 ---

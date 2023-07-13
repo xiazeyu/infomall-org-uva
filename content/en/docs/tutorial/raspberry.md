@@ -1,7 +1,7 @@
 ---
 title: "Raspberry Pi Cluster"
 linkTitle: "Pi"
-weight: 100
+weight: 90
 description: >-
      Raspberry Pi Cluster
 ---
