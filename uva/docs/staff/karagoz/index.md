@@ -1,24 +1,30 @@
-# about-me
 ---
 title: "Meryem Altin Karagoz"
 linkTitle: "meryemaltin"
 weight: 9
 description: Visiting Graduate Researcher 
-
 ------
+
 {{% pageinfo %}}
+
 ## Biography
+
 Meryem Altin Karagoz joined Computer Engineering department of Sivas Cumhuriyet University Turkey, in 2016, as a Research Assistant. She received a master’s
 degree in Computer Engineering at Erciyes University in 2019 and is currently Ph.D. student in Computer Engineering at Erciyes University. 
 She  is awarded a grant by The Scientific and Technological Research Council of Turkey (TUBITAK) to perform research at University of Virginia. Her research interests are artificial intelligence, deep learning, and medical image analysis.
+
 ## References 
+
 * KARAGOZ, M. A., AKAY, B., BASTURK, A., KARABOGA, D., & NALBANTOGLU, O. U., (2023). An unsupervised transfer learning model based on convolutional auto encoder for non-alcoholic steatohepatitis activity scoring and fibrosis staging of liver histopathological images. Neural Computing and Applications , vol.35, no.14, 10605-10619. 
 * KARAGOZ, M. A., KARABOGA, D., AKAY, B., BASTURK, A., & Nalbantoglu, O. U., (2022). Deep Learning Based Steatosis Quantification of Liver Histopathology Images Using Unsupervised Feature Extraction . 2nd International Conference on Computing and Machine Intelligence, ICMI 2022, İstanbul, Turkey 
 * KARAGOZ, M. A., & NALBANTOGLU, O. U., (2021). Taxonomic classification of metagenomic sequences from Relative Abundance Index profiles using deep learning. Biomedical Signal Processing and Control , vol.67. 
 * Karagoz, M. A., & Nalbantoglu, O. U., (2019). RAPID PATHOGEN DETECTION OF USING CONVOLUTIONAL NEURAL NETWORKS ON METAGENOMICS DATA. HIBIT 19- THE 12TH INTERNATIONAL SYMPOSIUM ON HEALTH INFORMATICS AND BIOINFORMATICS (pp.130-131). İzmir, Turkey 
 * Karagoz, M. A., & Nalbantoglu, O. U., (2018). TAXONOMIC ANALYSIS OF MICROBIOTA DATA BASED ON RELATIVE ABUNDANCE INDEX ALGORITHM. Uluslararası XXXVIII. TMC Kongresi (pp.381-382). Antalya, Turkey
+
 ## Project 
-Title: Developing Self-Supervised Learning Models for Reducing the Dependency on Expert Supervision in Medical Image Analysis
+
+**Title:** Developing Self-Supervised Learning Models for Reducing the Dependency on Expert Supervision in Medical Image Analysis
+
 Deep Learning methods are capable of learning highly complex mathematical functions using a large number of
 neural-net layers. Therefore, deep learning models require a large amount of data to learn large numbers of
 parameters. However, the two main problems encountered in current medical imaging studies with Deep Learning
@@ -43,6 +49,9 @@ limitations and enable automated diagnosis and detection systems at the expert l
 expert demand for medical image tasks. 
 
 ## Resources needs
-I need at least 10 TB of space for data storage.
+
+**Compute:**
+
+**Data:** at least 10 TB of space for data storage.
 
 {{% /pageinfo %}}
