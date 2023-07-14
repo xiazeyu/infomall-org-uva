@@ -160,9 +160,22 @@ AI predictions.&lt;/p&gt;
 
 
 &lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;h2 id=&#34;biography&#34;&gt;Biography&lt;/h2&gt;
 &lt;p&gt;Clara Grimmelbein is a student at the University of Virginia, class of
 2026, pursuing a B.A. in Computer Science and a B.S. in Commerce with
 a minor in Italian.&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;N/A&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;project&#34;&gt;Project&lt;/h2&gt;
+&lt;p&gt;Candle Uno utilizes deep learning architectures to predict tumor response to single and paired drugs. Candle combats the problems of cellular, molecular, and population problems within cancer. The project is trained with a subset of dose-response data from six data sources. Benchmark Pilot1 (P1) focuses on the molecular features of tumor cells from a singular data source, CCLE, to accelerate the use of effective drugs to cure cancerous cells.&lt;/p&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;p&gt;Compute Resources:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/ECP-CANDLE/Benchmarks/blob/develop/Pilot1/Uno/uno_baseline_keras2.py&#34;&gt;https://github.com/ECP-CANDLE/Benchmarks/blob/develop/Pilot1/Uno/uno_baseline_keras2.py&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;(to initiate training)&lt;/p&gt;
+&lt;p&gt;Data Resources:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot1/uno/top_21_auc_1fold.uno.h5&#34;&gt;http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot1/uno/top_21_auc_1fold.uno.h5&lt;/a&gt;&lt;/p&gt;
 
 &lt;/div&gt;
 

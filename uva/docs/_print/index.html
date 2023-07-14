@@ -18632,9 +18632,22 @@ AI predictions.</p>
 
 
 <div class="pageinfo pageinfo-primary">
+<h2 id="biography">Biography</h2>
 <p>Clara Grimmelbein is a student at the University of Virginia, class of
 2026, pursuing a B.A. in Computer Science and a B.S. in Commerce with
 a minor in Italian.</p>
+<h2 id="references">References</h2>
+<ul>
+<li>N/A</li>
+</ul>
+<h2 id="project">Project</h2>
+<p>Candle Uno utilizes deep learning architectures to predict tumor response to single and paired drugs. Candle combats the problems of cellular, molecular, and population problems within cancer. The project is trained with a subset of dose-response data from six data sources. Benchmark Pilot1 (P1) focuses on the molecular features of tumor cells from a singular data source, CCLE, to accelerate the use of effective drugs to cure cancerous cells.</p>
+<h2 id="resources">Resources</h2>
+<p>Compute Resources:</p>
+<p><a href="https://github.com/ECP-CANDLE/Benchmarks/blob/develop/Pilot1/Uno/uno_baseline_keras2.py">https://github.com/ECP-CANDLE/Benchmarks/blob/develop/Pilot1/Uno/uno_baseline_keras2.py</a></p>
+<p>(to initiate training)</p>
+<p>Data Resources:</p>
+<p><a href="http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot1/uno/top_21_auc_1fold.uno.h5">http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot1/uno/top_21_auc_1fold.uno.h5</a></p>
 
 </div>
 
@@ -19491,41 +19504,83 @@ set it as follows</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
 </span></span><span style="display:flex;"><span>  mkdir -p /project/<span style="color:#000">$USER</span>/.singularity/cache
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87">export</span> <span style="color:#000">SINGULARITY_CACHEDIR</span><span style="color:#ce5c00;font-weight:bold">=</span>/project/<span style="color:#000">$USER</span>/.singularity/cache
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">### Python</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>In <span style="color:#204a87;font-weight:bold">case</span> you use python venv, <span style="color:#204a87;font-weight:bold">do</span> not place them in home but under
-</span></span><span style="display:flex;"><span>project.
-</span></span></code></pre></div><p>rivanna&gt;
-module load python3.8
-python -m venv $PROJECT/ENV3
-source $PROJECT/ENV3/bin/activate</p>
-<pre tabindex="0"><code>
-If you succeed, you can also place the source line in your .bashrc
-file.
-
-In case you use conda and python, we also recommend that you create a
+</span></span></code></pre></div><p>`</p>
+<h3 id="python">Python</h3>
+<p>In case you use python venv, do not place them in home but under
+project.</p>
+<pre tabindex="0"><code>rivanna&gt;
+  module load python3.8
+  python -m venv $PROJECT/ENV3
+  source $PROJECT/ENV3/bin/activate
+</code></pre><p>If you succeed, you can also place the source line in your .bashrc
+file.</p>
+<p>In case you use conda and python, we also recommend that you create a
 venv from the conda python, so you have a copy of that in ENV3 and if
 something goes wrong it is easy to recreate from your default
-python. Those that use that path ought to improve how to do this here.
-
-
-
-
-
-
-## Load modules
-
-Modules are preconfigured packages that allow you to use a specific
+python. Those that use that path ought to improve how to do this here.</p>
+<h3 id="adding-cloudmesh-rivanna-specific-commands-and-tools">Adding cloudmesh rivanna specific commands and tools</h3>
+<p>On your computer in your ENV3 add the following to enable the commands</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>computer&gt; 
+</span></span><span style="display:flex;"><span>  pip install pip -U
+</span></span><span style="display:flex;"><span>  pip install cloudmesh-common
+</span></span><span style="display:flex;"><span>  pip install cloudmesh-rivanna
+</span></span><span style="display:flex;"><span>  pip install cloudmesh-sbatch
+</span></span><span style="display:flex;"><span>  pip install cloudmesh-vpn
+</span></span></code></pre></div><p>On Rivanna in ENV3 also add the gpu monitor</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>computer&gt; 
+</span></span><span style="display:flex;"><span>  pip install pip -U
+</span></span><span style="display:flex;"><span>  pip install cloudmesh-common
+</span></span><span style="display:flex;"><span>  pip install cloudmesh-gpu
+</span></span><span style="display:flex;"><span>  pip install cloudmesh-rivanna
+</span></span><span style="display:flex;"><span>  pip install cloudmesh-sbatch
+</span></span></code></pre></div><blockquote>
+<p><strong>Note:</strong> Please send me a mail to <a href="mailto:laszewski@gmail.com">laszewski@gmail.com</a>
+if any requirements are missing as I may not yet have included
+all of them in the pip package.</p>
+</blockquote>
+<p>Once you have activated it the cloudmesh rivanna command shows you combinations
+of SBATCH flags that you can use.</p>
+<p>To see them type in</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cms rivanna slurm list
+</span></span></code></pre></div><p>To login into a specific node you can say (lest assume you like to log into a k80</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cms rivanna login k80
+</span></span></code></pre></div><p>Please be reminded that interactive login is only allowed for debugging all
+jobs must be submitted through sbatch.</p>
+<p>To get the directives template to use that GPU, use</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cms rivanna slurm k80
+</span></span></code></pre></div><h3 id="cloudmesh-sbatch">cloudmesh sbatch</h3>
+<p>Cloudmesh-sbatch is a super cool extension to sbatch allowing you to outomatically
+run parameters studies while creating permuattions on experiment parameters.
+At this time we try to create some sampel applications, but you can also ararnge
+a 30 minute meeting with Gregor so we try setting it up for your application with his help</p>
+<p>See also:</p>
+<ul>
+<li><a href="https://pypi.org/project/cloudmesh-sbatch/">https://pypi.org/project/cloudmesh-sbatch/</a></li>
+<li>Example application: <a href="https://github.com/laszewsk/mlcommons/tree/main/benchmarks/cloudmask/target/rivanna">https://github.com/laszewsk/mlcommons/tree/main/benchmarks/cloudmask/target/rivanna</a>
+<ul>
+<li><code>make project; make submit</code></li>
+<li>see Makefile for how to use it.</li>
+</ul>
+</li>
+<li><a href="https://arxiv.org/abs/2210.16941">Hybrid Reusable Computational Analytics Workflow Management with Cloudmesh</a></li>
+</ul>
+<h3 id="cloudmesh-vpn-command">cloudmesh vpn command</h3>
+<p>cloudmesh has a simple commandline vpn command that you can use to switch on
+and off vpn for UVA (and other vpn&rsquo;s, we can add that feature ;-))</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>computer&gt; 
+</span></span><span style="display:flex;"><span>  cms vpn connect
+</span></span><span style="display:flex;"><span>  ... <span style="color:#204a87;font-weight:bold">do</span> your work in vpn such as working on rivanna
+</span></span><span style="display:flex;"><span>  cms vpn disconnect
+</span></span><span style="display:flex;"><span>  ... work on your regular network 
+</span></span></code></pre></div><h2 id="load-modules">Load modules</h2>
+<p>Modules are preconfigured packages that allow you to use a specific
 software to be loaded into your environment without needing you to
 install it from source.
 To find out more about a particular package such as cmake you can use
-the command
-
-```bash
-rivanna&gt;
-  module spider cmake # check whether cmake is available and details
-</code></pre><p>Load the needed module (you can add version info). Note that some
+the command</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
+</span></span><span style="display:flex;"><span>  module spider cmake <span style="color:#8f5902;font-style:italic"># check whether cmake is available and details</span>
+</span></span></code></pre></div><p>Load the needed module (you can add version info). Note that some
 modules are dependent on other modules (<code>clang/10.0.1</code> depends on
 <code>gcc/9.2.0</code> so <code>gcc</code> needs to be loaded first.</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
@@ -19962,7 +20017,6 @@ Please include the following lines:</p>
 <pre tabindex="0"><code>#SBATCH -p gpu
 #SBATCH --gres=gpu:a100:X # replace X with the number of GPUs per node
 #SBATCH -C gpupod
-#SBATCH -A superpodtest
 </code></pre><h3 id="open-ondemand">Open OnDemand</h3>
 <p>In <em>Optional: Slurm Option</em> write:</p>
 <pre tabindex="0"><code>-C gpupod

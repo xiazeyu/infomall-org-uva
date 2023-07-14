@@ -107,6 +107,8 @@ However, if you have a Linux machine you can follow the
 If you have issues installing it, attend an online support session
 with the Rivanna staff.
 
+
+
 ### Access via the Web Browser
 
 Rivanna can be accessed right from the Web browser. Although this may
@@ -409,7 +411,8 @@ set it as follows
 rivanna>
   mkdir -p /project/$USER/.singularity/cache
   export SINGULARITY_CACHEDIR=/project/$USER/.singularity/cache
-
+```
+`
 ### Python
 
 In case you use python venv, do not place them in home but under
@@ -431,9 +434,85 @@ something goes wrong it is easy to recreate from your default
 python. Those that use that path ought to improve how to do this here.
 
 
+### Adding cloudmesh rivanna specific commands and tools
 
+On your computer in your ENV3 add the following to enable the commands
 
+```bash
+computer> 
+  pip install pip -U
+  pip install cloudmesh-common
+  pip install cloudmesh-rivanna
+  pip install cloudmesh-sbatch
+  pip install cloudmesh-vpn
+```
 
+On Rivanna in ENV3 also add the gpu monitor
+
+```bash
+computer> 
+  pip install pip -U
+  pip install cloudmesh-common
+  pip install cloudmesh-gpu
+  pip install cloudmesh-rivanna
+  pip install cloudmesh-sbatch
+```
+
+> **Note:** Please send me a mail to laszewski@gmail.com 
+> if any requirements are missing as I may not yet have included 
+> all of them in the pip package.
+
+Once you have activated it the cloudmesh rivanna command shows you combinations 
+of SBATCH flags that you can use. 
+
+To see them type in 
+
+```bash
+cms rivanna slurm list
+```
+
+To login into a specific node you can say (lest assume you like to log into a k80
+
+```bash
+cms rivanna login k80
+```
+
+Please be reminded that interactive login is only allowed for debugging all 
+jobs must be submitted through sbatch.
+
+To get the directives template to use that GPU, use 
+
+```bash
+cms rivanna slurm k80
+```
+
+### cloudmesh sbatch
+
+Cloudmesh-sbatch is a super cool extension to sbatch allowing you to outomatically
+run parameters studies while creating permuattions on experiment parameters.
+At this time we try to create some sampel applications, but you can also ararnge 
+a 30 minute meeting with Gregor so we try setting it up for your application with his help
+
+See also:
+
+* <https://pypi.org/project/cloudmesh-sbatch/>
+* Example application: <https://github.com/laszewsk/mlcommons/tree/main/benchmarks/cloudmask/target/rivanna>
+  * ```make project; make submit``` 
+  * see Makefile for how to use it.
+* [Hybrid Reusable Computational Analytics Workflow Management with Cloudmesh](https://arxiv.org/abs/2210.16941)
+
+### cloudmesh vpn command
+
+cloudmesh has a simple commandline vpn command that you can use to switch on 
+and off vpn for UVA (and other vpn's, we can add that feature ;-))
+
+```bash
+computer> 
+  cms vpn connect
+  ... do your work in vpn such as working on rivanna
+  cms vpn disconnect
+  ... work on your regular network 
+```
 
 ## Load modules
 

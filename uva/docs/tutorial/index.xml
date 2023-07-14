@@ -557,41 +557,83 @@ set it as follows&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  mkdir -p /project/&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;/.singularity/cache
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SINGULARITY_CACHEDIR&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;/project/&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;/.singularity/cache
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;### Python&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;In &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;case&lt;/span&gt; you use python venv, &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;do&lt;/span&gt; not place them in home but under
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;project.
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;rivanna&amp;gt;
-module load python3.8
-python -m venv $PROJECT/ENV3
-source $PROJECT/ENV3/bin/activate&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;
-If you succeed, you can also place the source line in your .bashrc
-file.
-
-In case you use conda and python, we also recommend that you create a
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;`&lt;/p&gt;
+&lt;h3 id=&#34;python&#34;&gt;Python&lt;/h3&gt;
+&lt;p&gt;In case you use python venv, do not place them in home but under
+project.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;rivanna&amp;gt;
+  module load python3.8
+  python -m venv $PROJECT/ENV3
+  source $PROJECT/ENV3/bin/activate
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;If you succeed, you can also place the source line in your .bashrc
+file.&lt;/p&gt;
+&lt;p&gt;In case you use conda and python, we also recommend that you create a
 venv from the conda python, so you have a copy of that in ENV3 and if
 something goes wrong it is easy to recreate from your default
-python. Those that use that path ought to improve how to do this here.
-
-
-
-
-
-
-## Load modules
-
-Modules are preconfigured packages that allow you to use a specific
+python. Those that use that path ought to improve how to do this here.&lt;/p&gt;
+&lt;h3 id=&#34;adding-cloudmesh-rivanna-specific-commands-and-tools&#34;&gt;Adding cloudmesh rivanna specific commands and tools&lt;/h3&gt;
+&lt;p&gt;On your computer in your ENV3 add the following to enable the commands&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;computer&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pip install pip -U
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pip install cloudmesh-common
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pip install cloudmesh-rivanna
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pip install cloudmesh-sbatch
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pip install cloudmesh-vpn
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;On Rivanna in ENV3 also add the gpu monitor&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;computer&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pip install pip -U
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pip install cloudmesh-common
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pip install cloudmesh-gpu
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pip install cloudmesh-rivanna
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  pip install cloudmesh-sbatch
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; Please send me a mail to &lt;a href=&#34;mailto:laszewski@gmail.com&#34;&gt;laszewski@gmail.com&lt;/a&gt;
+if any requirements are missing as I may not yet have included
+all of them in the pip package.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Once you have activated it the cloudmesh rivanna command shows you combinations
+of SBATCH flags that you can use.&lt;/p&gt;
+&lt;p&gt;To see them type in&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cms rivanna slurm list
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To login into a specific node you can say (lest assume you like to log into a k80&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cms rivanna login k80
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Please be reminded that interactive login is only allowed for debugging all
+jobs must be submitted through sbatch.&lt;/p&gt;
+&lt;p&gt;To get the directives template to use that GPU, use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cms rivanna slurm k80
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;cloudmesh-sbatch&#34;&gt;cloudmesh sbatch&lt;/h3&gt;
+&lt;p&gt;Cloudmesh-sbatch is a super cool extension to sbatch allowing you to outomatically
+run parameters studies while creating permuattions on experiment parameters.
+At this time we try to create some sampel applications, but you can also ararnge
+a 30 minute meeting with Gregor so we try setting it up for your application with his help&lt;/p&gt;
+&lt;p&gt;See also:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://pypi.org/project/cloudmesh-sbatch/&#34;&gt;https://pypi.org/project/cloudmesh-sbatch/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Example application: &lt;a href=&#34;https://github.com/laszewsk/mlcommons/tree/main/benchmarks/cloudmask/target/rivanna&#34;&gt;https://github.com/laszewsk/mlcommons/tree/main/benchmarks/cloudmask/target/rivanna&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;make project; make submit&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;see Makefile for how to use it.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://arxiv.org/abs/2210.16941&#34;&gt;Hybrid Reusable Computational Analytics Workflow Management with Cloudmesh&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;cloudmesh-vpn-command&#34;&gt;cloudmesh vpn command&lt;/h3&gt;
+&lt;p&gt;cloudmesh has a simple commandline vpn command that you can use to switch on
+and off vpn for UVA (and other vpn&amp;rsquo;s, we can add that feature ;-))&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;computer&amp;gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  cms vpn connect
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ... &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;do&lt;/span&gt; your work in vpn such as working on rivanna
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  cms vpn disconnect
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ... work on your regular network 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;load-modules&#34;&gt;Load modules&lt;/h2&gt;
+&lt;p&gt;Modules are preconfigured packages that allow you to use a specific
 software to be loaded into your environment without needing you to
 install it from source.
 To find out more about a particular package such as cmake you can use
-the command
-
-```bash
-rivanna&amp;gt;
-  module spider cmake # check whether cmake is available and details
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Load the needed module (you can add version info). Note that some
+the command&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  module spider cmake &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# check whether cmake is available and details&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Load the needed module (you can add version info). Note that some
 modules are dependent on other modules (&lt;code&gt;clang/10.0.1&lt;/code&gt; depends on
 &lt;code&gt;gcc/9.2.0&lt;/code&gt; so &lt;code&gt;gcc&lt;/code&gt; needs to be loaded first.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
@@ -1024,7 +1066,6 @@ Please include the following lines:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;#SBATCH -p gpu
 #SBATCH --gres=gpu:a100:X # replace X with the number of GPUs per node
 #SBATCH -C gpupod
-#SBATCH -A superpodtest
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;open-ondemand&#34;&gt;Open OnDemand&lt;/h3&gt;
 &lt;p&gt;In &lt;em&gt;Optional: Slurm Option&lt;/em&gt; write:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;-C gpupod
