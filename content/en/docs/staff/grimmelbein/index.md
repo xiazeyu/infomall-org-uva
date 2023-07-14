@@ -16,6 +16,8 @@ Clara Grimmelbein is a student at the University of Virginia, class of
 2026, pursuing a B.A. in Computer Science and a B.S. in Commerce with
 a minor in Italian. 
 
+{{% /pageinfo %}}
+
 ## References 
 
 * N/A
@@ -36,7 +38,7 @@ Data Resources:
 
 <http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot1/uno/top_21_auc_1fold.uno.h5>
 
-{{% /pageinfo %}}
+
 
 
 
