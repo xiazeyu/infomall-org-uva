@@ -164,6 +164,9 @@ AI predictions.&lt;/p&gt;
 &lt;p&gt;Clara Grimmelbein is a student at the University of Virginia, class of
 2026, pursuing a B.A. in Computer Science and a B.S. in Commerce with
 a minor in Italian.&lt;/p&gt;
+
+&lt;/div&gt;
+
 &lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;N/A&lt;/li&gt;
@@ -176,9 +179,6 @@ a minor in Italian.&lt;/p&gt;
 &lt;p&gt;(to initiate training)&lt;/p&gt;
 &lt;p&gt;Data Resources:&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot1/uno/top_21_auc_1fold.uno.h5&#34;&gt;http://ftp.mcs.anl.gov/pub/candle/public/benchmarks/Pilot1/uno/top_21_auc_1fold.uno.h5&lt;/a&gt;&lt;/p&gt;
-
-&lt;/div&gt;
-
 
       </description>
     </item>
@@ -204,6 +204,95 @@ learning, and artificial intelligence.&lt;/p&gt;
 
 &lt;/div&gt;
 
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Meryem Altin Karagoz</title>
+      <link>https://infomall.org/uva/docs/staff/karagoz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://infomall.org/uva/docs/staff/karagoz/</guid>
+      <description>
+        
+        
+        &lt;hr&gt;
+
+
+&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;h2 id=&#34;biography&#34;&gt;Biography&lt;/h2&gt;
+&lt;p&gt;Meryem Altin Karagoz joined Computer Engineering department of Sivas
+Cumhuriyet University Turkey, in 2016, as a Research Assistant. She
+received a master’s degree in Computer Engineering at Erciyes
+University in 2019 and is currently Ph.D. student in Computer
+Engineering at Erciyes University.  She is awarded a grant by The
+Scientific and Technological Research Council of Turkey (TUBITAK) to
+perform research at University of Virginia. Her research interests are
+artificial intelligence, deep learning, and medical image analysis.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;KARAGOZ, M. A., AKAY, B., BASTURK, A., KARABOGA, D., &amp;amp; NALBANTOGLU, O. U., (2023). An unsupervised transfer learning model based on convolutional auto encoder for non-alcoholic steatohepatitis activity scoring and fibrosis staging of liver histopathological images. Neural Computing and Applications , vol.35, no.14, 10605-10619.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;KARAGOZ, M. A., KARABOGA, D., AKAY, B., BASTURK, A., &amp;amp; Nalbantoglu, O. U., (2022). Deep Learning Based Steatosis Quantification of Liver Histopathology Images Using Unsupervised Feature Extraction . 2nd International Conference on Computing and Machine Intelligence, ICMI 2022, İstanbul, Turkey&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;KARAGOZ, M. A., &amp;amp; NALBANTOGLU, O. U., (2021). Taxonomic classification of metagenomic sequences from Relative Abundance Index profiles using deep learning. Biomedical Signal Processing and Control , vol.67.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Karagoz, M. A., &amp;amp; Nalbantoglu, O. U., (2019). RAPID PATHOGEN DETECTION OF USING CONVOLUTIONAL NEURAL NETWORKS ON METAGENOMICS DATA. HIBIT 19- THE 12TH INTERNATIONAL SYMPOSIUM ON HEALTH INFORMATICS AND BIOINFORMATICS (pp.130-131). İzmir, Turkey&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Karagoz, M. A., &amp;amp; Nalbantoglu, O. U., (2018). TAXONOMIC ANALYSIS OF MICROBIOTA DATA BASED ON RELATIVE ABUNDANCE INDEX ALGORITHM. Uluslararası XXXVIII. TMC Kongresi (pp.381-382). Antalya, Turkey&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;project&#34;&gt;Project&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Title:&lt;/strong&gt; Developing Self-Supervised Learning Models for Reducing the Dependency on Expert Supervision in Medical Image Analysis&lt;/p&gt;
+&lt;p&gt;Deep Learning methods are capable of learning highly complex
+mathematical functions using a large number of neural-net
+layers. Therefore, deep learning models require a large amount of data
+to learn large numbers of parameters. However, the two main problems
+encountered in current medical imaging studies with Deep Learning are:
+(i) lack of annotated datasets and (ii)imbalanced datasets between
+labels or classes. While limited labeled datasets cause overfitting,
+an imbalanced dataset between positive and negative samples causes an
+underfitting problem for deep networks. Thus, deep learning models are
+challenging to provide high performance in computer vision problems
+with insufficient data; medical imaging is one of these areas. The
+problem of generating largescale and public datasets for medical image
+analysis is difficult to solve in the short term due to practical
+difficulties such as cost, time, patient privacy, and lack of standard
+data publication procedures. On the other hand, the problem of an
+imbalanced dataset can be challenging for generating a large-scale
+annotated dataset. Therefore, it is an important field for medical
+image analysis studies that researchers develop Deep Learning
+strategies to overcome these data constraints by reducing the
+dependence on expert supervision.  In recent years, self-supervised
+learning (SSL) has gained remarkable attention against lack of
+datasets owing to pretext task and downstream task mechanisms with
+prior studies. The pretext task is pre-designed as the former task for
+learning discriminative visual features on unlabeled data to be used
+in downstream tasks such as classification, detection, and
+segmentation. In addition to providing robust and
+performance-enhancing solutions in the lack of labeled data,
+self-supervised learning methods allow extraction of distinct signals
+by using labeled and unlabeled data all together as in an unsupervised
+manner during the pretext task step. Thus, SSL provides a solution to
+the problem of a large amount of unlabeled data, which is the most
+critical problem in medical image tasks. However, there is a
+noticeable lack of self-supervised learning models for medical image
+analysis tasks and needs to be improved with further studies. In
+conclusion, we focus on SSL models to deal with data limitations and
+enable automated diagnosis and detection systems at the expert level
+for clinical usage by reducing expert demand for medical image tasks.&lt;/p&gt;
+&lt;h2 id=&#34;resources-needs&#34;&gt;Resources needs&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Compute:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Data:&lt;/strong&gt; at least 10 TB of space for data storage.&lt;/p&gt;
 
       </description>
     </item>

@@ -1,6 +1,6 @@
 ---
 title: "Meryem Altin Karagoz"
-linkTitle: "meryemaltin"
+linkTitle: "Karagoz"
 weight: 9
 description: Visiting Graduate Researcher 
 ------
