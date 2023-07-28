@@ -576,36 +576,37 @@ and charging rate. `dev` is free but limited to 1 hour for each
 session/allocation and no GPU is available. To list the different
 partitons use `qlist` to check partitions 
 
+Last Checked July 28th, note thes values may change.
 
-| Queue          | Total   | Free    | Jobs    | Jobs    | Time       | SU     |    
-| ---------------| --------| --------| --------| --------| -----------| --- |
-| **(partition)**    | **Cores**   | **Cores**   | **Running** | **Pending** | **Limit**      | **Charge** |
-| bii            | 4640    | 4306    | 38      | 1949    | 7-00:00:00 | 1  |    
-| standard       | 5644    | 1391    | 706     | 12      | 7-00:00:00 | 1  |    
-| dev            | 456     | 426     | 2       | 1       | 1:00:00    | 0  |    
-| parallel       | 5680    | 364     | 32      | 21      | 3-00:00:00 | 1  |    
-| instructional  | 2320    | 2180    |         |         | 3-00:00:00 | 1  |    
-| largemem       | 208     | 123     | 10      | 2       | 4-00:00:00 | 1  |    
-| gpu            | 2372    | 1745    | 67      | 1       | 3-00:00:00 | 3  |    
-| bii-gpu        | 608     | 554     |         | 4       | 3-00:00:00 | 1  |    
-| bii-largemem   | 288     | 171     |         | 1       | 7-00:00:00 | 1  |
+| Queue          | Total   | Free    | Jobs    | Jobs    | Time           | SU     |
+| (partition)    | Cores   | Cores   | Running | Pending | Limit          | Charge |
+| ---------------| --------| --------| --------| --------| ---------------| -------|
+| bii            | 4640    | 3331    | 31      | 15      | 7-00:00:00     | 1      |
+| standard       | 4080    | 496     | 1209    | 5670    | 7-00:00:00     | 1      |
+| dev            | 160     | 86      |         | 5       | 1:00:00        | 0      |
+| parallel       | 4880    | 1594    | 21      | 3       | 3-00:00:00     | 1      |
+| instructional  | 480     | 280     |         | 16      | 3-00:00:00     | 1      |
+| largemem       | 144     | 80      | 2       | 1       | 4-00:00:00     | 1      |
+| gpu            | 1876    | 1066    | 99      | 210     | 3-00:00:00     | 3      |
+| bii-gpu        | 608     | 542     | 18      | 1       | 3-00:00:00     | 1      |
+| bii-largemem   | 288     | 224     |         |         | 7-00:00:00     | 1      |
 
 To list the limits, use the command `qlimits`
 
+Last Checked July 28th, note these values may change.
 
-| Queue           | Maximum    | Maximum        | Minimum      | Maximum       | Maximum       | Default       | Maximum          | Minimum     |
-|-----------------|------------|----------------|--------------|---------------|---------------|---------------|------------------|-------------|
-| **(partition)** | **Submit** | **Cores(GPU)** | **Cores**    | **Mem/Node**  | **Mem/Core**  | **Mem/Core**  | **Nodes**    	  | **Nodes**   |
-| 	 	  | 	       | **per User**   | **per Job**  | **in MB**     | **in MB**     | **in MB**     | **per Job**   	  | **per Job** |
-| bii             | 10000      | cpu=400        |              | 354000+       |               | 9400          | 112              |             |
-| standard        | 10000      | cpu=1000       |              | 255000+       |               | 9000          | 1                |             |
-| dev             | 10000      | cpu=16         |              | 127000+       | 9000          | 6000          | 2                |             |
-| parallel        | 2000       | cpu=1000       | 4            | 384000        | 9600          | 9000          | 25               | 2           |
-| instructional   | 2000       | cpu=20         |              | 112000+       |               | 6000          | 5                |             |
-| largemem        | 2000       | cpu=32         |              | 1000000+      | 64000         | 60000         | 2                |             |
-| gpu             | 10000      | gres/gpu=32    |              | 128000+       | 32000         | 6000          | 4                |             |
-| bii-gpu         | 10000      |                |              | 384000+       |               | 9400          | 12               |             |
-| bii-largemem    | 10000      |                |              | 1500000       |               | 31000         | 2                |             |
+| Queue          | Maximum      | Maximum          | Minimum      | Maximum       | Maximum       | Default       | Maximum      | Minimum     |
+| (partition)    | Submit       | Cores(GPU)/User  | Cores/Job    | Mem/Node(MB)  | Mem/Core(MB)  | Mem/Core(MB)  | Nodes/Job    | Nodes/Job   |
+| ---------------| -------------| -----------------| -------------| --------------| --------------| --------------| -------------| ------------|
+| bii            | 10000        | cpu=400          |              | 354000+       |               | 9400          | 112          |             |
+| standard       | 10000        | cpu=1000         |              | 384000+       |               | 9000          | 1            |             |
+| dev            | 10000        | cpu=16           |              | 384000        | 9000          | 6000          | 2            |             |
+| parallel       | 2000         | cpu=1500         | 4            | 384000        | 9600          | 9000          | 50           | 2           |
+| instructional  | 2000         | cpu=20           |              | 384000        |               | 6000          | 5            |             |
+| largemem       | 2000         | cpu=32           |              | 1500000       | 64000         | 60000         | 2            |             |
+| gpu            | 10000        | gres/gpu=32      |              | 128000+       | 32000         | 6000          | 4            |             |
+| bii-gpu        | 10000        |                  |              | 384000+       |               | 9400          | 12           |             |
+| bii-largemem   | 10000        |                  |              | 1500000       |               | 31000         | 2            |             |
 
 ## Linux commands for HPC
 
