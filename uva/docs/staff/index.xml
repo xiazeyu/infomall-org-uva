@@ -130,19 +130,31 @@ Jacques Fleischer
 	
 &lt;/figure&gt;
 
-
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;h2 id=&#34;biography&#34;&gt;Biography&lt;/h2&gt;
 &lt;p&gt;Jacques is an undergraduate computer science major
-who is a part of the Computing for Global Challenges
+in the Computing for Global Challenges
 program of the Biocomplexity Institute at the University
 of Virginia. His interests include leveraging artificial
 intelligence to analyze timeseries; he also
 uses high performance computing to conduct geospatial
 AI predictions.&lt;/p&gt;
-
-&lt;/div&gt;
-
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;von Laszewski, G., Fleischer, J. P., &amp;amp; Fox, G. C. (2022). &lt;a href=&#34;https://arxiv.org/abs/2210.16941v1&#34;&gt;Hybrid Reusable Computational Analytics Workflow Management with Cloudmesh.&lt;/a&gt; arXiv, 2210.16941.&lt;/li&gt;
+&lt;li&gt;Fleischer, J. P., von Laszewski, G., Theran, C., &amp;amp; Parra Bautista, Y. J. (2022). &lt;a href=&#34;https://dx.doi.org/10.3390/a15070230&#34;&gt;Time Series Analysis of Cryptocurrency Prices Using Long Short-Term Memory.&lt;/a&gt; Algorithms, 15(7), 230. MDPI AG.&lt;/li&gt;
+&lt;li&gt;Fleischer, J. P., von Laszewski, G., Theran, C., &amp;amp; Parra Bautista, Y. J. (2022). &lt;a href=&#34;https://doi.org/10.48550/arXiv.2202.13874&#34;&gt;Time Series Analysis of Blockchain-Based Cryptocurrency Price Changes.&lt;/a&gt; arXiv, 2202.13874.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;project&#34;&gt;Project&lt;/h2&gt;
+&lt;p&gt;The &lt;em&gt;tevelop&lt;/em&gt; earthquake benchmark analyzes historical data and forecasts
+earthquakes with Normalized Nash-Sutcliffe Efficiency (NNSE) as a measure of
+accuracy. The benchmark is ran several times in parallel on several graphics
+cards and varying epochs to find the best hyperparameter combination.&lt;/p&gt;
+&lt;p&gt;The &lt;em&gt;cloudmask&lt;/em&gt; benchmark reads satellite imagery and classifies portions
+of images as cloudy or clear sky. Validation loss and inference accuracy
+are used to identify which epoch number is ideal for optimal classification.&lt;/p&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Compute Resources:&lt;/strong&gt; 500 GPU-accelerated Slurm hours&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Data Resources:&lt;/strong&gt; at least 5 TB of space for data storage&lt;/p&gt;
 
       </description>
     </item>
@@ -472,6 +484,7 @@ Christopher Zelaya
 
 
 &lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
+&lt;h2 id=&#34;biography&#34;&gt;Biography&lt;/h2&gt;
 &lt;p&gt;Christopher Zelaya is a student at the University of Virginia, class
 of 2024, pursuing a B.S. in Computer Science with a minor in Data
 Science. He is an incoming Software Engineer Intern at Honeywell
@@ -481,6 +494,17 @@ AI.&lt;/p&gt;
 
 &lt;/div&gt;
 
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;N/A&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;project&#34;&gt;Project&lt;/h2&gt;
+&lt;p&gt;State of the art scanning transmission electron microscopes (STEM) produce focused electron beams with atomic dimensions and allow to capture diffraction patterns arising from the interaction of incident electrons with nanoscale material volumes. Backing out the local atomic structure of said materials requires compute- and time-intensive analyses of these diffraction patterns (known as convergent beam electron diffraction, CBED). Traditional analyses of CBED requires iterative numerical solutions of partial differential equations and comparison with experimental data to refine the starting material configuration. This process is repeated anew for every newly acquired experimental CBED pattern and/or probed material.&lt;/p&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;p&gt;Compute Resources:
+&lt;a href=&#34;https://github.com/mlcommons/science/tree/main/benchmarks/stemdl&#34;&gt;https://github.com/mlcommons/science/tree/main/benchmarks/stemdl&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Data Resources:
+&lt;a href=&#34;https://doi.ccs.ornl.gov/ui/doi/70&#34;&gt;https://doi.ccs.ornl.gov/ui/doi/70&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>

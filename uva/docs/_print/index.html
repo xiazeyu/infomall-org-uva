@@ -18606,19 +18606,31 @@ Jacques Fleischer
 	
 </figure>
 
-
-
-<div class="pageinfo pageinfo-primary">
+<h2 id="biography">Biography</h2>
 <p>Jacques is an undergraduate computer science major
-who is a part of the Computing for Global Challenges
+in the Computing for Global Challenges
 program of the Biocomplexity Institute at the University
 of Virginia. His interests include leveraging artificial
 intelligence to analyze timeseries; he also
 uses high performance computing to conduct geospatial
 AI predictions.</p>
-
-</div>
-
+<h2 id="references">References</h2>
+<ul>
+<li>von Laszewski, G., Fleischer, J. P., &amp; Fox, G. C. (2022). <a href="https://arxiv.org/abs/2210.16941v1">Hybrid Reusable Computational Analytics Workflow Management with Cloudmesh.</a> arXiv, 2210.16941.</li>
+<li>Fleischer, J. P., von Laszewski, G., Theran, C., &amp; Parra Bautista, Y. J. (2022). <a href="https://dx.doi.org/10.3390/a15070230">Time Series Analysis of Cryptocurrency Prices Using Long Short-Term Memory.</a> Algorithms, 15(7), 230. MDPI AG.</li>
+<li>Fleischer, J. P., von Laszewski, G., Theran, C., &amp; Parra Bautista, Y. J. (2022). <a href="https://doi.org/10.48550/arXiv.2202.13874">Time Series Analysis of Blockchain-Based Cryptocurrency Price Changes.</a> arXiv, 2202.13874.</li>
+</ul>
+<h2 id="project">Project</h2>
+<p>The <em>tevelop</em> earthquake benchmark analyzes historical data and forecasts
+earthquakes with Normalized Nash-Sutcliffe Efficiency (NNSE) as a measure of
+accuracy. The benchmark is ran several times in parallel on several graphics
+cards and varying epochs to find the best hyperparameter combination.</p>
+<p>The <em>cloudmask</em> benchmark reads satellite imagery and classifies portions
+of images as cloudy or clear sky. Validation loss and inference accuracy
+are used to identify which epoch number is ideal for optimal classification.</p>
+<h2 id="resources">Resources</h2>
+<p><strong>Compute Resources:</strong> 500 GPU-accelerated Slurm hours</p>
+<p><strong>Data Resources:</strong> at least 5 TB of space for data storage</p>
 
 </div>
 
@@ -18974,6 +18986,7 @@ Christopher Zelaya
 
 
 <div class="pageinfo pageinfo-primary">
+<h2 id="biography">Biography</h2>
 <p>Christopher Zelaya is a student at the University of Virginia, class
 of 2024, pursuing a B.S. in Computer Science with a minor in Data
 Science. He is an incoming Software Engineer Intern at Honeywell
@@ -18983,6 +18996,17 @@ AI.</p>
 
 </div>
 
+<h2 id="references">References</h2>
+<ul>
+<li>N/A</li>
+</ul>
+<h2 id="project">Project</h2>
+<p>State of the art scanning transmission electron microscopes (STEM) produce focused electron beams with atomic dimensions and allow to capture diffraction patterns arising from the interaction of incident electrons with nanoscale material volumes. Backing out the local atomic structure of said materials requires compute- and time-intensive analyses of these diffraction patterns (known as convergent beam electron diffraction, CBED). Traditional analyses of CBED requires iterative numerical solutions of partial differential equations and comparison with experimental data to refine the starting material configuration. This process is repeated anew for every newly acquired experimental CBED pattern and/or probed material.</p>
+<h2 id="resources">Resources</h2>
+<p>Compute Resources:
+<a href="https://github.com/mlcommons/science/tree/main/benchmarks/stemdl">https://github.com/mlcommons/science/tree/main/benchmarks/stemdl</a></p>
+<p>Data Resources:
+<a href="https://doi.ccs.ornl.gov/ui/doi/70">https://doi.ccs.ornl.gov/ui/doi/70</a></p>
 
 </div>
 
@@ -19707,149 +19731,122 @@ modules are dependent on other modules (<code>clang/10.0.1</code> depends on
 and charging rate. <code>dev</code> is free but limited to 1 hour for each
 session/allocation and no GPU is available. To list the different
 partitons use <code>qlist</code> to check partitions</p>
+<p>Last Checked July 28th, note thes values may change.</p>
+<p>| Queue          | Total   | Free    | Jobs    | Jobs    | Time           | SU     |</p>
 <table>
 <thead>
 <tr>
-<th>Queue</th>
-<th>Total</th>
-<th>Free</th>
-<th>Jobs</th>
-<th>Jobs</th>
-<th>Time</th>
-<th>SU</th>
+<th>(partition)</th>
+<th>Cores</th>
+<th>Cores</th>
+<th>Running</th>
+<th>Pending</th>
+<th>Limit</th>
+<th>Charge</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>(partition)</strong></td>
-<td><strong>Cores</strong></td>
-<td><strong>Cores</strong></td>
-<td><strong>Running</strong></td>
-<td><strong>Pending</strong></td>
-<td><strong>Limit</strong></td>
-<td><strong>Charge</strong></td>
-</tr>
-<tr>
 <td>bii</td>
 <td>4640</td>
-<td>4306</td>
-<td>38</td>
-<td>1949</td>
+<td>3331</td>
+<td>31</td>
+<td>15</td>
 <td>7-00:00:00</td>
 <td>1</td>
 </tr>
 <tr>
 <td>standard</td>
-<td>5644</td>
-<td>1391</td>
-<td>706</td>
-<td>12</td>
+<td>4080</td>
+<td>496</td>
+<td>1209</td>
+<td>5670</td>
 <td>7-00:00:00</td>
 <td>1</td>
 </tr>
 <tr>
 <td>dev</td>
-<td>456</td>
-<td>426</td>
-<td>2</td>
-<td>1</td>
+<td>160</td>
+<td>86</td>
+<td></td>
+<td>5</td>
 <td>1:00:00</td>
 <td>0</td>
 </tr>
 <tr>
 <td>parallel</td>
-<td>5680</td>
-<td>364</td>
-<td>32</td>
+<td>4880</td>
+<td>1594</td>
 <td>21</td>
+<td>3</td>
 <td>3-00:00:00</td>
 <td>1</td>
 </tr>
 <tr>
 <td>instructional</td>
-<td>2320</td>
-<td>2180</td>
+<td>480</td>
+<td>280</td>
 <td></td>
-<td></td>
+<td>16</td>
 <td>3-00:00:00</td>
 <td>1</td>
 </tr>
 <tr>
 <td>largemem</td>
-<td>208</td>
-<td>123</td>
-<td>10</td>
+<td>144</td>
+<td>80</td>
 <td>2</td>
+<td>1</td>
 <td>4-00:00:00</td>
 <td>1</td>
 </tr>
 <tr>
 <td>gpu</td>
-<td>2372</td>
-<td>1745</td>
-<td>67</td>
-<td>1</td>
+<td>1876</td>
+<td>1066</td>
+<td>99</td>
+<td>210</td>
 <td>3-00:00:00</td>
 <td>3</td>
 </tr>
 <tr>
 <td>bii-gpu</td>
 <td>608</td>
-<td>554</td>
-<td></td>
-<td>4</td>
+<td>542</td>
+<td>18</td>
+<td>1</td>
 <td>3-00:00:00</td>
 <td>1</td>
 </tr>
 <tr>
 <td>bii-largemem</td>
 <td>288</td>
-<td>171</td>
+<td>224</td>
 <td></td>
-<td>1</td>
+<td></td>
 <td>7-00:00:00</td>
 <td>1</td>
 </tr>
 </tbody>
 </table>
 <p>To list the limits, use the command <code>qlimits</code></p>
+<p>Last Checked July 28th, note these values may change.</p>
+<p>| Queue          | Maximum      | Maximum          | Minimum      | Maximum       | Maximum       | Default       | Maximum      | Minimum     |</p>
 <table>
 <thead>
 <tr>
-<th>Queue</th>
-<th>Maximum</th>
-<th>Maximum</th>
-<th>Minimum</th>
-<th>Maximum</th>
-<th>Maximum</th>
-<th>Default</th>
-<th>Maximum</th>
-<th>Minimum</th>
+<th>(partition)</th>
+<th>Submit</th>
+<th>Cores(GPU)/User</th>
+<th>Cores/Job</th>
+<th>Mem/Node(MB)</th>
+<th>Mem/Core(MB)</th>
+<th>Mem/Core(MB)</th>
+<th>Nodes/Job</th>
+<th>Nodes/Job</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>(partition)</strong></td>
-<td><strong>Submit</strong></td>
-<td><strong>Cores(GPU)</strong></td>
-<td><strong>Cores</strong></td>
-<td><strong>Mem/Node</strong></td>
-<td><strong>Mem/Core</strong></td>
-<td><strong>Mem/Core</strong></td>
-<td><strong>Nodes</strong></td>
-<td><strong>Nodes</strong></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td><strong>per User</strong></td>
-<td><strong>per Job</strong></td>
-<td><strong>in MB</strong></td>
-<td><strong>in MB</strong></td>
-<td><strong>in MB</strong></td>
-<td><strong>per Job</strong></td>
-<td><strong>per Job</strong></td>
-</tr>
 <tr>
 <td>bii</td>
 <td>10000</td>
@@ -19866,7 +19863,7 @@ partitons use <code>qlist</code> to check partitions</p>
 <td>10000</td>
 <td>cpu=1000</td>
 <td></td>
-<td>255000+</td>
+<td>384000+</td>
 <td></td>
 <td>9000</td>
 <td>1</td>
@@ -19877,7 +19874,7 @@ partitons use <code>qlist</code> to check partitions</p>
 <td>10000</td>
 <td>cpu=16</td>
 <td></td>
-<td>127000+</td>
+<td>384000</td>
 <td>9000</td>
 <td>6000</td>
 <td>2</td>
@@ -19886,12 +19883,12 @@ partitons use <code>qlist</code> to check partitions</p>
 <tr>
 <td>parallel</td>
 <td>2000</td>
-<td>cpu=1000</td>
+<td>cpu=1500</td>
 <td>4</td>
 <td>384000</td>
 <td>9600</td>
 <td>9000</td>
-<td>25</td>
+<td>50</td>
 <td>2</td>
 </tr>
 <tr>
@@ -19899,7 +19896,7 @@ partitons use <code>qlist</code> to check partitions</p>
 <td>2000</td>
 <td>cpu=20</td>
 <td></td>
-<td>112000+</td>
+<td>384000</td>
 <td></td>
 <td>6000</td>
 <td>5</td>
@@ -19910,7 +19907,7 @@ partitons use <code>qlist</code> to check partitions</p>
 <td>2000</td>
 <td>cpu=32</td>
 <td></td>
-<td>1000000+</td>
+<td>1500000</td>
 <td>64000</td>
 <td>60000</td>
 <td>2</td>
@@ -20210,8 +20207,8 @@ following groups:</p>
 is created in your home directory and is often far too small for even our small projects. Thus you need to
 set it as follows</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
-</span></span><span style="display:flex;"><span>  mkdir -p /project/<span style="color:#000">$USER</span>/.singularity/cache
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87">export</span> <span style="color:#000">SINGULARITY_CACHEDIR</span><span style="color:#ce5c00;font-weight:bold">=</span>/project/<span style="color:#000">$USER</span>/.singularity/cache
+</span></span><span style="display:flex;"><span>  mkdir -p /scratch/<span style="color:#000">$USER</span>/.singularity/cache
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87">export</span> <span style="color:#000">SINGULARITY_CACHEDIR</span><span style="color:#ce5c00;font-weight:bold">=</span>/scratch/<span style="color:#000">$USER</span>/.singularity/cache
 </span></span></code></pre></div><h3 id="builddef">build.def</h3>
 <p>To build an image you will need a build definition file</p>
 <p>We show next an exxample of a simple <code>buid.def</code> file that uses
