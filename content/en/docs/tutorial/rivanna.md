@@ -579,8 +579,8 @@ partitons use `qlist` to check partitions
 Last Checked July 28th, note thes values may change.
 
 | Queue          | Total   | Free    | Jobs    | Jobs    | Time           | SU     |
-| (partition)    | Cores   | Cores   | Running | Pending | Limit          | Charge |
 | ---------------| --------| --------| --------| --------| ---------------| -------|
+| (partition)    | Cores   | Cores   | Running | Pending | Limit          | Charge |
 | bii            | 4640    | 3331    | 31      | 15      | 7-00:00:00     | 1      |
 | standard       | 4080    | 496     | 1209    | 5670    | 7-00:00:00     | 1      |
 | dev            | 160     | 86      |         | 5       | 1:00:00        | 0      |
@@ -596,8 +596,8 @@ To list the limits, use the command `qlimits`
 Last Checked July 28th, note these values may change.
 
 | Queue          | Maximum      | Maximum          | Minimum      | Maximum       | Maximum       | Default       | Maximum      | Minimum     |
-| (partition)    | Submit       | Cores(GPU)/User  | Cores/Job    | Mem/Node(MB)  | Mem/Core(MB)  | Mem/Core(MB)  | Nodes/Job    | Nodes/Job   |
 | ---------------| -------------| -----------------| -------------| --------------| --------------| --------------| -------------| ------------|
+| (partition)    | Submit       | Cores(GPU)/User  | Cores/Job    | Mem/Node(MB)  | Mem/Core(MB)  | Mem/Core(MB)  | Nodes/Job    | Nodes/Job   |
 | bii            | 10000        | cpu=400          |              | 354000+       |               | 9400          | 112          |             |
 | standard       | 10000        | cpu=1000         |              | 384000+       |               | 9000          | 1            |             |
 | dev            | 10000        | cpu=16           |              | 384000        | 9000          | 6000          | 2            |             |
