@@ -869,20 +869,28 @@ and charging rate. <code>dev</code> is free but limited to 1 hour for each
 session/allocation and no GPU is available. To list the different
 partitons use <code>qlist</code> to check partitions</p>
 <p>Last Checked July 28th, note thes values may change.</p>
-<p>| Queue          | Total   | Free    | Jobs    | Jobs    | Time           | SU     |</p>
 <table>
 <thead>
 <tr>
-<th>(partition)</th>
-<th>Cores</th>
-<th>Cores</th>
-<th>Running</th>
-<th>Pending</th>
-<th>Limit</th>
-<th>Charge</th>
+<th>Queue</th>
+<th>Total</th>
+<th>Free</th>
+<th>Jobs</th>
+<th>Jobs</th>
+<th>Time</th>
+<th>SU</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>(partition)</td>
+<td>Cores</td>
+<td>Cores</td>
+<td>Running</td>
+<td>Pending</td>
+<td>Limit</td>
+<td>Charge</td>
+</tr>
 <tr>
 <td>bii</td>
 <td>4640</td>
@@ -968,22 +976,32 @@ partitons use <code>qlist</code> to check partitions</p>
 </table>
 <p>To list the limits, use the command <code>qlimits</code></p>
 <p>Last Checked July 28th, note these values may change.</p>
-<p>| Queue          | Maximum      | Maximum          | Minimum      | Maximum       | Maximum       | Default       | Maximum      | Minimum     |</p>
 <table>
 <thead>
 <tr>
-<th>(partition)</th>
-<th>Submit</th>
-<th>Cores(GPU)/User</th>
-<th>Cores/Job</th>
-<th>Mem/Node(MB)</th>
-<th>Mem/Core(MB)</th>
-<th>Mem/Core(MB)</th>
-<th>Nodes/Job</th>
-<th>Nodes/Job</th>
+<th>Queue</th>
+<th>Maximum</th>
+<th>Maximum</th>
+<th>Minimum</th>
+<th>Maximum</th>
+<th>Maximum</th>
+<th>Default</th>
+<th>Maximum</th>
+<th>Minimum</th>
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>(partition)</td>
+<td>Submit</td>
+<td>Cores(GPU)/User</td>
+<td>Cores/Job</td>
+<td>Mem/Node(MB)</td>
+<td>Mem/Core(MB)</td>
+<td>Mem/Core(MB)</td>
+<td>Nodes/Job</td>
+<td>Nodes/Job</td>
+</tr>
 <tr>
 <td>bii</td>
 <td>10000</td>
