@@ -621,6 +621,8 @@ The following additional commands are quite useful on HPC systems
 | `allocations`| check available account and balance |
 | `hdquota` | check storage you has used
 | `du -h --max-depth=1` | check which directory uses most space |
+| qlist | list the queues |
+| qlimits | prints the limits of the queues |
 
 ## SLURM Batch Parameters
 
