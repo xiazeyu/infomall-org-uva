@@ -51,6 +51,15 @@ rivanna>
   export SINGULARITY_CACHEDIR=/scratch/$USER/.singularity/cache
 ```
 
+Please remember that scratch is not permanent. In case you like a bit more permanent location you can alternatively use 
+
+```bash
+rivanna>
+  mkdir -p /project/bii_dsc_community/$USER/.singularity/cache
+  export SINGULARITY_CACHEDIR=/project/bii_dsc_community/$USER/.singularity/cache
+```
+
+
 ### build.def
 
 To build an image you will need a build definition file
