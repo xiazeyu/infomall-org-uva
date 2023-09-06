@@ -21,7 +21,7 @@ A100-40GB, A100-80GB.
 
 We have a team discord at: uva-bii-community
 
-<https://discord.gg/2pPR5ves>
+<https://discord.gg/7K2PQqxYz7>
 
 to be added, send laszewski@gmail.com an email with subject:
 Please add me to discord for bii_dsc_community
