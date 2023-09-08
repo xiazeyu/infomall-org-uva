@@ -2,6 +2,21 @@ all: hugo rsync chmod
 
 .PHONY: pubs
 
+# local:
+# 	mkdir -p uva
+# 	docker-compose up
+
+# run shell:
+# 	@if docker ps -q -f name=infomall-org-uva-site-1 | grep -q . ; then \
+# 		echo "Container is already running. Attaching..." ; \
+# 		docker exec -it infomall-org-uva-site-1 bash ; \
+# 	else \
+# 		echo "Container is not running. Starting new container..." ; \
+# 		docker run -it --privileged --detach --name infomall-org-uva-site-1 --cap-add=NET_ADMIN \
+# 		-v $(PWD):/app -v ~/remote_mount:/app/remote_mount $(DOCKER_IMAGE_NAME) ; \
+# 	fi
+
+
 hugo:
 	hugo
 
@@ -20,6 +35,10 @@ publish:
 rsync: hugo
 	rsync -rv uva rivanna:www/infomall
 	make -f Makefile chmod
+
+windows: hugo
+	wsl -e bash -c "rsync -rv uva rivanna:/project/bii_dsc/www/infomall"
+	wsl -e bash -c "make -f Makefile chmod"
 
 chmod:
 	ssh rivanna "cd www/infomall/uva; sh ../../permissions.sh"
