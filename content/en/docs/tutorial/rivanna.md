@@ -622,7 +622,7 @@ The following additional commands are quite useful on HPC systems
 | command | description|
 | --- | --- |
 | `allocations`| check available account and balance |
-| `llocations -a bii_dsc_community` | check allocation availability for users under `bii_dsc_community` |
+| `allocations -a bii_dsc_community` | check allocation availability for users under `bii_dsc_community` |
 | `hdquota` | check storage you has used
 | `du -h --max-depth=1` | check which directory uses most space |
 | qlist | list the queues |
