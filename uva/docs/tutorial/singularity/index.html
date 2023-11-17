@@ -25,11 +25,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://infomall.org/uva/docs/tutorial/singularity/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-07-24T18:53:13-04:00" /><meta property="og:site_name" content="Infomall.org" />
+<meta property="article:modified_time" content="2023-08-17T11:11:31-04:00" /><meta property="og:site_name" content="Infomall.org" />
 <meta itemprop="name" content="Rivanna and Singularity">
 <meta itemprop="description" content="Singularity.">
-<meta itemprop="dateModified" content="2023-07-24T18:53:13-04:00" />
-<meta itemprop="wordCount" content="639">
+<meta itemprop="dateModified" content="2023-08-17T11:11:31-04:00" />
+<meta itemprop="wordCount" content="665">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Rivanna and Singularity"/>
 <meta name="twitter:description" content="Singularity."/>
@@ -340,6 +340,10 @@ set it as follows</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
 </span></span><span style="display:flex;"><span>  mkdir -p /scratch/<span style="color:#000">$USER</span>/.singularity/cache
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87">export</span> <span style="color:#000">SINGULARITY_CACHEDIR</span><span style="color:#ce5c00;font-weight:bold">=</span>/scratch/<span style="color:#000">$USER</span>/.singularity/cache
+</span></span></code></pre></div><p>Please remember that scratch is not permanent. In case you like a bit more permanent location you can alternatively use</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
+</span></span><span style="display:flex;"><span>  mkdir -p /project/bii_dsc_community/<span style="color:#000">$USER</span>/.singularity/cache
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87">export</span> <span style="color:#000">SINGULARITY_CACHEDIR</span><span style="color:#ce5c00;font-weight:bold">=</span>/project/bii_dsc_community/<span style="color:#000">$USER</span>/.singularity/cache
 </span></span></code></pre></div><h3 id="builddef">build.def</h3>
 <p>To build an image you will need a build definition file</p>
 <p>We show next an exxample of a simple <code>buid.def</code> file that uses
@@ -440,7 +444,7 @@ by the host:</p>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified July 24, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/934c9bd8df6f9dee505fb9d8648cea5af8ce2baf">Update singularity.md (934c9bd)</a>
+  Last modified August 17, 2023: <a href="https://github.com/DSC-SPIDAL/infomall-org-uva/commit/c6eccf97d359b9311b4fdb932bee9276b54391fc">Update singularity.md (c6eccf9)</a>
 </div>
 
 </div>

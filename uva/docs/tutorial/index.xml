@@ -259,7 +259,9 @@ A100-40GB, A100-80GB.&lt;/p&gt;
 
 &lt;h2 id=&#34;communication&#34;&gt;Communication&lt;/h2&gt;
 &lt;p&gt;We have a team discord at: uva-bii-community&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://discord.gg/uFKJ5TUv&#34;&gt;https://discord.gg/uFKJ5TUv&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://discord.gg/7K2PQqxYz7&#34;&gt;https://discord.gg/7K2PQqxYz7&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;to be added, send &lt;a href=&#34;mailto:laszewski@gmail.com&#34;&gt;laszewski@gmail.com&lt;/a&gt; an email with subject:
+Please add me to discord for bii_dsc_community&lt;/p&gt;
 &lt;p&gt;please subscribe if you work on rivanna and are part of the
 bii_dsc_community.&lt;/p&gt;
 &lt;h2 id=&#34;rivanna-at-uva&#34;&gt;Rivanna at UVA&lt;/h2&gt;
@@ -913,6 +915,10 @@ partitons use &lt;code&gt;qlist&lt;/code&gt; to check partitions&lt;/p&gt;
 &lt;td&gt;check available account and balance&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
+&lt;td&gt;&lt;code&gt;allocations -a bii_dsc_community&lt;/code&gt;&lt;/td&gt;
+&lt;td&gt;check allocation availability for users under &lt;code&gt;bii_dsc_community&lt;/code&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td&gt;&lt;code&gt;hdquota&lt;/code&gt;&lt;/td&gt;
 &lt;td&gt;check storage you has used&lt;/td&gt;
 &lt;/tr&gt;
@@ -1155,6 +1161,10 @@ set it as follows&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  mkdir -p /scratch/&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;/.singularity/cache
 &lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SINGULARITY_CACHEDIR&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;/scratch/&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;/.singularity/cache
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Please remember that scratch is not permanent. In case you like a bit more permanent location you can alternatively use&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;rivanna&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  mkdir -p /project/bii_dsc_community/&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;/.singularity/cache
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#204a87&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SINGULARITY_CACHEDIR&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;/project/bii_dsc_community/&lt;span style=&#34;color:#000&#34;&gt;$USER&lt;/span&gt;/.singularity/cache
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;builddef&#34;&gt;build.def&lt;/h3&gt;
 &lt;p&gt;To build an image you will need a build definition file&lt;/p&gt;
 &lt;p&gt;We show next an exxample of a simple &lt;code&gt;buid.def&lt;/code&gt; file that uses

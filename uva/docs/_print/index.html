@@ -19331,7 +19331,9 @@ A100-40GB, A100-80GB.</p>
 
 <h2 id="communication">Communication</h2>
 <p>We have a team discord at: uva-bii-community</p>
-<p><a href="https://discord.gg/uFKJ5TUv">https://discord.gg/uFKJ5TUv</a></p>
+<p><a href="https://discord.gg/7K2PQqxYz7">https://discord.gg/7K2PQqxYz7</a></p>
+<p>to be added, send <a href="mailto:laszewski@gmail.com">laszewski@gmail.com</a> an email with subject:
+Please add me to discord for bii_dsc_community</p>
 <p>please subscribe if you work on rivanna and are part of the
 bii_dsc_community.</p>
 <h2 id="rivanna-at-uva">Rivanna at UVA</h2>
@@ -19985,6 +19987,10 @@ partitons use <code>qlist</code> to check partitions</p>
 <td>check available account and balance</td>
 </tr>
 <tr>
+<td><code>allocations -a bii_dsc_community</code></td>
+<td>check allocation availability for users under <code>bii_dsc_community</code></td>
+</tr>
+<tr>
 <td><code>hdquota</code></td>
 <td>check storage you has used</td>
 </tr>
@@ -20235,6 +20241,10 @@ set it as follows</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
 </span></span><span style="display:flex;"><span>  mkdir -p /scratch/<span style="color:#000">$USER</span>/.singularity/cache
 </span></span><span style="display:flex;"><span>  <span style="color:#204a87">export</span> <span style="color:#000">SINGULARITY_CACHEDIR</span><span style="color:#ce5c00;font-weight:bold">=</span>/scratch/<span style="color:#000">$USER</span>/.singularity/cache
+</span></span></code></pre></div><p>Please remember that scratch is not permanent. In case you like a bit more permanent location you can alternatively use</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rivanna&gt;
+</span></span><span style="display:flex;"><span>  mkdir -p /project/bii_dsc_community/<span style="color:#000">$USER</span>/.singularity/cache
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87">export</span> <span style="color:#000">SINGULARITY_CACHEDIR</span><span style="color:#ce5c00;font-weight:bold">=</span>/project/bii_dsc_community/<span style="color:#000">$USER</span>/.singularity/cache
 </span></span></code></pre></div><h3 id="builddef">build.def</h3>
 <p>To build an image you will need a build definition file</p>
 <p>We show next an exxample of a simple <code>buid.def</code> file that uses
